@@ -240,21 +240,29 @@ section{ position:relative; }
 
 /* ---------- ledger ---------- */
 .ledger{ border-block-start:1px solid var(--ink); margin-block-start:2.6rem; }
+/* The figure column is fixed, not fractional: every row must share the same
+   column edges or the ledger stops reading as a ledger. It is sized to hold
+   the widest figure (a 9-character grouped number) at the largest step. */
 .row{
-  display:grid; grid-template-columns:minmax(0,7.5rem) minmax(0,1fr) minmax(0,22ch);
+  display:grid; grid-template-columns:13.5rem minmax(0,1fr) minmax(0,22ch);
   gap:1rem 2rem; align-items:baseline;
   padding-block:1.5rem; border-block-end:1px solid var(--rule);
 }
 .row__fig{
   font-family:var(--font-mono); font-variant-numeric:tabular-nums;
-  font-size:clamp(1.45rem,3.1vw,2.35rem); line-height:1; letter-spacing:-.03em; font-weight:600;
+  font-size:clamp(1.45rem,2.6vw,2.15rem); line-height:1; letter-spacing:-.03em; font-weight:600;
   white-space:nowrap;
 }
 .row__fig.is-sig{ color:var(--signal); }
 .row__fig small{ font-size:.5em; letter-spacing:.02em; margin-inline-start:.25em; color:var(--ink-soft); font-weight:400; }
 .row__lab{ font-size:1.02rem; line-height:1.4; }
+@media (max-width:1040px){
+  .row{ grid-template-columns:11rem minmax(0,1fr) minmax(0,19ch); gap:1rem 1.5rem; }
+  .row__fig{ font-size:1.7rem; }
+}
 @media (max-width:780px){
   .row{ grid-template-columns:1fr; gap:.35rem; padding-block:1.15rem; }
+  .row__fig{ font-size:clamp(1.45rem,6vw,2rem); }
   .row .note{ order:3; }
 }
 
