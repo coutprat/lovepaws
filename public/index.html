@@ -14,28 +14,29 @@
    ============================================================ */
 
 :root{
-  --paper:      oklch(0.958 0.011 84);
-  --paper-2:    oklch(0.930 0.015 84);
-  --paper-3:    oklch(0.895 0.018 84);
-  --ink:        oklch(0.245 0.018 60);
-  --ink-soft:   oklch(0.470 0.016 60);
-  --rule:       oklch(0.830 0.018 84);
-  --rule-soft:  oklch(0.880 0.014 84);
+  --paper:      oklch(0.968 0.006 88);
+  --paper-2:    oklch(0.940 0.008 88);
+  --paper-3:    oklch(0.902 0.010 88);
+  --ink:        oklch(0.215 0.020 250);
+  --ink-soft:   oklch(0.455 0.018 250);
+  --rule:       oklch(0.858 0.010 250);
+  --rule-soft:  oklch(0.902 0.008 250);
+  --wash:       oklch(0.625 0.150 72 / 0.055);
   /* Accent in two steps: saffron carries graphics and large type, deep amber
      carries small labels. On a bone ground a bright gold cannot do both. */
-  --signal:     oklch(0.625 0.150 72);
-  --signal-ink: oklch(0.455 0.115 58);
-  --signal-dim: oklch(0.625 0.150 72 / 0.16);
-  --verified:   oklch(0.480 0.095 232);
-  --verified-dim: oklch(0.480 0.095 232 / 0.12);
-  --ochre:      oklch(0.845 0.130 92);
+  --signal:     oklch(0.615 0.145 70);
+  --signal-ink: oklch(0.450 0.115 58);
+  --signal-dim: oklch(0.615 0.145 70 / 0.15);
+  --verified:   oklch(0.470 0.090 205);
+  --verified-dim: oklch(0.470 0.090 205 / 0.12);
+  --ochre:      oklch(0.850 0.125 92);
 
   /* closing band: inverted against the page in both themes */
-  --ask-bg:     oklch(0.245 0.018 60);
-  --ask-fg:     oklch(0.962 0.011 84);
-  --ask-mute:   oklch(0.800 0.012 84);
-  --ask-rule:   oklch(0.400 0.020 60);
-  --ask-accent: oklch(0.845 0.130 92);
+  --ask-bg:     oklch(0.192 0.022 250);
+  --ask-fg:     oklch(0.968 0.006 88);
+  --ask-mute:   oklch(0.800 0.010 88);
+  --ask-rule:   oklch(0.372 0.022 250);
+  --ask-accent: oklch(0.845 0.128 90);
 
   --font-display: "Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,"Hoefler Text",Georgia,serif;
   --font-mono: "JetBrains Mono","SFMono-Regular",ui-monospace,Consolas,"Liberation Mono","Courier New",monospace;
@@ -47,45 +48,47 @@
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:      oklch(0.185 0.014 60);
-    --paper-2:    oklch(0.225 0.016 60);
-    --paper-3:    oklch(0.275 0.016 60);
-    --ink:        oklch(0.935 0.012 84);
-    --ink-soft:   oklch(0.715 0.013 84);
-    --rule:       oklch(0.345 0.016 60);
-    --rule-soft:  oklch(0.290 0.016 60);
-    --signal:     oklch(0.815 0.150 84);
-    --signal-ink: oklch(0.830 0.140 86);
-    --signal-dim: oklch(0.815 0.150 84 / 0.18);
-    --verified:   oklch(0.700 0.105 232);
-    --verified-dim: oklch(0.700 0.105 232 / 0.16);
-    --ochre:      oklch(0.700 0.110 92);
-    --ask-bg:     oklch(0.930 0.013 84);
-    --ask-fg:     oklch(0.205 0.018 60);
-    --ask-mute:   oklch(0.430 0.016 60);
-    --ask-rule:   oklch(0.800 0.016 84);
-    --ask-accent: oklch(0.520 0.140 55);
+    --paper:      oklch(0.190 0.018 250);
+    --paper-2:    oklch(0.232 0.020 250);
+    --paper-3:    oklch(0.282 0.022 250);
+    --ink:        oklch(0.945 0.010 88);
+    --ink-soft:   oklch(0.742 0.013 88);
+    --rule:       oklch(0.348 0.020 250);
+    --rule-soft:  oklch(0.278 0.018 250);
+    --signal:     oklch(0.818 0.140 84);
+    --signal-ink: oklch(0.845 0.130 86);
+    --signal-dim: oklch(0.818 0.140 84 / 0.16);
+    --verified:   oklch(0.762 0.095 196);
+    --verified-dim: oklch(0.762 0.095 196 / 0.15);
+    --ochre:      oklch(0.760 0.110 90);
+    --wash:       oklch(0.818 0.140 84 / 0.075);
+    --ask-bg:     oklch(0.940 0.008 88);
+    --ask-fg:     oklch(0.195 0.020 250);
+    --ask-mute:   oklch(0.430 0.018 250);
+    --ask-rule:   oklch(0.820 0.010 250);
+    --ask-accent: oklch(0.520 0.140 58);
   }
 }
 :root[data-theme="dark"]{
-  --paper:      oklch(0.185 0.014 60);
-  --paper-2:    oklch(0.225 0.016 60);
-  --paper-3:    oklch(0.275 0.016 60);
-  --ink:        oklch(0.935 0.012 84);
-  --ink-soft:   oklch(0.715 0.013 84);
-  --rule:       oklch(0.345 0.016 60);
-  --rule-soft:  oklch(0.290 0.016 60);
-  --signal:     oklch(0.815 0.150 84);
-  --signal-ink: oklch(0.830 0.140 86);
-  --signal-dim: oklch(0.815 0.150 84 / 0.18);
-  --verified:   oklch(0.700 0.105 232);
-  --verified-dim: oklch(0.700 0.105 232 / 0.16);
-  --ochre:      oklch(0.700 0.110 92);
-  --ask-bg:     oklch(0.930 0.013 84);
-  --ask-fg:     oklch(0.205 0.018 60);
-  --ask-mute:   oklch(0.430 0.016 60);
-  --ask-rule:   oklch(0.800 0.016 84);
-  --ask-accent: oklch(0.520 0.140 55);
+  --paper:      oklch(0.190 0.018 250);
+  --paper-2:    oklch(0.232 0.020 250);
+  --paper-3:    oklch(0.282 0.022 250);
+  --ink:        oklch(0.945 0.010 88);
+  --ink-soft:   oklch(0.742 0.013 88);
+  --rule:       oklch(0.348 0.020 250);
+  --rule-soft:  oklch(0.278 0.018 250);
+  --signal:     oklch(0.818 0.140 84);
+  --signal-ink: oklch(0.845 0.130 86);
+  --signal-dim: oklch(0.818 0.140 84 / 0.16);
+  --verified:   oklch(0.762 0.095 196);
+  --verified-dim: oklch(0.762 0.095 196 / 0.15);
+  --ochre:      oklch(0.760 0.110 90);
+  --wash:       oklch(0.818 0.140 84 / 0.075);
+  --ask-bg:     oklch(0.940 0.008 88);
+  --ask-fg:     oklch(0.195 0.020 250);
+  --ask-mute:   oklch(0.430 0.018 250);
+  --ask-rule:   oklch(0.820 0.010 250);
+  --ask-accent: oklch(0.520 0.140 58);
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -461,6 +464,7 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
 .tl__row{
   display:grid; grid-template-columns:8rem minmax(0,1fr); gap:.4rem 2rem;
   padding-block:1.3rem; border-block-end:1px solid var(--rule); align-items:baseline;
+  position:relative;
 }
 .tl__y{
   font-family:var(--font-mono); font-weight:600; font-size:.95rem; letter-spacing:.01em;
@@ -558,6 +562,73 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
 .chainfig{ margin-block-start:2.4rem; overflow-x:auto; }
 .chainfig svg{ min-width:640px; width:100%; height:auto; }
 
+
+/* ---------- scroll progress rail ---------- */
+.prog{
+  position:absolute; inset-inline:0; inset-block-end:-1px; height:2px; display:block;
+  background:var(--signal); transform:scaleX(0); transform-origin:left; will-change:transform;
+}
+
+/* ---------- hero wash ---------- */
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(70% 55% at 22% 62%, var(--wash), transparent 70%);
+}
+
+/* ---------- timeline spine ---------- */
+.tl__row{ padding-inline-start:1.7rem; }
+.tl__row::before{
+  content:""; position:absolute; inset-inline-start:.34rem; inset-block:0; width:1px; background:var(--rule);
+}
+.tl__row:first-child::before{ inset-block-start:.6rem; }
+.tl__row:last-child::before{ inset-block-end:calc(100% - 2.1rem); }
+.tl__row::after{
+  content:""; position:absolute; inset-inline-start:0; inset-block-start:1.5rem;
+  width:9px; height:9px; border-radius:50%; background:var(--paper);
+  border:1.5px solid var(--signal-ink); transform:scale(0);
+  transition:transform .55s var(--ease);
+}
+.tl__row.lit::after{ transform:scale(1); }
+.tl__row.is-good::after{ border-color:var(--verified); background:var(--verified); }
+.tl__row.is-now::after{ border-color:var(--signal); background:var(--signal); }
+@media (max-width:760px){ .tl__row{ padding-inline-start:1.5rem; } }
+
+/* ---------- precedent stat tick ---------- */
+.proof-row__stat b{ font-weight:600; font-variant-numeric:tabular-nums; }
+.proof-row__stat b::before{ content:attr(data-lead); color:var(--ink-soft); }
+
+/* ---------- transmission chain reveal ---------- */
+.chainfig svg > g{ opacity:0; transform:translateY(10px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+.chainfig.in svg > g{ opacity:1; transform:none; }
+.chainfig.in svg > g:nth-child(2){ transition-delay:.10s }
+.chainfig.in svg > g:nth-child(3){ transition-delay:.18s }
+.chainfig.in svg > g:nth-child(4){ transition-delay:.30s }
+.chainfig.in svg > g:nth-child(5){ transition-delay:.46s }
+.chainfig.in svg > g:nth-child(6){ transition-delay:.56s }
+.chainfig.in svg > g:nth-child(7){ transition-delay:.64s }
+
+/* ---------- record card live pulse ---------- */
+.record__ft i{ animation:pulse 2.6s ease-in-out infinite; }
+@keyframes pulse{ 0%,100%{ opacity:1; box-shadow:0 0 0 0 var(--verified-dim) } 50%{ opacity:.55; box-shadow:0 0 0 5px transparent } }
+
+/* ---------- ear plate draw-in ---------- */
+.notch__cell svg path, .notch__cell svg circle{
+  stroke-dasharray:340; stroke-dashoffset:340;
+}
+.rv.in .notch__cell svg path, .rv.in .notch__cell svg circle{
+  animation:drawline 1.5s var(--ease) forwards;
+}
+.rv.in .notch__cell:nth-child(2) svg *{ animation-delay:.18s }
+.rv.in .notch__cell:nth-child(3) svg *{ animation-delay:.36s }
+@keyframes drawline{ to{ stroke-dashoffset:0 } }
+
+@media (prefers-reduced-motion: reduce){
+  .tl__row::after{ transform:scale(1) !important }
+  .chainfig svg > g{ opacity:1 !important; transform:none !important }
+  .record__ft i{ animation:none }
+  .notch__cell svg path, .notch__cell svg circle{ stroke-dashoffset:0 !important; animation:none !important }
+}
+
 /* ---------- reveal ---------- */
 .rv{ opacity:0; transform:translateY(18px); }
 .rv.in{ opacity:1; transform:none; transition:opacity .8s var(--ease), transform .8s var(--ease); }
@@ -591,6 +662,7 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
     </nav>
     <button class="themer" id="themer" type="button" aria-label="Switch colour theme">Theme</button>
   </div>
+  <i class="prog" id="prog" aria-hidden="true"></i>
 </header>
 
 <!-- ============ HERO ============ -->
@@ -1127,7 +1199,7 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
     <div class="proofs rv d2">
       <article class="proof-row">
         <div class="proof-row__place"><b>Jaipur</b><span>Help in Suffering / since 1994</span></div>
-        <p class="proof-row__stat">7.2 to 2.2<span>Dog bites per 1,000 people</span></p>
+        <p class="proof-row__stat"><b class="tick" data-from="7.2" data-to="2.2" data-dec="1">7.2</b><span>Dog bites per 1,000 people, Jaipur</span></p>
         <div>
           <p>One of the longest continuously running ABC programmes in the world, built on WHO and WSPA guidelines. More than 1,50,000 dogs have passed through it. Over 70 per cent of female street dogs are sterilised, and over 70 per cent of the street dog population is vaccinated.</p>
           <p>It is credited with averting an estimated 500 human rabies deaths and 3,60,000 bite injuries. Human rabies in the city is now close to zero. Thirty years is also the honest answer to how long a city takes when it starts without a map.</p>
@@ -1136,7 +1208,7 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
 
       <article class="proof-row">
         <div class="proof-row__place"><b>Sikkim</b><span>SARAH programme / since 2005</span></div>
-        <p class="proof-row__stat">4 to 0<span>Human rabies deaths per year</span></p>
+        <p class="proof-row__stat"><b class="tick" data-from="4" data-to="0" data-dec="0">4</b><span>Human rabies deaths per year, Sikkim</span></p>
         <div>
           <p>The first government-sanctioned programme in India to put animal welfare and public health inside one structure, which is One Health before the phrase was common. Four human rabies deaths in 2005, then none at all from 2006 through 2015.</p>
           <p>Two deaths appeared in 2016, both near the West Bengal border. That detail matters more than the zeros. It is the case for drawing boundaries around whole administrative units rather than convenient pockets, because a partially covered neighbour re-seeds you.</p>
@@ -1145,7 +1217,7 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
 
       <article class="proof-row">
         <div class="proof-row__place"><b>Ahmedabad</b><span>Municipal ABC programme</span></div>
-        <p class="proof-row__stat">Near 90%<span>Sterilisation coverage</span></p>
+        <p class="proof-row__stat"><b class="tick" data-from="0" data-to="90" data-dec="0" data-suffix="%">0%</b><span>Sterilisation coverage reached</span></p>
         <div>
           <p>1,88,828 sterilisations delivered against roughly ₹18.11 crore of spending, which works out near ₹960 an animal. A major Indian city approaching the threshold on a municipal budget.</p>
           <p>It is also the cleanest evidence available that surgical cost is not what stops the rest of the country. Ahmedabad paid roughly what everybody else is offered. What it did differently was keep going in the same place.</p>
@@ -1307,7 +1379,7 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
   });
 
   /* ---------- reveal on enter ---------- */
-  var pending = [].slice.call(document.querySelectorAll(".rv, .ledger, .contrast, .chain"));
+  var pending = [].slice.call(document.querySelectorAll(".rv, .ledger, .contrast, .chain, .tl, .proofs, .chainfig"));
 
   function reveal(el){
     var i = pending.indexOf(el);
@@ -1318,6 +1390,8 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
     if (el.classList.contains("ledger")) countUp(el);
     if (el.classList.contains("contrast")) growBars(el);
     if (el.classList.contains("chain")) stagger(el);
+    if (el.classList.contains("tl")) litRows(el);
+    if (el.classList.contains("proofs")) tickStats(el);
   }
 
   var io = new IntersectionObserver(function(entries){
@@ -1348,10 +1422,56 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
   }
 
   function growBars(box){
-    box.querySelectorAll(".bar__fill").forEach(function(f){
-      requestAnimationFrame(function(){ f.style.width = f.dataset.w + "%"; });
+    box.querySelectorAll(".bar__fill").forEach(function(f,i){
+      setTimeout(function(){ f.style.width = f.dataset.w + "%"; }, reduce ? 0 : i*110);
     });
   }
+
+  /* timeline dots light up in sequence as the spine is read */
+  function litRows(tl){
+    tl.querySelectorAll(".tl__row").forEach(function(r,i){
+      setTimeout(function(){ r.classList.add("lit"); }, reduce ? 0 : i*80);
+    });
+  }
+
+  /* each precedent counts from its starting figure to what it achieved */
+  function tickStats(scope){
+    scope.querySelectorAll(".tick").forEach(function(el,i){
+      var from = parseFloat(el.dataset.from), to = parseFloat(el.dataset.to);
+      var dec = parseInt(el.dataset.dec || "0", 10), suf = el.dataset.suffix || "";
+      if (reduce){ el.textContent = to.toFixed(dec) + suf; return; }
+      setTimeout(function(){
+        var t0 = null, dur = 1700;
+        requestAnimationFrame(function step(t){
+          if (t0 === null) t0 = t;
+          var p = Math.min((t - t0)/dur, 1);
+          var e = 1 - Math.pow(1 - p, 4);
+          el.textContent = (from + (to - from)*e).toFixed(dec) + suf;
+          if (p < 1) requestAnimationFrame(step);
+        });
+      }, i*200);
+    });
+  }
+
+  /* reading progress */
+  (function(){
+    var rail = document.getElementById("prog");
+    if (!rail) return;
+    var queued = false;
+    function paint(){
+      queued = false;
+      var d = document.documentElement;
+      var max = d.scrollHeight - d.clientHeight;
+      rail.style.transform = "scaleX(" + (max > 0 ? Math.min(d.scrollTop/max, 1) : 0) + ")";
+    }
+    window.addEventListener("scroll", function(){
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(paint);
+    }, { passive:true });
+    window.addEventListener("resize", paint);
+    paint();
+  })();
 
   /* ---------- count up ---------- */
   function fmt(n, dec){
@@ -1416,22 +1536,44 @@ h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacin
       }
     }
 
+    var nextConv = 0;
+    var CONV_MS = 3200;
+
     function draw(now){
       if (!running) return;
       ctx.clearRect(0,0,W,H);
-      var ink = cssv("--ink-soft"), sig = cssv("--signal");
+      var ink = cssv("--ink-soft"), sig = cssv("--signal"), ver = cssv("--verified");
       var age = now - born;
+
+      // one dog at a time, somewhere in the field, quietly gets counted
+      if (!reduce && age > 1800 && now > nextConv){
+        nextConv = now + 1500 + Math.random()*1800;
+        dots[Math.floor(Math.random()*dots.length)].conv = now;
+      }
+
       for (var i=0;i<dots.length;i++){
         var d = dots[i];
         var a = Math.min(Math.max((age - d.delay)/900, 0), 1);
         if (a <= 0) continue;
         var wob = reduce ? 0 : Math.sin(now/2600 + d.p) * 2.4;
-        ctx.globalAlpha = a * 0.34;
-        ctx.fillStyle = (i % 47 === 0) ? sig : ink;
-        if (i % 47 === 0) ctx.globalAlpha = a * 0.85;
-        ctx.beginPath();
-        ctx.arc(d.x + wob, d.y + wob*0.4, d.s + (i%47===0 ? 0.9 : 0), 0, Math.PI*2);
-        ctx.fill();
+        var x = d.x + wob, y = d.y + wob*0.4;
+        var marked = (i % 47 === 0);
+        var t = d.conv ? (now - d.conv)/CONV_MS : 2;
+
+        if (t < 1){
+          // expanding ring, then the dot settles as verified
+          var ease = 1 - Math.pow(1 - Math.min(t*1.8, 1), 3);
+          ctx.globalAlpha = a * (1 - Math.min(t*1.8, 1)) * 0.55;
+          ctx.strokeStyle = ver; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.arc(x, y, 1.5 + ease*13, 0, Math.PI*2); ctx.stroke();
+          ctx.globalAlpha = a * 0.9;
+          ctx.fillStyle = ver;
+          ctx.beginPath(); ctx.arc(x, y, d.s + 1.1, 0, Math.PI*2); ctx.fill();
+        } else {
+          ctx.globalAlpha = a * (marked ? 0.85 : 0.34);
+          ctx.fillStyle = marked ? sig : ink;
+          ctx.beginPath(); ctx.arc(x, y, d.s + (marked ? 0.9 : 0), 0, Math.PI*2); ctx.fill();
+        }
       }
       ctx.globalAlpha = 1;
       requestAnimationFrame(draw);
