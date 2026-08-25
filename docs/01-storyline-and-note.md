@@ -253,3 +253,69 @@ It follows the storyline above in the same order — scale, the 70% line, the fo
 | **Caregiver channel** | Report, request, track — turning the community into the sensing network |
 
 Design principles to hold: **offline-first** (field areas have no reliable data), **one-hand operable** (the operator is holding a dog), **photo-and-GPS as the only accepted evidence**, and **the polygon, not the animal, is the unit of completion.**
+
+---
+
+## 13. The precedents, in detail
+
+Added after the first draft. These are the evidence base for the claim that the model works in India, not only in theory.
+
+### Goa — Mission Rabies with the state government, since 2013
+
+| When | What |
+|---|---|
+| 2013 | Campaign begins. No location-specific canine rabies surveillance data existed, so the first task was building the map. |
+| Mar 2014 | A 24/7 public rabies hotline for reporting suspect rabid animals. This created the surveillance layer. |
+| 2014–2019 | Teams directed to assigned polygons on a smartphone app, every dog GPS-logged, offline-capable. The whole state re-vaccinated every 12 months; peak of 25,000+ dogs in a single month. |
+| 2019 | **92% reduction** in monthly canine rabies cases. |
+| Jun 2021 | First **Rabies Controlled Area** in India, after three consecutive years with zero human rabies deaths. |
+| 2022 | Published in *Nature Communications*. Education programme reaches **5 million children** by June 2022. |
+| Today | **4 million+ vaccine doses** delivered since 2013, the largest continuous rabies control effort ever run in India. |
+
+Four mechanisms carried it: a boundary drawn before work started, a phone that recorded every animal in place, a rule that a polygon is not finished until it clears the threshold, and a surveillance line that reported the truth while it was still fixable.
+
+### Jaipur — Help in Suffering, since 1994
+
+Bites down from **7.2 to 2.2 per 1,000 people**. Over **1,50,000 dogs** through the programme, run on WHO/WSPA guidelines. Over **70% of female street dogs sterilised** and over 70% of the street dog population vaccinated. An estimated **500 human rabies deaths and 3,60,000 bite injuries averted**. Human rabies in the city is close to zero. Thirty years is also the honest answer to how long a city takes when it starts without a map.
+
+### Sikkim — SARAH programme, since 2005
+
+The first government-sanctioned programme in India to put animal welfare and public health in one structure. **Four human rabies deaths in 2005, then zero from 2006 to 2015.** Two deaths in 2016, both near the West Bengal border — which is the argument for boundaries drawn around whole administrative units, because a partially covered neighbour re-seeds you.
+
+### Ahmedabad — municipal ABC programme
+
+**1,88,828 sterilisations** against roughly **₹18.11 crore**, about **₹960 per animal**, now approaching **90% coverage**. The cleanest evidence that surgical cost is not the obstacle: Ahmedabad paid roughly what everyone else is offered. It simply kept going in the same place.
+
+### What one sterilisation costs
+
+| Figure | Source | What it represents |
+|---|---|---|
+| ₹800 | Centre, revised 2025 | Contribution, not cost |
+| ₹960 | Ahmedabad, delivered | Close to surgical cost alone |
+| ₹5,111 | Implied by BMC's ₹23 cr for 45,000/yr | True programme cost per animal, including catching, transport, recovery, release, overheads |
+
+National arithmetic at 70% coverage: roughly 4.3 crore surgeries, so **₹4,200 crore to ₹22,000 crore**. Not a funding request — a reason to stop pretending the country can be covered uniformly, and to finish one boundary before moving to the next.
+
+## 14. The policy clock, and the gap it exposes
+
+| Year | Event |
+|---|---|
+| 1960 | Prevention of Cruelty to Animals Act, the parent statute |
+| 2001 | First ABC (Dogs) Rules. CNVR becomes national policy; delivery and measurement left to local bodies |
+| 2021 | **NAPRE** launched; India commits to eliminating dog-mediated human rabies by **2030**, aligned to the global Zero by 30 target (WHO/FAO/WOAH/GARC). Interim targets: **cut dog bites 50% by 2025**, raise dog vaccination 75% by 2025 |
+| 2023 | ABC Rules revised: exact-location release, ear-notching, monitoring committees, AWBI recognition |
+| 2025 | Funding raised to ₹800/dog plus ₹2 crore infrastructure grants; states advised to cover at least 70% |
+| Aug 2025 | Supreme Court orders removal in Delhi NCR (11 Aug), modifies to release-after-sterilisation (22 Aug); all states and UTs impleaded for a pan-India policy |
+| Now | **The 2025 targets came due.** Bites were to fall by half. They rose from 37,17,336 (2024) to 47,48,478 (2025), roughly **+28%** |
+| 2030 | The deadline, four years out |
+
+**The headline for any policy room:** NAPRE asked for a 50% cut in dog bites by 2025 and got a 28% rise. That is not a failure of intent, funding or law — all three exist. It is a failure of verification. A target with no measurement system is a press release, and the country has now run that experiment for four years with the deadline in sight.
+
+### Additional sources for §13–14
+
+- NAPRE and Zero by 30 — [National Rabies Control Programme](https://rabiesfreeindia.mohfw.gov.in/About-NAPRE) · [PIB](https://www.pib.gov.in/PressReleasePage.aspx?PRID=1758965)
+- Goa campaign scale and method — [Mission Rabies India](https://www.missionrabies.com/en/our-projects/india) · [Goa Campaign](https://goarabiescampaign.in/)
+- Jaipur ABC programme — [Help in Suffering](https://helpinsuffering.org/abc-programme/)
+- Sikkim SARAH, ten-year outcomes — [PubMed](https://pubmed.ncbi.nlm.nih.gov/28361056/) · [GARC](https://rabiesalliance.org/resource/sarah-program-stops-rabies-sikkim-india)
+- Ahmedabad coverage and cost — [Prokerala](https://www.prokerala.com/news/articles/a1770413.html)
+- Livestock Census 2012 and 2019 counts — [Vision IAS](https://visionias.in/blog/current-affairs/stray-dogs-management-in-india-balancing-public-safety-with-animal-welfare)

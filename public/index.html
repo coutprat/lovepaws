@@ -275,17 +275,17 @@ section{ position:relative; }
   margin-block-start:3.2rem; display:grid; gap:1.1rem;
   padding:clamp(1.25rem,3vw,2rem); background:var(--paper-2); border:1px solid var(--rule);
 }
-.bar{ display:grid; grid-template-columns:minmax(0,14ch) 1fr; gap:1rem; align-items:center; }
+.bar{ display:grid; grid-template-columns:minmax(0,14ch) minmax(0,1fr) minmax(0,9ch); gap:1rem; align-items:center; }
 .bar__lab{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); }
 .bar__track{ position:relative; height:26px; background:var(--paper-3); }
 .bar__fill{ position:absolute; inset-block:0; inset-inline-start:0; width:0; transition:width 1.4s var(--ease); }
 .bar__fill.a{ background:var(--ink-soft); }
 .bar__fill.b{ background:var(--signal); }
 .bar__val{
-  position:absolute; inset-block-start:50%; transform:translateY(-50%); inset-inline-start:calc(100% + .6rem);
   font-family:var(--font-mono); font-size:.74rem; font-variant-numeric:tabular-nums; white-space:nowrap;
+  text-align:end; color:var(--ink);
 }
-@media (max-width:640px){ .bar{ grid-template-columns:1fr; gap:.3rem } .bar__val{ inset-inline-start:auto; inset-inline-end:0; inset-block-start:-1.35rem; transform:none } }
+@media (max-width:640px){ .bar{ grid-template-columns:minmax(0,1fr) auto; gap:.4rem .8rem } .bar__lab{ grid-column:1/-1 } }
 
 /* ---------- threshold (sticky scroll driven) ---------- */
 .thintro{ padding-block:clamp(4.5rem,11vh,8.5rem) clamp(1.5rem,4vh,3rem); }
@@ -452,6 +452,112 @@ footer{ padding-block:3.5rem 4.5rem; }
 @media (max-width:560px){ .srcs{ columns:1 } }
 .disclaimer{ font-family:var(--font-mono); font-size:.66rem; line-height:1.7; color:var(--ink-soft); border:1px dashed var(--rule); padding:1rem; }
 
+
+/* ---------- headings level 4 ---------- */
+h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacing:-.01em; }
+
+/* ---------- timeline ledger ---------- */
+.tl{ margin-block-start:2.6rem; border-block-start:1px solid var(--ink); }
+.tl__row{
+  display:grid; grid-template-columns:8rem minmax(0,1fr); gap:.4rem 2rem;
+  padding-block:1.3rem; border-block-end:1px solid var(--rule); align-items:baseline;
+}
+.tl__y{
+  font-family:var(--font-mono); font-weight:600; font-size:.95rem; letter-spacing:.01em;
+  color:var(--signal-ink); white-space:nowrap;
+}
+.tl__row.is-good .tl__y{ color:var(--verified); }
+.tl__row.is-now{ background:var(--signal-dim); }
+.tl h4{ margin:0 0 .35rem; }
+.tl p{ margin:0; color:var(--ink-soft); font-size:.95rem; }
+@media (max-width:760px){ .tl__row{ grid-template-columns:1fr; gap:.3rem; } }
+
+/* ---------- precedent ledger ---------- */
+.proofs{ border-block-start:1px solid var(--ink); margin-block-start:2.6rem; }
+.proof-row{
+  display:grid; grid-template-columns:minmax(0,12rem) minmax(0,14rem) minmax(0,1fr);
+  gap:1.1rem 2.4rem; padding-block:2rem; border-block-end:1px solid var(--rule);
+}
+.proof-row__place b{ display:block; font-size:1.4rem; font-weight:400; letter-spacing:-.01em; }
+.proof-row__place span{
+  font-family:var(--font-mono); font-size:.64rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-soft); display:block; margin-block-start:.3rem;
+}
+.proof-row__stat{
+  font-family:var(--font-mono); font-size:clamp(1.25rem,2.2vw,1.75rem); font-weight:600;
+  letter-spacing:-.03em; color:var(--verified); line-height:1.15; font-variant-numeric:tabular-nums;
+}
+.proof-row__stat span{
+  display:block; font-family:var(--font-mono); font-size:.62rem; font-weight:400; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink-soft); margin-block-start:.55rem; line-height:1.5;
+}
+.proof-row p{ margin:0; color:var(--ink-soft); font-size:.96rem; }
+.proof-row p + p{ margin-block-start:.7rem; }
+@media (max-width:900px){
+  .proof-row{ grid-template-columns:1fr; gap:.8rem; padding-block:1.6rem; }
+}
+
+/* ---------- verdict callout ---------- */
+.verdictbox{
+  margin-block-start:2.6rem; border:1px solid var(--ink); padding:clamp(1.3rem,3vw,2.2rem);
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:1.2rem 2.5rem; align-items:center;
+}
+.verdictbox__k{
+  font-family:var(--font-mono); font-size:clamp(1.6rem,3.4vw,2.6rem); font-weight:600;
+  letter-spacing:-.04em; line-height:1.05; color:var(--signal);
+}
+.verdictbox__k span{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-soft); margin-block-start:.7rem;
+}
+.verdictbox p{ margin:0; color:var(--ink-soft); }
+@media (max-width:760px){ .verdictbox{ grid-template-columns:1fr; } }
+
+/* ---------- plates: record card + ear notches ---------- */
+.plates{
+  display:grid; grid-template-columns:minmax(0,22rem) minmax(0,1fr); gap:clamp(1.5rem,4vw,3.5rem);
+  align-items:start; margin-block-start:2.8rem;
+}
+@media (max-width:820px){ .plates{ grid-template-columns:1fr; } }
+
+.record{ border:1px solid var(--rule); background:var(--paper-2); font-family:var(--font-mono); }
+.record__hd{
+  display:flex; justify-content:space-between; gap:1rem; padding:.7rem .9rem;
+  border-block-end:1px solid var(--rule); font-size:.58rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.record__hd b{ color:var(--verified); font-weight:600; }
+.record__photo{
+  aspect-ratio:4/3; background:var(--paper-3); border-block-end:1px solid var(--rule);
+  display:grid; place-items:center; position:relative;
+}
+.record__photo svg{ width:38%; height:auto; opacity:.5; }
+.record__photo::after{
+  content:"GPS 19.0176 N / 72.8562 E"; position:absolute; inset-block-end:.5rem; inset-inline-start:.6rem;
+  font-size:.55rem; letter-spacing:.1em; color:var(--ink-soft);
+}
+.record__body{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:.5rem 1.1rem; padding:.95rem; margin:0; }
+.record__body dt{ font-size:.57rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); }
+.record__body dd{ margin:0; font-size:.72rem; color:var(--ink); }
+.record__ft{
+  padding:.7rem .9rem; border-block-start:1px solid var(--rule); display:flex; align-items:center; gap:.5rem;
+  font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:var(--verified);
+}
+.record__ft i{ width:7px; height:7px; border-radius:50%; background:var(--verified); display:block; }
+
+.notch{ margin-block-start:2rem; }
+.notch__grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.4rem; margin-block-start:1.2rem; max-width:26rem; }
+.notch__cell{ text-align:center; }
+.notch__cell svg{ width:100%; height:auto; }
+.notch__cell span{
+  display:block; font-family:var(--font-mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-soft); margin-block-start:.6rem; line-height:1.5;
+}
+
+/* ---------- transmission chain ---------- */
+.chainfig{ margin-block-start:2.4rem; overflow-x:auto; }
+.chainfig svg{ min-width:640px; width:100%; height:auto; }
+
 /* ---------- reveal ---------- */
 .rv{ opacity:0; transform:translateY(18px); }
 .rv.in{ opacity:1; transform:none; transition:opacity .8s var(--ease), transform .8s var(--ease); }
@@ -479,6 +585,7 @@ footer{ padding-block:3.5rem 4.5rem; }
       <a href="#threshold">The 70% line</a>
       <a href="#failures">Failures</a>
       <a href="#model">The model</a>
+      <a href="#precedents">Proof</a>
       <a href="#app">The app</a>
       <a href="#ask">The ask</a>
     </nav>
@@ -533,7 +640,7 @@ footer{ padding-block:3.5rem 4.5rem; }
       <li><a class="beat" href="#proof">
         <span class="beat__n">Beat 5</span>
         <span class="beat__t">It has already been done, in India</span>
-        <span class="beat__c">Goa reached rabies control with a map, a phone and one rule: finish the polygon. The demonstration exists. The repeatable format does not.</span>
+        <span class="beat__c">Goa, Jaipur, Sikkim and Ahmedabad each got there with a map, a phone and one rule: finish the polygon. The demonstrations exist. The repeatable format does not.</span>
       </a></li>
       <li><a class="beat" href="#bhag">
         <span class="beat__n">Beat 6</span>
@@ -580,13 +687,56 @@ footer{ padding-block:3.5rem 4.5rem; }
       <p class="note" style="margin:0 0 .6rem">Human rabies deaths, 2024: what was reported against what is estimated.</p>
       <div class="bar">
         <span class="bar__lab">Reported</span>
-        <span class="bar__track"><span class="bar__fill a" data-w="0.94"></span><span class="bar__val">54</span></span>
+        <span class="bar__track"><span class="bar__fill a" data-w="0.94"></span></span><span class="bar__val">54</span>
       </div>
       <div class="bar">
         <span class="bar__lab">Estimated</span>
-        <span class="bar__track"><span class="bar__fill b" data-w="88"></span><span class="bar__val">5,726</span></span>
+        <span class="bar__track"><span class="bar__fill b" data-w="88"></span></span><span class="bar__val">5,726</span>
       </div>
       <p class="note" style="margin:.6rem 0 0">A hundredfold gap. We are not measuring the thing we claim to be solving.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============ CENSUS + BURDEN ============ -->
+<section class="pad" id="count">
+  <div class="wrap">
+    <p class="eyebrow rv">01b / The count</p>
+    <h2 class="rv d1">The official number says the problem is shrinking.</h2>
+    <p class="lede rv d2" style="margin-block-start:1.3rem">India's Livestock Census counted 1.71 crore stray dogs in 2012 and 1.53 crore in 2019, a decline of roughly 11 per cent. Over the same period, reported dog bites rose relentlessly. Independent ecological estimates put the free-roaming population near 6.2 crore, four times the official figure.</p>
+
+    <div class="contrast rv">
+      <p class="note" style="margin:0 0 .9rem">Stray dog population, official count against independent estimate.</p>
+      <div class="bar">
+        <span class="bar__lab">2012 census</span>
+        <span class="bar__track"><span class="bar__fill a" data-w="27.6"></span></span><span class="bar__val">1.71 crore</span>
+      </div>
+      <div class="bar">
+        <span class="bar__lab">2019 census</span>
+        <span class="bar__track"><span class="bar__fill a" data-w="24.7"></span></span><span class="bar__val">1.53 crore</span>
+      </div>
+      <div class="bar">
+        <span class="bar__lab">Independent</span>
+        <span class="bar__track"><span class="bar__fill b" data-w="100"></span></span><span class="bar__val">≈ 6.2 crore</span>
+      </div>
+      <p class="note" style="margin:.9rem 0 0">Both cannot be true. Until one of them is settled, no coverage percentage anyone quotes has a denominator, and a programme cannot report progress against a number it does not have.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:clamp(1.5rem,4vw,3.5rem);margin-block-start:3.2rem">
+      <div class="rv">
+        <h3>Where the burden actually sits</h3>
+        <p class="body" style="margin-block-start:.8rem">Five states carried roughly half of India's reported dog bites in 2024. Maharashtra alone recorded more bites than most countries record in a decade. This is the argument for sequencing: the map is not uniform, so the money should not be either.</p>
+      </div>
+      <div class="contrast rv d1" style="margin:0">
+        <p class="note" style="margin:0 0 .9rem">Reported dog bite cases by state, 2024.</p>
+        <div class="bar"><span class="bar__lab">Maharashtra</span><span class="bar__track"><span class="bar__fill b" data-w="100"></span></span><span class="bar__val">4,85,345</span></div>
+        <div class="bar"><span class="bar__lab">Tamil Nadu</span><span class="bar__track"><span class="bar__fill b" data-w="99"></span></span><span class="bar__val">4,80,427</span></div>
+        <div class="bar"><span class="bar__lab">Gujarat</span><span class="bar__track"><span class="bar__fill b" data-w="81"></span></span><span class="bar__val">3,92,837</span></div>
+        <div class="bar"><span class="bar__lab">Karnataka</span><span class="bar__track"><span class="bar__fill b" data-w="74"></span></span><span class="bar__val">3,61,494</span></div>
+        <div class="bar"><span class="bar__lab">Bihar</span><span class="bar__track"><span class="bar__fill b" data-w="54"></span></span><span class="bar__val">2,63,930</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -644,6 +794,31 @@ footer{ padding-block:3.5rem 4.5rem; }
         <p class="lede uline" style="font-style:normal">The conclusion is not "give us more money".</p>
         <p class="body" style="margin-block-start:1rem">Any finite budget, spread evenly across a city, closes zero areas. The same budget, concentrated inside one boundary until it crosses 70 per cent, closes that area permanently. Coverage is not a percentage of money spent. It is a percentage of a defined map.</p>
       </div>
+    </div>
+
+    <div class="rv" style="margin-block-start:3.4rem">
+      <h3>What one sterilisation actually costs</h3>
+      <p class="body" style="margin-block-start:.8rem">Three published figures, which do not agree, and the gap between them is the whole problem.</p>
+      <div class="tl" style="margin-block-start:1.6rem">
+        <div class="tl__row">
+          <span class="tl__y">₹800</span>
+          <div><h4>Central support per dog</h4><p>The revised 2025 scheme, up from ₹445. This is what the Centre contributes, not what the work costs.</p></div>
+        </div>
+        <div class="tl__row">
+          <span class="tl__y">₹960</span>
+          <div><h4>Ahmedabad, delivered</h4><p>1,88,828 sterilisations against ₹18.11 crore of spending. Close to the surgical cost alone, on a programme now approaching 90 per cent coverage.</p></div>
+        </div>
+        <div class="tl__row">
+          <span class="tl__y">₹5,111</span>
+          <div><h4>Mumbai, implied by budget</h4><p>₹23 crore allocated against a target of 45,000 sterilisations a year. The true programme cost per animal, once catching, transport, post-operative care, release and overheads are counted.</p></div>
+        </div>
+      </div>
+      <p class="note rv" style="margin-block-start:1.2rem;max-width:70ch">Central support therefore covers somewhere between a sixth and all of the cost, depending on whether anyone counts the parts of the job that are not the surgery. The parts nobody counts are exactly the parts that fail: catching, recovery and release.</p>
+    </div>
+
+    <div class="verdictbox rv">
+      <p class="verdictbox__k">₹4,200 to ₹22,000 crore<span>Arithmetic for national 70 per cent coverage</span></p>
+      <p>Roughly 4.3 crore surgeries, priced at the delivered range above. This is not a funding request, it is a reason to stop pretending the country can be covered uniformly. No plausible budget does every ward at once, which is precisely why the money has to finish one boundary before it moves to the next.</p>
     </div>
   </div>
 </section>
@@ -763,6 +938,121 @@ footer{ padding-block:3.5rem 4.5rem; }
       <article class="link"><span class="link__n">06</span><h3>Publish</h3><p>Coverage, bites and vaccination by zone, on a dashboard anyone can audit.</p></article>
     </div>
     <p class="note rv" style="margin-block-start:1.6rem;max-width:70ch">Design constraints held throughout: offline first, because field areas have no reliable data. One-hand operable, because the operator is holding a dog. Photograph and GPS as the only accepted evidence. And the polygon, not the animal, as the unit of completion.</p>
+
+    <div class="plates">
+      <figure class="record rv" style="margin:0">
+        <div class="record__hd"><span>Catch record</span><b>LP-04B-0117</b></div>
+        <div class="record__photo">
+          <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+            <ellipse cx="24" cy="38" rx="9" ry="12"/>
+            <ellipse cx="44" cy="26" rx="9" ry="13"/>
+            <ellipse cx="64" cy="26" rx="9" ry="13"/>
+            <ellipse cx="84" cy="38" rx="9" ry="12"/>
+            <ellipse cx="54" cy="71" rx="24" ry="19"/>
+          </svg>
+        </div>
+        <dl class="record__body">
+          <dt>Zone</dt><dd>04B / Sewri lane cluster</dd>
+          <dt>Sex</dt><dd>Female, approx. 2 years</dd>
+          <dt>Caught</dt><dd>12 Aug, 06:42</dd>
+          <dt>Surgery</dt><dd>12 Aug, 09:15 / Vet ID 114</dd>
+          <dt>Vaccine</dt><dd>ARV batch 2291</dd>
+          <dt>Released</dt><dd>15 Aug, 07:10 / 40 m from catch</dd>
+          <dt>Marking</dt><dd>Left ear notched</dd>
+        </dl>
+        <div class="record__ft"><i></i> Chain complete / payment released</div>
+      </figure>
+
+      <div class="rv d1">
+        <h3>One animal, one record, six timestamps</h3>
+        <p class="body" style="margin-block-start:.8rem">This is the whole system in one card. A claim is only payable when every field is filled by the person who did the work, at the moment they did it, with the phone's own clock and coordinates. A dog caught twice shows up as a duplicate. A dog released a kilometre away fails the radius check. A recovery window cut from three days to three hours fails on the timestamps.</p>
+        <p class="body">None of this requires new law. The ABC Rules already mandate return to the exact original location, ear-notching and record keeping. It requires only that somebody check, and checking is cheap once the record exists.</p>
+
+        <div class="notch">
+          <p class="note" style="margin:0">The mark the rules already require</p>
+          <div class="notch__grid" role="img" aria-label="Three ear states: unmarked, notched after sterilisation, and notched with a linked record">
+            <div class="notch__cell">
+              <svg viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" style="color:var(--signal)">
+                <path d="M40 6 L64 78 Q64 92 40 92 Q16 92 16 78 Z"/>
+              </svg>
+              <span>Unmarked<br>no record exists</span>
+            </div>
+            <div class="notch__cell">
+              <svg viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" style="color:var(--ink-soft)">
+                <path d="M40 6 L64 78 Q64 92 40 92 Q16 92 16 78 L25.7 49 L35 43 L30.3 35 Z"/>
+              </svg>
+              <span>Notched<br>sterilised, unverifiable</span>
+            </div>
+            <div class="notch__cell">
+              <svg viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" style="color:var(--verified)">
+                <path d="M40 6 L64 78 Q64 92 40 92 Q16 92 16 78 L25.7 49 L35 43 L30.3 35 Z"/>
+                <circle cx="62" cy="26" r="13" stroke-width="2.5"/>
+                <path d="M56 26 L60.5 31 L68 21" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <span>Notched and linked<br>provable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============ TRANSMISSION CHAIN ============ -->
+<section class="pad" id="chain">
+  <div class="wrap">
+    <p class="eyebrow rv">06b / Why vaccination comes first</p>
+    <h2 class="rv d1">Two places to cut the same chain.</h2>
+    <p class="lede rv d2" style="margin-block-start:1.3rem">Dogs are the source of about 99 per cent of human rabies cases. Once symptoms appear the disease is effectively always fatal. Before that point it is entirely preventable, twice over.</p>
+
+    <div class="chainfig rv d2">
+      <svg viewBox="0 0 900 240" role="img" aria-label="Transmission chain from infected dog to human death, with dog vaccination and post-exposure prophylaxis each able to cut it">
+        <g stroke="var(--rule)" fill="var(--paper-2)" stroke-width="1">
+          <rect x="12" y="62" width="180" height="68"/>
+          <rect x="252" y="62" width="180" height="68"/>
+          <rect x="492" y="62" width="180" height="68"/>
+          <rect x="732" y="62" width="156" height="68"/>
+        </g>
+        <g text-anchor="middle" fill="var(--ink)" style="font-family:var(--font-display);font-size:17px">
+          <text x="102" y="93">Infected dog</text>
+          <text x="342" y="93">Bite</text>
+          <text x="582" y="93">Untreated</text>
+          <text x="810" y="93">Death</text>
+        </g>
+        <g text-anchor="middle" fill="var(--ink-soft)" style="font-family:var(--font-mono);font-size:11px">
+          <text x="102" y="114">the reservoir</text>
+          <text x="342" y="114">47.5 lakh in 2025</text>
+          <text x="582" y="114">no prophylaxis</text>
+          <text x="810" y="114">≈100% fatal</text>
+        </g>
+        <g stroke="var(--ink-soft)" stroke-width="1.5" fill="var(--ink-soft)">
+          <line x1="192" y1="96" x2="244" y2="96"/><polygon points="252,96 242,91 242,101"/>
+          <line x1="432" y1="96" x2="484" y2="96"/><polygon points="492,96 482,91 482,101"/>
+          <line x1="672" y1="96" x2="724" y2="96"/><polygon points="732,96 722,91 722,101"/>
+        </g>
+        <g stroke="var(--verified)" stroke-width="2" stroke-dasharray="6 5">
+          <line x1="222" y1="34" x2="222" y2="158"/>
+          <line x1="462" y1="34" x2="462" y2="158"/>
+        </g>
+        <g text-anchor="middle" fill="var(--verified)" style="font-family:var(--font-mono);font-size:12px;letter-spacing:.08em">
+          <text x="222" y="184">DOG VACCINATION</text>
+          <text x="462" y="184">POST-EXPOSURE PROPHYLAXIS</text>
+        </g>
+        <g text-anchor="middle" fill="var(--ink-soft)" style="font-family:var(--font-mono);font-size:11px">
+          <text x="222" y="204">cuts it at the source,</text>
+          <text x="222" y="220">one season, whole zones</text>
+          <text x="462" y="204">cuts it one person at a time,</text>
+          <text x="462" y="220">only if they reach a clinic in time</text>
+        </g>
+      </svg>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:clamp(1.5rem,4vw,3.5rem);margin-block-start:2.6rem">
+      <p class="body rv">Sterilisation is the long game. It shrinks the reservoir over years, and it is the only thing that ends the cycle rather than managing it. Vaccination is the fast one: push coverage past 70 per cent inside a zone and human deaths from that zone stop within a single season, whether or not a single dog has been sterilised yet.</p>
+      <p class="body rv d1">Which is why they belong on the same visit and in the same record. Every catch is already a vaccination opportunity, and every vaccination round is already a census. Running them separately, as most programmes do, pays the catching cost twice and produces two sets of numbers that never reconcile.</p>
+    </div>
   </div>
 </section>
 
@@ -779,6 +1069,139 @@ footer{ padding-block:3.5rem 4.5rem; }
     </div>
     <div class="rv d2" style="justify-self:center">
       <p class="stamp">Goa, 2021<br>Rabies controlled<br>First state in India</p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============ GOA TIMELINE ============ -->
+<section class="pad" id="goa">
+  <div class="wrap">
+    <p class="eyebrow rv">07b / How Goa actually did it</p>
+    <h2 class="rv d1">Eight years, one method, repeated.</h2>
+    <p class="lede rv d2" style="margin-block-start:1.3rem">Not a breakthrough. A sequence, held to for long enough that the arithmetic caught up.</p>
+    <div class="tl rv d2">
+      <div class="tl__row">
+        <span class="tl__y">2013</span>
+        <div><h4>Campaign begins with the state government</h4><p>A small pilot vaccination drive. At this point no location-specific canine rabies surveillance data existed anywhere in Goa, so the first job was building the map, not vaccinating against it.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">March 2014</span>
+        <div><h4>A 24 hour rabies hotline</h4><p>One public number, widely advertised, for reporting a suspect rabid animal at any hour. This is the piece most programmes skip. Without it there is no way to know whether the vaccination is working.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">2014 to 2019</span>
+        <div><h4>Polygon by polygon, on repeat</h4><p>Teams were directed to assigned polygons shown on a smartphone app, each dog logged with GPS, working offline and syncing later. The entire state was re-vaccinated every twelve months, with a peak of more than 25,000 dogs in a single month.</p></div>
+      </div>
+      <div class="tl__row is-good">
+        <span class="tl__y">2019</span>
+        <div><h4>Canine rabies collapses</h4><p>A 92 per cent reduction in monthly canine rabies cases against the start of the campaign. The reservoir, not just the symptoms.</p></div>
+      </div>
+      <div class="tl__row is-good">
+        <span class="tl__y">June 2021</span>
+        <div><h4>First Rabies Controlled Area in India</h4><p>Declared after three consecutive years with zero human rabies deaths.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">2022</span>
+        <div><h4>Published, and taught</h4><p>The results appear in Nature Communications, making the method citable in a policy room. By June 2022 the education programme had reached five million children with rabies prevention lessons.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">Today</span>
+        <div><h4>Over four million doses</h4><p>Delivered in Goa since 2013, the largest continuous rabies control effort ever run in India.</p></div>
+      </div>
+    </div>
+    <p class="note rv" style="margin-block-start:1.4rem;max-width:72ch">Four mechanisms carried all of it: a boundary drawn before any work started, a phone that recorded every animal where it stood, a rule that a polygon is not finished until it clears the threshold, and a surveillance line that told them the truth while it was still fixable.</p>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============ MORE PROOFS ============ -->
+<section class="pad" id="precedents">
+  <div class="wrap">
+    <p class="eyebrow rv">07c / Three more, already done</p>
+    <h2 class="rv d1">Goa is not a fluke.</h2>
+    <p class="lede rv d2" style="margin-block-start:1.3rem">Every one of these ran in India, on Indian budgets, under Indian conditions, solving catching, transport and post-operative care exactly as we will have to.</p>
+
+    <div class="proofs rv d2">
+      <article class="proof-row">
+        <div class="proof-row__place"><b>Jaipur</b><span>Help in Suffering / since 1994</span></div>
+        <p class="proof-row__stat">7.2 to 2.2<span>Dog bites per 1,000 people</span></p>
+        <div>
+          <p>One of the longest continuously running ABC programmes in the world, built on WHO and WSPA guidelines. More than 1,50,000 dogs have passed through it. Over 70 per cent of female street dogs are sterilised, and over 70 per cent of the street dog population is vaccinated.</p>
+          <p>It is credited with averting an estimated 500 human rabies deaths and 3,60,000 bite injuries. Human rabies in the city is now close to zero. Thirty years is also the honest answer to how long a city takes when it starts without a map.</p>
+        </div>
+      </article>
+
+      <article class="proof-row">
+        <div class="proof-row__place"><b>Sikkim</b><span>SARAH programme / since 2005</span></div>
+        <p class="proof-row__stat">4 to 0<span>Human rabies deaths per year</span></p>
+        <div>
+          <p>The first government-sanctioned programme in India to put animal welfare and public health inside one structure, which is One Health before the phrase was common. Four human rabies deaths in 2005, then none at all from 2006 through 2015.</p>
+          <p>Two deaths appeared in 2016, both near the West Bengal border. That detail matters more than the zeros. It is the case for drawing boundaries around whole administrative units rather than convenient pockets, because a partially covered neighbour re-seeds you.</p>
+        </div>
+      </article>
+
+      <article class="proof-row">
+        <div class="proof-row__place"><b>Ahmedabad</b><span>Municipal ABC programme</span></div>
+        <p class="proof-row__stat">Near 90%<span>Sterilisation coverage</span></p>
+        <div>
+          <p>1,88,828 sterilisations delivered against roughly ₹18.11 crore of spending, which works out near ₹960 an animal. A major Indian city approaching the threshold on a municipal budget.</p>
+          <p>It is also the cleanest evidence available that surgical cost is not what stops the rest of the country. Ahmedabad paid roughly what everybody else is offered. What it did differently was keep going in the same place.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============ POLICY CLOCK ============ -->
+<section class="pad" id="clock">
+  <div class="wrap">
+    <p class="eyebrow rv">07d / The policy clock</p>
+    <h2 class="rv d1">The law is not the missing piece.</h2>
+    <p class="lede rv d2" style="margin-block-start:1.3rem">Almost everything this page argues for is already policy. It has been written, funded, revised and given a deadline. What was never built is the machinery that shows whether any of it happened.</p>
+
+    <div class="tl rv d2">
+      <div class="tl__row">
+        <span class="tl__y">1960</span>
+        <div><h4>Prevention of Cruelty to Animals Act</h4><p>The parent statute. Every rule since is made under it.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">2001</span>
+        <div><h4>First ABC (Dogs) Rules</h4><p>Catch, neuter, vaccinate, return becomes national policy. Delivery is left to urban local bodies, and so is the measurement.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">2021</span>
+        <div><h4>NAPRE, and Zero by 30</h4><p>India commits to eliminating dog-mediated human rabies by 2030, aligned to the global target set by WHO, FAO, WOAH and GARC. The interim goals were explicit: cut dog bites by half by 2025, and raise dog vaccination by 75 per cent by 2025.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">2023</span>
+        <div><h4>ABC Rules revised</h4><p>Return to the exact original location, ear-notching, multi-tier monitoring committees, AWBI recognition valid three years. The traceability this page asks for is, on paper, already compulsory.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">2025</span>
+        <div><h4>Funding raised</h4><p>₹800 per dog, up from ₹445, plus a one-time ₹2 crore infrastructure grant for state veterinary hospitals. States are advised to cover at least 70 per cent.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">Aug 2025</span>
+        <div><h4>The Supreme Court intervenes</h4><p>Removal from Delhi NCR streets ordered on 11 August, modified on 22 August to release back into the same territory after sterilisation and immunisation, except animals that are rabid or aggressive. All states and union territories were impleaded for a pan-India policy.</p></div>
+      </div>
+      <div class="tl__row is-now">
+        <span class="tl__y">Now</span>
+        <div><h4>The 2025 targets came due</h4><p>Bites were to fall by half. They rose from 37,17,336 in 2024 to 47,48,478 in 2025, an increase of roughly 28 per cent. No national dashboard exists to explain why, because none was ever built.</p></div>
+      </div>
+      <div class="tl__row">
+        <span class="tl__y">2030</span>
+        <div><h4>The deadline</h4><p>Four years out. Reaching it needs coverage that can be proved, zone by zone, which is the one thing nobody currently produces.</p></div>
+      </div>
+    </div>
+
+    <div class="verdictbox rv">
+      <p class="verdictbox__k">A 50% cut asked for. A 28% rise delivered.<span>NAPRE dog bite target, 2025</span></p>
+      <p>This is the gap Love Paws exists to close, and it is not a gap in intent, funding or law. It is a gap in verification. A target with no measurement system is a press release, and the country has now run that experiment for four years with the deadline in sight.</p>
     </div>
   </div>
 </section>
@@ -855,6 +1278,12 @@ footer{ padding-block:3.5rem 4.5rem; }
         <li><a href="https://www.freepressjournal.in/mumbai/mumbai-bmc-plans-sterilisation-of-45000-stray-dogs-annually-allocates-23-crore-for-control-drive" target="_blank" rel="noopener">BMC allocation and targets</a></li>
         <li><a href="https://www.nature.com/articles/s41467-022-30371-y" target="_blank" rel="noopener">Goa rabies elimination, Nature Communications</a></li>
         <li><a href="https://straydogmenace.com/2026/02/13/exclusive-india-4748478-dog-bite-cases-2025-10-lakh-rise-7-58-crore-since-2010/" target="_blank" rel="noopener">2025 bite case compilation</a></li>
+        <li><a href="https://rabiesfreeindia.mohfw.gov.in/About-NAPRE" target="_blank" rel="noopener">NAPRE and the Zero by 30 target</a></li>
+        <li><a href="https://helpinsuffering.org/abc-programme/" target="_blank" rel="noopener">Jaipur ABC programme, Help in Suffering</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28361056/" target="_blank" rel="noopener">Sikkim SARAH, ten-year outcomes</a></li>
+        <li><a href="https://www.prokerala.com/news/articles/a1770413.html" target="_blank" rel="noopener">Ahmedabad coverage and cost per animal</a></li>
+        <li><a href="https://www.missionrabies.com/en/our-projects/india" target="_blank" rel="noopener">Goa campaign scale and method</a></li>
+        <li><a href="https://visionias.in/blog/current-affairs/stray-dogs-management-in-india-balancing-public-safety-with-animal-welfare" target="_blank" rel="noopener">Livestock Census 2012 and 2019 counts</a></li>
       </ul>
     </div>
   </div>
