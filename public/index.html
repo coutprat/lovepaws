@@ -3,1807 +3,1153 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Love Paws Field Note</title>
-<meta name="description" content="A field note on stray management in India: the seventy per cent threshold, why funded programmes still fail, and the operating model Love Paws Foundation proposes.">
+<title>Love Paws Foundation — humane, measurable stray animal management in India</title>
+<meta name="description" content="India runs stray sterilisation programmes without a count, without a threshold and without proof. Love Paws proposes the opposite: a defined area, a measured population, and every animal traceable from catch to release.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Love Paws Foundation">
+<meta property="og:description" content="A defined area, a measured population, and every animal traceable from catch to release.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 /* ============================================================
-   LOVE PAWS FOUNDATION / demonstrative field note
-   Aesthetic: municipal survey ledger. Bone paper, ink, hairlines,
-   one alarm colour, one verified colour. Serif for argument,
-   mono for evidence.
+   Love Paws Foundation — presented in the REC 2 design system.
+   Editorial print: cream paper, charcoal ink, hairline rules,
+   Cormorant Garamond for argument, Plus Jakarta for evidence.
+   Zero dependencies; fonts degrade to system stacks offline.
    ============================================================ */
 
 :root{
-  --paper:      oklch(0.968 0.006 88);
-  --paper-2:    oklch(0.940 0.008 88);
-  --paper-3:    oklch(0.902 0.010 88);
-  --ink:        oklch(0.215 0.020 250);
-  --ink-soft:   oklch(0.455 0.018 250);
-  --rule:       oklch(0.858 0.010 250);
-  --rule-soft:  oklch(0.902 0.008 250);
-  --wash:       oklch(0.625 0.150 72 / 0.055);
-  /* Accent in two steps: saffron carries graphics and large type, deep amber
-     carries small labels. On a bone ground a bright gold cannot do both. */
-  --signal:     oklch(0.615 0.145 70);
-  --signal-ink: oklch(0.450 0.115 58);
-  --signal-dim: oklch(0.615 0.145 70 / 0.15);
-  --verified:   oklch(0.470 0.090 205);
-  --verified-dim: oklch(0.470 0.090 205 / 0.12);
-  --ochre:      oklch(0.850 0.125 92);
-
-  /* closing band: inverted against the page in both themes */
-  --ask-bg:     oklch(0.192 0.022 250);
-  --ask-fg:     oklch(0.968 0.006 88);
-  --ask-mute:   oklch(0.800 0.010 88);
-  --ask-rule:   oklch(0.372 0.022 250);
-  --ask-accent: oklch(0.845 0.128 90);
-
-  --font-display: "Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,"Hoefler Text",Georgia,serif;
-  --font-mono: "JetBrains Mono","SFMono-Regular",ui-monospace,Consolas,"Liberation Mono","Courier New",monospace;
-
-  --wrap: 1180px;
-  --gut: clamp(1.25rem, 5vw, 4.5rem);
-  --ease: cubic-bezier(.16,1,.3,1);
+  --cream:#FAFAF8;
+  --cream-deep:#F4F3EF;
+  --charcoal:#1A1A1A;
+  --charcoal-mid:#2A2A28;
+  --charcoal-light:#3A3A38;
+  --muted:#6B6860;
+  --faint:#9A9690;
+  --hairline-faint:#C5C2BA;
+  --border:#E5E3DC;
+  --border-strong:#C5C2BA;
+  --accent:#9C3F63;              /* the CSR plum REC 2 gives this subject */
+  --font-display:"Cormorant Garamond",Georgia,"Palatino Linotype",serif;
+  --font-body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:24px;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:      oklch(0.190 0.018 250);
-    --paper-2:    oklch(0.232 0.020 250);
-    --paper-3:    oklch(0.282 0.022 250);
-    --ink:        oklch(0.945 0.010 88);
-    --ink-soft:   oklch(0.742 0.013 88);
-    --rule:       oklch(0.348 0.020 250);
-    --rule-soft:  oklch(0.278 0.018 250);
-    --signal:     oklch(0.818 0.140 84);
-    --signal-ink: oklch(0.845 0.130 86);
-    --signal-dim: oklch(0.818 0.140 84 / 0.16);
-    --verified:   oklch(0.762 0.095 196);
-    --verified-dim: oklch(0.762 0.095 196 / 0.15);
-    --ochre:      oklch(0.760 0.110 90);
-    --wash:       oklch(0.818 0.140 84 / 0.075);
-    --ask-bg:     oklch(0.940 0.008 88);
-    --ask-fg:     oklch(0.195 0.020 250);
-    --ask-mute:   oklch(0.430 0.018 250);
-    --ask-rule:   oklch(0.820 0.010 250);
-    --ask-accent: oklch(0.520 0.140 58);
-  }
-}
-:root[data-theme="dark"]{
-  --paper:      oklch(0.190 0.018 250);
-  --paper-2:    oklch(0.232 0.020 250);
-  --paper-3:    oklch(0.282 0.022 250);
-  --ink:        oklch(0.945 0.010 88);
-  --ink-soft:   oklch(0.742 0.013 88);
-  --rule:       oklch(0.348 0.020 250);
-  --rule-soft:  oklch(0.278 0.018 250);
-  --signal:     oklch(0.818 0.140 84);
-  --signal-ink: oklch(0.845 0.130 86);
-  --signal-dim: oklch(0.818 0.140 84 / 0.16);
-  --verified:   oklch(0.762 0.095 196);
-  --verified-dim: oklch(0.762 0.095 196 / 0.15);
-  --ochre:      oklch(0.760 0.110 90);
-  --wash:       oklch(0.818 0.140 84 / 0.075);
-  --ask-bg:     oklch(0.940 0.008 88);
-  --ask-fg:     oklch(0.195 0.020 250);
-  --ask-mute:   oklch(0.430 0.018 250);
-  --ask-rule:   oklch(0.820 0.010 250);
-  --ask-accent: oklch(0.520 0.140 58);
-}
+@media (min-width:1024px){ :root{ --gut:56px; } }
 
 *,*::before,*::after{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
 body{
   margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--font-display);
-  font-size:clamp(1rem,0.96rem + 0.22vw,1.125rem);
-  line-height:1.62;
-  text-rendering:optimizeLegibility;
+  background:var(--cream);
+  color:var(--charcoal);
+  font-family:var(--font-body);
   -webkit-font-smoothing:antialiased;
 }
-img,canvas,svg{ display:block; max-width:100%; }
+img,svg,canvas{ display:block; max-width:100%; }
 a{ color:inherit; }
+::selection{ background:rgba(156,63,99,.16); }
 
-::selection{ background:var(--ochre); color:oklch(0.22 0.02 60); }
-
-/* paper grain, fixed, never interactive */
-.grain{
-  position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.42;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  mix-blend-mode:multiply;
+.wrap{ max-width:1100px; margin-inline:auto; }
+.band{
+  padding:88px var(--gut);
+  border-bottom:1px solid var(--border);
+  background:var(--cream);
+  scroll-margin-top:76px;
 }
-:root[data-theme="dark"] .grain{ mix-blend-mode:screen; opacity:.16; }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]) .grain{ mix-blend-mode:screen; opacity:.16; }
+.band.deep{ background:var(--cream-deep); }
+
+.label{
+  font-family:var(--font-body);
+  font-size:9px; font-weight:700; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--faint); margin:0;
+}
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:400; margin:0; }
+.h2{
+  font-family:var(--font-display); font-weight:300;
+  font-size:clamp(30px,4.6vw,52px); line-height:1.08;
+  letter-spacing:-.015em; color:var(--charcoal); max-width:20ch; margin:0;
+}
+.h2 em{ font-style:italic; color:var(--accent); }
+.lede{
+  margin:28px 0 0; max-width:68ch;
+  font-size:16.5px; font-weight:300; line-height:1.82; color:var(--charcoal-light);
+}
+.body{
+  margin:0; max-width:70ch;
+  font-size:15px; font-weight:300; line-height:1.85; color:var(--charcoal-light);
+}
+.body + .body{ margin-top:20px; }
+.body strong{ font-weight:600; color:var(--charcoal); }
+.note{
+  margin:0; max-width:68ch;
+  font-size:12px; line-height:1.72; color:var(--faint);
 }
 
-.wrap{ width:100%; max-width:var(--wrap); margin-inline:auto; padding-inline:var(--gut); }
+/* ---------- source tags ---------- */
+/* References carry the accent at rest, not only on hover. The argument of this
+   page is that provenance should be impossible to overlook, so the chips are
+   styled to be noticed rather than to sit quietly out of the way. */
+.srcs{ display:inline-flex; flex-wrap:wrap; align-items:center; gap:6px; }
+.src-tag{
+  display:inline-flex; align-items:center;
+  font-family:var(--font-body); font-size:9px; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase; line-height:1;
+  white-space:nowrap; padding:6px 8px 5px;
+  border:1px solid rgba(156,63,99,.42); border-radius:2px;
+  background:rgba(156,63,99,.07);
+  color:var(--accent); text-decoration:none;
+  transition:color .16s,border-color .16s,background-color .16s,box-shadow .16s;
+}
+.src-tag:hover{
+  color:var(--cream); border-color:var(--accent); background:var(--accent);
+  box-shadow:0 2px 10px rgba(156,63,99,.24);
+}
+.src-tag:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+.src-tag i{ font-style:normal; opacity:.75; margin-left:4px; }
+
+/* A quiet "Source" cue in front of each cluster, so the chips read as
+   attribution rather than as tags or navigation. */
+.srcs::before{
+  content:"Source";
+  font-size:9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--faint); margin-right:4px;
+}
+.srcs.inline{ vertical-align:baseline; }
+.srcs.inline::before{ content:none; }
 
 /* ---------- masthead ---------- */
 .masthead{
-  position:fixed; inset-block-start:0; inset-inline:0; z-index:50;
-  background:var(--paper);
-  border-block-end:1px solid var(--rule);
-}
-.masthead__in{
-  display:flex; align-items:center; gap:1.25rem;
-  min-height:52px;
+  position:fixed; inset:0 0 auto 0; z-index:50; height:64px;
+  display:flex; align-items:center; gap:32px;
+  padding-inline:var(--gut);
+  background:rgba(250,250,248,.92);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(26,26,26,.08);
 }
 .mark{
-  font-family:var(--font-mono); font-size:.72rem; letter-spacing:.16em;
-  text-transform:uppercase; font-weight:600; white-space:nowrap;
+  font-family:var(--font-display); font-size:21px; font-weight:600;
+  letter-spacing:.07em; color:var(--charcoal); text-decoration:none; white-space:nowrap;
 }
-.mark b{ color:var(--signal-ink); font-weight:600; }
-.tag{
-  font-family:var(--font-mono); font-size:.6rem; letter-spacing:.16em; text-transform:uppercase;
-  border:1px solid var(--signal-ink); color:var(--signal-ink);
-  padding:.15rem .4rem; border-radius:2px;
+.mark b{ font-weight:600; color:var(--accent); }
+.mnav{ display:none; align-items:center; gap:2px; margin-left:auto; }
+@media (min-width:1024px){ .mnav{ display:flex; } }
+.mnav a{
+  position:relative; font-size:10px; font-weight:500; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--muted); text-decoration:none;
+  padding:6px 10px; transition:color .18s;
 }
-.masthead nav{ margin-inline-start:auto; display:flex; gap:1.4rem; }
-.masthead nav a{
-  font-family:var(--font-mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
-  color:var(--ink-soft); text-decoration:none; padding-block:.35rem;
-  border-block-end:1px solid transparent; transition:color .25s var(--ease), border-color .25s var(--ease);
+.mnav a:hover{ color:var(--accent); }
+.mnav a::after{
+  content:""; position:absolute; left:10px; right:10px; bottom:0; height:2px;
+  background:var(--accent); transform:scaleX(0); transform-origin:left;
+  transition:transform .24s var(--ease);
 }
-.masthead nav a:hover, .masthead nav a:focus-visible{ color:var(--ink); border-block-end-color:var(--signal); }
-.themer{
-  font-family:var(--font-mono); font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
-  background:none; border:1px solid var(--rule); color:var(--ink-soft);
-  padding:.28rem .5rem; border-radius:2px; cursor:pointer;
-  transition:border-color .25s var(--ease), color .25s var(--ease);
-}
-.themer:hover{ color:var(--ink); border-color:var(--ink-soft); }
-@media (max-width:860px){
-  .masthead nav{ display:none; }
-}
-
-:where(a,button):focus-visible{ outline:2px solid var(--signal); outline-offset:3px; }
-
-/* ---------- shared type ---------- */
-.eyebrow{
-  font-family:var(--font-mono); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--signal-ink); margin:0 0 1.4rem;
-  display:flex; align-items:center; gap:.7rem;
-}
-.eyebrow::after{ content:""; flex:1; height:1px; background:var(--rule); max-width:120px; }
-
-h1,h2,h3{ font-weight:400; margin:0; }
-h1{
-  font-size:clamp(2.7rem,7.4vw,6.1rem); line-height:.94; letter-spacing:-.025em;
-  max-width:16ch;
-}
-h2{
-  font-size:clamp(1.95rem,4.4vw,3.35rem); line-height:1.04; letter-spacing:-.02em;
-  max-width:19ch;
-}
-h3{ font-size:clamp(1.15rem,1.8vw,1.45rem); line-height:1.24; letter-spacing:-.01em; }
-p{ margin:0 0 1.1em; }
-.lede{ font-size:clamp(1.1rem,1.05rem + 0.5vw,1.42rem); line-height:1.5; max-width:52ch; color:var(--ink); }
-.body{ max-width:62ch; color:var(--ink-soft); }
-.body strong{ color:var(--ink); font-weight:600; }
-.note{
-  font-family:var(--font-mono); font-size:.7rem; line-height:1.65; letter-spacing:.02em;
-  color:var(--ink-soft); text-transform:none;
-}
-.uline{ background:linear-gradient(var(--ochre),var(--ochre)) 0 88%/100% .32em no-repeat; }
-
-section{ position:relative; }
-.pad{ padding-block:clamp(4.5rem,11vh,8.5rem); }
-.hr{ height:1px; background:var(--rule); border:0; margin:0; }
+.mnav a:hover::after{ transform:scaleX(1); }
+.accentbar{ position:fixed; top:64px; inset-inline:0; height:3px; background:var(--accent); z-index:49; }
 
 /* ---------- hero ---------- */
 .hero{
-  min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end;
-  padding-block:7rem 3rem; position:relative; overflow:hidden;
+  position:relative; overflow:hidden;
+  padding:120px var(--gut) 64px;
+  border-bottom:1px solid var(--border);
 }
-#heroCanvas{
-  position:absolute; inset:0; width:100%; height:100%; z-index:0; opacity:.9;
+.blob{ position:absolute; border-radius:50%; background:var(--accent); opacity:.045; filter:blur(70px); pointer-events:none; }
+.ghost{
+  position:absolute; right:-20px; top:50%; transform:translateY(-50%);
+  font-family:var(--font-display); font-weight:300; line-height:1;
+  font-size:clamp(90px,22vw,320px); color:var(--charcoal); opacity:.04;
+  user-select:none; pointer-events:none;
 }
-.hero__grid{
-  position:absolute; inset:0; z-index:0; pointer-events:none;
-  background-image:linear-gradient(var(--rule-soft) 1px,transparent 1px),linear-gradient(90deg,var(--rule-soft) 1px,transparent 1px);
-  background-size:clamp(48px,7vw,96px) clamp(48px,7vw,96px);
-  mask-image:radial-gradient(120% 80% at 70% 30%,oklch(0 0 0) 20%,transparent 78%);
+.crumb{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:44px; }
+.crumb span,.crumb a{
+  font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+  font-weight:500; color:var(--faint); text-decoration:none;
 }
-.hero .wrap{ position:relative; z-index:1; }
-.hero h1 .sig{ color:var(--signal); }
-.hero__foot{
-  display:flex; flex-wrap:wrap; gap:2rem 3rem; align-items:end;
-  margin-block-start:clamp(2rem,5vh,3.6rem);
-  padding-block-start:1.4rem; border-block-start:1px solid var(--rule);
+.crumb .cur{ font-weight:700; color:var(--accent); }
+.eyebrow{ display:inline-flex; align-items:center; gap:10px; margin-bottom:28px; }
+.eyebrow i{ display:block; width:28px; height:2px; background:var(--accent); }
+.eyebrow span{ font-size:9px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:var(--accent); }
+.hero h1{
+  font-weight:300; font-size:clamp(40px,9vw,110px); line-height:.94;
+  letter-spacing:-.02em; color:var(--charcoal); margin:0 0 32px; word-break:break-word;
 }
-.hero__foot .lede{ flex:1 1 30ch; margin:0; }
-.scrollcue{
-  font-family:var(--font-mono); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--ink-soft); display:flex; align-items:center; gap:.6rem;
-}
-.scrollcue i{ width:1px; height:34px; background:var(--ink-soft); display:block; transform-origin:top; animation:drop 2.4s var(--ease) infinite; }
-@keyframes drop{ 0%{ transform:scaleY(0); opacity:0 } 30%{ transform:scaleY(1); opacity:1 } 75%{ transform:scaleY(1); opacity:1 } 100%{ transform:scaleY(1); opacity:0 } }
+.hero h1 em{ font-style:italic; color:var(--accent); }
+.hero p.sub{ margin:0; max-width:520px; font-size:16px; font-weight:300; line-height:1.65; color:var(--muted); }
 
-/* ---------- storyline: the six beats, doubling as the contents ---------- */
-.beats{ list-style:none; margin:2.8rem 0 0; padding:0; border-block-start:1px solid var(--ink); }
-.beats li{ border-block-end:1px solid var(--rule); }
-.beat{
-  display:grid; grid-template-columns:6.5rem minmax(0,1fr) minmax(0,1.25fr);
-  gap:.5rem 2.4rem; align-items:baseline;
-  padding-block:1.4rem; text-decoration:none;
-  transition:padding-inline-start .4s var(--ease), background .4s var(--ease);
-}
-.beat:hover, .beat:focus-visible{ padding-inline-start:.9rem; background:var(--paper-2); }
-.beat__n{
-  font-family:var(--font-mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-soft); transition:color .3s var(--ease);
-}
-.beat:hover .beat__n, .beat:focus-visible .beat__n{ color:var(--signal-ink); }
-.beat__t{ font-size:clamp(1.15rem,1.9vw,1.5rem); line-height:1.2; letter-spacing:-.01em; }
-.beat__c{ color:var(--ink-soft); font-size:.98rem; line-height:1.5; }
-@media (max-width:900px){
-  .beat{ grid-template-columns:1fr; gap:.35rem; padding-block:1.15rem; }
-}
-
-/* fixed masthead must not sit over a jumped-to heading */
-[id]{ scroll-margin-block-start:64px; }
-
-/* ---------- ledger ---------- */
-.ledger{ border-block-start:1px solid var(--ink); margin-block-start:2.6rem; }
-/* The figure column is fixed, not fractional: every row must share the same
-   column edges or the ledger stops reading as a ledger. It is sized to hold
-   the widest figure (a 9-character grouped number) at the largest step. */
-.row{
-  display:grid; grid-template-columns:13.5rem minmax(0,1fr) minmax(0,22ch);
-  gap:1rem 2rem; align-items:baseline;
-  padding-block:1.5rem; border-block-end:1px solid var(--rule);
-}
-.row__fig{
-  font-family:var(--font-mono); font-variant-numeric:tabular-nums;
-  font-size:clamp(1.45rem,2.6vw,2.15rem); line-height:1; letter-spacing:-.03em; font-weight:600;
-  white-space:nowrap;
-}
-.row__fig.is-sig{ color:var(--signal); }
-.row__fig small{ font-size:.5em; letter-spacing:.02em; margin-inline-start:.25em; color:var(--ink-soft); font-weight:400; }
-.row__lab{ font-size:1.02rem; line-height:1.4; }
-@media (max-width:1040px){
-  .row{ grid-template-columns:11rem minmax(0,1fr) minmax(0,19ch); gap:1rem 1.5rem; }
-  .row__fig{ font-size:1.7rem; }
-}
-@media (max-width:780px){
-  .row{ grid-template-columns:1fr; gap:.35rem; padding-block:1.15rem; }
-  .row__fig{ font-size:clamp(1.45rem,6vw,2rem); }
-  .row .note{ order:3; }
-}
-
-.contrast{
-  margin-block-start:3.2rem; display:grid; gap:1.1rem;
-  padding:clamp(1.25rem,3vw,2rem); background:var(--paper-2); border:1px solid var(--rule);
-}
-.bar{ display:grid; grid-template-columns:minmax(0,14ch) minmax(0,1fr) minmax(0,9ch); gap:1rem; align-items:center; }
-.bar__lab{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); }
-.bar__track{ position:relative; height:26px; background:var(--paper-3); }
-.bar__fill{ position:absolute; inset-block:0; inset-inline-start:0; width:0; transition:width 1.4s var(--ease); }
-.bar__fill.a{ background:var(--ink-soft); }
-.bar__fill.b{ background:var(--signal); }
-.bar__val{
-  font-family:var(--font-mono); font-size:.74rem; font-variant-numeric:tabular-nums; white-space:nowrap;
-  text-align:end; color:var(--ink);
-}
-@media (max-width:640px){ .bar{ grid-template-columns:minmax(0,1fr) auto; gap:.4rem .8rem } .bar__lab{ grid-column:1/-1 } }
-
-/* ---------- threshold (sticky scroll driven) ---------- */
-.thintro{ padding-block:clamp(4.5rem,11vh,8.5rem) clamp(1.5rem,4vh,3rem); }
-.thintro h2{ margin-block:0 1.2rem; }
-.thintro .lede{ color:var(--ink-soft); max-width:64ch; }
-.threshold{ height:420vh; }
-.threshold__pin{
-  position:sticky; inset-block-start:52px; height:calc(100svh - 52px);
-  display:flex; align-items:center; overflow:hidden;
-}
-.thgrid{
-  width:100%; display:grid; gap:clamp(1.5rem,4vw,3.5rem);
-  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); align-items:center;
-}
-.readout{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; }
-.readout__num{
-  font-size:clamp(3.4rem,9vw,7rem); line-height:.85; letter-spacing:-.05em; font-weight:600;
-  color:var(--signal); transition:color .4s var(--ease);
-}
-.readout__num.is-past{ color:var(--verified); }
-.readout__num sup{ font-size:.3em; vertical-align:super; letter-spacing:0; }
-.covbar{ position:relative; height:10px; background:var(--paper-3); margin-block:1.5rem .8rem; }
-.covbar__fill{ position:absolute; inset-block:0; inset-inline-start:0; background:var(--signal); }
-.covbar__fill.is-past{ background:var(--verified); }
-.covbar__mark{ position:absolute; inset-block:-9px; inset-inline-start:70%; width:1px; background:var(--ink); }
-.covbar__mark::after{
-  content:"70% threshold"; position:absolute; inset-block-start:-1.5rem; inset-inline-start:0;
-  font-family:var(--font-mono); font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; white-space:nowrap;
-}
-.verdict{ font-family:var(--font-mono); font-size:.82rem; line-height:1.6; min-height:3.2em; color:var(--ink); }
-.verdict.is-past{ color:var(--verified); }
-.panels{ display:grid; gap:1rem; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
-.panel{ border:1px solid var(--rule); background:var(--paper-2); padding:.75rem; }
-.panel h3{
-  font-family:var(--font-mono); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-soft); margin:0 0 .5rem;
-}
-.panels__foot{ grid-column:1/-1; margin:0; }
-.panel canvas{ width:100%; height:auto; aspect-ratio:1/1; }
-.panel--curve canvas{ aspect-ratio:1/1; }
-@media (max-width:960px){
-  .threshold{ height:340vh; }
-  .thgrid{ grid-template-columns:1fr; gap:1.25rem; }
-  .panels{ grid-template-columns:1fr 1fr; }
-  .panel canvas{ aspect-ratio:1/.9; }
-  .readout__num{ font-size:clamp(2.6rem,13vw,4rem); }
-  .verdict{ min-height:4.4em; font-size:.75rem; }
-}
-
-/* ---------- numbered entries ---------- */
-.entries{ border-block-start:1px solid var(--ink); }
-.entry{
-  display:grid; grid-template-columns:5.5rem minmax(0,1fr) minmax(0,20ch);
-  gap:1rem 2.4rem; padding-block:2.4rem; border-block-end:1px solid var(--rule);
-}
-.entry__n{
-  font-family:var(--font-mono); font-size:1.6rem; line-height:1; font-weight:600; color:var(--signal);
-  letter-spacing:-.02em;
-}
-.entry h3{ margin:0 0 .7rem; }
-.entry .body{ margin:0; }
-.entry__side{ align-self:start; }
-.pull{
-  font-family:var(--font-mono); font-size:.74rem; line-height:1.7; color:var(--ink);
-  border-inline-start:0; padding:.9rem 1rem; background:var(--signal-dim);
-}
-@media (max-width:900px){
-  .entry{ grid-template-columns:3.2rem minmax(0,1fr); gap:.5rem 1.2rem; }
-  .entry__side{ grid-column:2; }
-  .entry__n{ font-size:1.15rem; padding-block-start:.25rem; }
-}
-
-/* ---------- model ---------- */
-.model{ display:grid; grid-template-columns:repeat(12,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); margin-block-start:2.8rem; }
-.cell{ background:var(--paper); padding:clamp(1.2rem,2.4vw,2rem); }
-.cell__n{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.16em; color:var(--verified); display:block; margin-block-end:.9rem; }
-.cell h3{ margin:0 0 .55rem; }
-.cell p{ margin:0; color:var(--ink-soft); font-size:.97rem; }
-.c7{ grid-column:span 7 } .c5{ grid-column:span 5 } .c4{ grid-column:span 4 } .c8{ grid-column:span 8 } .c6{ grid-column:span 6 } .c12{ grid-column:span 12 }
-@media (max-width:860px){ .model > *{ grid-column:span 12 !important } }
-
-.flip{
-  margin-block-start:3rem; padding:clamp(1.4rem,3vw,2.2rem); border:1px solid var(--ink);
-  display:flex; flex-wrap:wrap; align-items:center; gap:1rem 2rem;
-  font-family:var(--font-mono); font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
-}
-.flip s{ color:var(--ink-soft); text-decoration-color:var(--signal-ink); text-decoration-thickness:2px; }
-.flip b{ color:var(--verified); font-weight:600; }
-.flip .arrow{ color:var(--signal-ink); }
-
-/* ---------- chain ---------- */
-.chain{ display:grid; grid-template-columns:repeat(6,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); margin-block-start:2.8rem; }
-.link{ background:var(--paper); padding:1.15rem 1rem 1.35rem; position:relative; opacity:0; transform:translateY(14px); }
-.link.in{ opacity:1; transform:none; transition:opacity .6s var(--ease), transform .6s var(--ease); }
-.link__n{ font-family:var(--font-mono); font-size:.6rem; letter-spacing:.16em; color:var(--ink-soft); }
-.link h3{ font-size:1.02rem; margin:.45rem 0 .5rem; }
-.link p{ margin:0; font-family:var(--font-mono); font-size:.66rem; line-height:1.6; color:var(--ink-soft); }
-.link::before{
-  content:""; position:absolute; inset-block-start:0; inset-inline:0; height:2px; background:var(--verified);
-  transform:scaleX(0); transform-origin:left; transition:transform .7s var(--ease) .15s;
-}
-.link.in::before{ transform:scaleX(1); }
-@media (max-width:1000px){ .chain{ grid-template-columns:repeat(3,1fr) } }
-@media (max-width:560px){ .chain{ grid-template-columns:repeat(2,1fr) } }
-
-/* ---------- goals ---------- */
-.goals{ counter-reset:g; margin-block-start:2.6rem; border-block-start:1px solid var(--ink); }
-.goal{
-  display:grid; grid-template-columns:3.2rem minmax(0,1fr); gap:1.6rem; align-items:baseline;
-  padding-block:1.35rem; border-block-end:1px solid var(--rule);
-}
-.goal::before{
-  counter-increment:g; content:counter(g,decimal-leading-zero);
-  font-family:var(--font-mono); font-size:.78rem; color:var(--verified); letter-spacing:.1em;
-}
-.goal p{ margin:0; }
-.goal p span{ display:block; color:var(--ink-soft); font-size:.94rem; margin-block-start:.3rem; }
-
-/* ---------- bhag ---------- */
-.bhag{ background:var(--paper-2); }
-.team{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); margin-block-start:2.6rem; }
-.team > div{ background:var(--paper); padding:clamp(1.2rem,2.5vw,1.8rem); }
-.team dt{ font-family:var(--font-mono); font-size:.64rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft); }
-.team .num{ font-family:var(--font-mono); font-size:clamp(2rem,4vw,3rem); line-height:1; font-weight:600; letter-spacing:-.04em; margin:.7rem 0 .6rem; }
-.team dd{ margin:0; font-size:.97rem; color:var(--ink-soft); }
-@media (max-width:760px){ .team{ grid-template-columns:1fr } }
-
-/* ---------- goa ---------- */
-.proof{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(1.5rem,4vw,4rem); align-items:center; }
-@media (max-width:860px){ .proof{ grid-template-columns:1fr } }
-.stamp{
-  font-family:var(--font-mono); border:2px solid var(--verified); color:var(--verified);
-  padding:1rem 1.2rem; display:inline-block; transform:rotate(-2.5deg);
-  font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; line-height:1.5;
-}
-
-/* ---------- ask ---------- */
-.ask{ background:var(--ask-bg); color:var(--ask-fg); }
-.ask h2, .ask .lede{ color:var(--ask-fg); }
-.ask .eyebrow{ color:var(--ask-accent); }
-.ask .eyebrow::after{ background:var(--ask-rule); }
-.asks{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--ask-rule); border:1px solid var(--ask-rule); margin-block-start:2.8rem; }
-.asks > div{ background:var(--ask-bg); padding:clamp(1.3rem,2.6vw,2rem); }
-.asks h3{ color:var(--ask-fg); margin:0 0 .6rem; }
-.asks p{ margin:0; color:var(--ask-mute); font-size:.96rem; }
-.asks .who{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ask-accent); display:block; margin-block-end:.9rem; }
-@media (max-width:820px){ .asks{ grid-template-columns:1fr } }
-.cta{
-  display:inline-flex; align-items:center; gap:.8rem; margin-block-start:2.6rem;
-  font-family:var(--font-mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
-  color:var(--ask-fg); text-decoration:none; border:1px solid var(--ask-accent); padding:.85rem 1.4rem;
-  transition:background .3s var(--ease), color .3s var(--ease);
-}
-.cta:hover{ background:var(--ask-accent); color:var(--ask-bg); }
-
-/* ---------- footer ---------- */
-footer{ padding-block:3.5rem 4.5rem; }
-.foot{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:2rem 3rem; }
-@media (max-width:820px){ .foot{ grid-template-columns:1fr } }
-.srcs{ margin:0; padding:0; list-style:none; columns:2; column-gap:2rem; }
-.srcs li{ break-inside:avoid; margin-block-end:.5rem; }
-.srcs a{ font-family:var(--font-mono); font-size:.68rem; color:var(--ink-soft); text-decoration:none; border-block-end:1px solid var(--rule); }
-.srcs a:hover{ color:var(--ink); border-block-end-color:var(--signal); }
-@media (max-width:560px){ .srcs{ columns:1 } }
-.disclaimer{ font-family:var(--font-mono); font-size:.66rem; line-height:1.7; color:var(--ink-soft); border:1px dashed var(--rule); padding:1rem; }
-
-
-/* ---------- headings level 4 ---------- */
-h4{ font-weight:400; margin:0; font-size:1.05rem; line-height:1.3; letter-spacing:-.01em; }
-
-/* ---------- timeline ledger ---------- */
-.tl{ margin-block-start:2.6rem; border-block-start:1px solid var(--ink); }
-.tl__row{
-  display:grid; grid-template-columns:8rem minmax(0,1fr); gap:.4rem 2rem;
-  padding-block:1.3rem; border-block-end:1px solid var(--rule); align-items:baseline;
-  position:relative;
-}
-.tl__y{
-  font-family:var(--font-mono); font-weight:600; font-size:.95rem; letter-spacing:.01em;
-  color:var(--signal-ink); white-space:nowrap;
-}
-.tl__row.is-good .tl__y{ color:var(--verified); }
-.tl__row.is-now{ background:var(--signal-dim); }
-.tl h4{ margin:0 0 .35rem; }
-.tl p{ margin:0; color:var(--ink-soft); font-size:.95rem; }
-@media (max-width:760px){ .tl__row{ grid-template-columns:1fr; gap:.3rem; } }
-
-/* ---------- precedent ledger ---------- */
-.proofs{ border-block-start:1px solid var(--ink); margin-block-start:2.6rem; }
-.proof-row{
-  display:grid; grid-template-columns:minmax(0,12rem) minmax(0,14rem) minmax(0,1fr);
-  gap:1.1rem 2.4rem; padding-block:2rem; border-block-end:1px solid var(--rule);
-}
-.proof-row__place b{ display:block; font-size:1.4rem; font-weight:400; letter-spacing:-.01em; }
-.proof-row__place span{
-  font-family:var(--font-mono); font-size:.64rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-soft); display:block; margin-block-start:.3rem;
-}
-.proof-row__stat{
-  font-family:var(--font-mono); font-size:clamp(1.25rem,2.2vw,1.75rem); font-weight:600;
-  letter-spacing:-.03em; color:var(--verified); line-height:1.15; font-variant-numeric:tabular-nums;
-}
-.proof-row__stat span{
-  display:block; font-family:var(--font-mono); font-size:.62rem; font-weight:400; letter-spacing:.12em;
-  text-transform:uppercase; color:var(--ink-soft); margin-block-start:.55rem; line-height:1.5;
-}
-.proof-row p{ margin:0; color:var(--ink-soft); font-size:.96rem; }
-.proof-row p + p{ margin-block-start:.7rem; }
-@media (max-width:900px){
-  .proof-row{ grid-template-columns:1fr; gap:.8rem; padding-block:1.6rem; }
-}
-
-/* ---------- verdict callout ---------- */
-.verdictbox{
-  margin-block-start:2.6rem; border:1px solid var(--ink); padding:clamp(1.3rem,3vw,2.2rem);
-  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:1.2rem 2.5rem; align-items:center;
-}
-.verdictbox__k{
-  font-family:var(--font-mono); font-size:clamp(1.6rem,3.4vw,2.6rem); font-weight:600;
-  letter-spacing:-.04em; line-height:1.05; color:var(--signal);
-}
-.verdictbox__k span{
-  display:block; font-size:.28em; font-weight:400; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-soft); margin-block-start:.7rem;
-}
-.verdictbox p{ margin:0; color:var(--ink-soft); }
-@media (max-width:760px){ .verdictbox{ grid-template-columns:1fr; } }
-
-/* ---------- plates: record card + ear notches ---------- */
-.plates{
-  display:grid; grid-template-columns:minmax(0,22rem) minmax(0,1fr); gap:clamp(1.5rem,4vw,3.5rem);
-  align-items:start; margin-block-start:2.8rem;
-}
-@media (max-width:820px){ .plates{ grid-template-columns:1fr; } }
-
-.record{ border:1px solid var(--rule); background:var(--paper-2); font-family:var(--font-mono); }
-.record__hd{
-  display:flex; justify-content:space-between; gap:1rem; padding:.7rem .9rem;
-  border-block-end:1px solid var(--rule); font-size:.58rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-soft);
-}
-.record__hd b{ color:var(--verified); font-weight:600; }
-.record__photo{
-  aspect-ratio:4/3; background:var(--paper-3); border-block-end:1px solid var(--rule);
-  display:grid; place-items:center; position:relative;
-}
-.record__photo svg{ width:38%; height:auto; opacity:.5; }
-.record__photo::after{
-  content:"GPS 19.0176 N / 72.8562 E"; position:absolute; inset-block-end:.5rem; inset-inline-start:.6rem;
-  font-size:.55rem; letter-spacing:.1em; color:var(--ink-soft);
-}
-.record__body{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:.5rem 1.1rem; padding:.95rem; margin:0; }
-.record__body dt{ font-size:.57rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); }
-.record__body dd{ margin:0; font-size:.72rem; color:var(--ink); }
-.record__ft{
-  padding:.7rem .9rem; border-block-start:1px solid var(--rule); display:flex; align-items:center; gap:.5rem;
-  font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:var(--verified);
-}
-.record__ft i{ width:7px; height:7px; border-radius:50%; background:var(--verified); display:block; }
-
-.notch{ margin-block-start:2rem; }
-.notch__grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.4rem; margin-block-start:1.2rem; max-width:26rem; }
-.notch__cell{ text-align:center; }
-.notch__cell svg{ width:100%; height:auto; }
-.notch__cell span{
-  display:block; font-family:var(--font-mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase;
-  color:var(--ink-soft); margin-block-start:.6rem; line-height:1.5;
-}
-
-/* ---------- transmission chain ---------- */
-.chainfig{ margin-block-start:2.4rem; overflow-x:auto; }
-.chainfig svg{ min-width:640px; width:100%; height:auto; }
-
-
-/* ---------- scroll progress rail ---------- */
-.prog{
-  position:absolute; inset-inline:0; inset-block-end:-1px; height:2px; display:block;
-  background:var(--signal); transform:scaleX(0); transform-origin:left; will-change:transform;
-}
-
-/* ---------- hero wash ---------- */
-.hero::before{
-  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
-  background:radial-gradient(70% 55% at 22% 62%, var(--wash), transparent 70%);
-}
-
-/* ---------- timeline spine ---------- */
-.tl__row{ padding-inline-start:1.7rem; }
-.tl__row::before{
-  content:""; position:absolute; inset-inline-start:.34rem; inset-block:0; width:1px; background:var(--rule);
-}
-.tl__row:first-child::before{ inset-block-start:.6rem; }
-.tl__row:last-child::before{ inset-block-end:calc(100% - 2.1rem); }
-.tl__row::after{
-  content:""; position:absolute; inset-inline-start:0; inset-block-start:1.5rem;
-  width:9px; height:9px; border-radius:50%; background:var(--paper);
-  border:1.5px solid var(--signal-ink); transform:scale(0);
-  transition:transform .55s var(--ease);
-}
-.tl__row.lit::after{ transform:scale(1); }
-.tl__row.is-good::after{ border-color:var(--verified); background:var(--verified); }
-.tl__row.is-now::after{ border-color:var(--signal); background:var(--signal); }
-@media (max-width:760px){ .tl__row{ padding-inline-start:1.5rem; } }
-
-/* ---------- precedent stat tick ---------- */
-.proof-row__stat b{ font-weight:600; font-variant-numeric:tabular-nums; }
-.proof-row__stat b::before{ content:attr(data-lead); color:var(--ink-soft); }
-
-/* ---------- transmission chain reveal ---------- */
-.chainfig svg > g{ opacity:0; transform:translateY(10px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
-.chainfig.in svg > g{ opacity:1; transform:none; }
-.chainfig.in svg > g:nth-child(2){ transition-delay:.10s }
-.chainfig.in svg > g:nth-child(3){ transition-delay:.18s }
-.chainfig.in svg > g:nth-child(4){ transition-delay:.30s }
-.chainfig.in svg > g:nth-child(5){ transition-delay:.46s }
-.chainfig.in svg > g:nth-child(6){ transition-delay:.56s }
-.chainfig.in svg > g:nth-child(7){ transition-delay:.64s }
-
-/* ---------- record card live pulse ---------- */
-.record__ft i{ animation:pulse 2.6s ease-in-out infinite; }
-@keyframes pulse{ 0%,100%{ opacity:1; box-shadow:0 0 0 0 var(--verified-dim) } 50%{ opacity:.55; box-shadow:0 0 0 5px transparent } }
-
-/* ---------- ear plate draw-in ---------- */
-.notch__cell svg path, .notch__cell svg circle{
-  stroke-dasharray:340; stroke-dashoffset:340;
-}
-.rv.in .notch__cell svg path, .rv.in .notch__cell svg circle{
-  animation:drawline 1.5s var(--ease) forwards;
-}
-.rv.in .notch__cell:nth-child(2) svg *{ animation-delay:.18s }
-.rv.in .notch__cell:nth-child(3) svg *{ animation-delay:.36s }
-@keyframes drawline{ to{ stroke-dashoffset:0 } }
-
-@media (prefers-reduced-motion: reduce){
-  .tl__row::after{ transform:scale(1) !important }
-  .chainfig svg > g{ opacity:1 !important; transform:none !important }
-  .record__ft i{ animation:none }
-  .notch__cell svg path, .notch__cell svg circle{ stroke-dashoffset:0 !important; animation:none !important }
-}
+/* ---------- overview ---------- */
+.overview{ display:grid; gap:32px; }
+@media (min-width:768px){ .overview{ grid-template-columns:200px 1fr; gap:80px; } }
+.overview .rule{ width:32px; height:2px; background:var(--accent); margin-top:20px; }
+.overview p{ margin:0; font-size:17px; font-weight:300; line-height:1.88; color:var(--charcoal-light); }
+.overview p + p{ margin-top:28px; }
 
 /* ---------- reveal ---------- */
-.rv{ opacity:0; transform:translateY(18px); }
-.rv.in{ opacity:1; transform:none; transition:opacity .8s var(--ease), transform .8s var(--ease); }
-.rv.in.d1{ transition-delay:.08s } .rv.in.d2{ transition-delay:.16s } .rv.in.d3{ transition-delay:.24s }
+.rv{ opacity:0; transform:translateY(28px); transition:opacity .55s var(--ease),transform .55s var(--ease); }
+.rv.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){ .rv{ opacity:1; transform:none; transition:none; } }
 
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior:auto }
-  .rv,.link{ opacity:1 !important; transform:none !important; transition:none !important }
-  .link::before{ transform:scaleX(1) !important }
-  .scrollcue i{ animation:none }
+/* ---------- shared blocks ---------- */
+.rowlist > *{ border-top:1px solid var(--border); }
+.beat{ display:grid; gap:12px 32px; padding:28px 0; }
+@media (min-width:768px){ .beat{ grid-template-columns:52px minmax(0,1fr) minmax(0,1.25fr); } }
+.beat .n{ font-family:var(--font-display); font-size:26px; font-weight:300; color:var(--accent); line-height:1; padding-top:4px; font-variant-numeric:tabular-nums; }
+.beat h3{ font-size:21px; font-weight:400; line-height:1.24; color:var(--charcoal); }
+
+.ledrow{ display:grid; gap:8px 36px; padding:32px 0; align-items:baseline; }
+@media (min-width:768px){ .ledrow{ grid-template-columns:minmax(0,190px) minmax(0,1fr) minmax(0,1.1fr); } }
+.ledrow .fig{ font-family:var(--font-display); font-size:clamp(30px,4vw,44px); font-weight:300; line-height:1; letter-spacing:-.02em; color:var(--charcoal); font-variant-numeric:tabular-nums; }
+.ledrow .fig.hot{ color:var(--accent); }
+.ledrow .lab{ margin:0; font-size:14px; font-weight:300; line-height:1.6; color:var(--charcoal); }
+
+.bars .bar{ display:grid; grid-template-columns:minmax(74px,110px) 1fr auto; align-items:center; gap:16px; }
+.bars .bar + .bar{ margin-top:16px; }
+.bars .bl{ font-size:11px; letter-spacing:.06em; color:var(--muted); }
+.bars .track{ position:relative; height:7px; background:var(--border); }
+.bars .fill{ position:absolute; inset-block:0; left:0; width:0; background:var(--border-strong); transition:width 1.1s var(--ease); }
+.bars .fill.hot{ background:var(--accent); }
+.bars .bv{ font-size:12px; text-align:right; min-width:66px; color:var(--charcoal); font-variant-numeric:tabular-nums; }
+.bars .bv.hot{ color:var(--accent); }
+
+.verdict{
+  margin-top:64px; padding:40px 0 44px;
+  border-top:1px solid var(--border-strong); border-bottom:1px solid var(--border-strong);
+  display:grid; gap:32px;
 }
+@media (min-width:768px){ .verdict{ grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:64px; } }
+.verdict .fig{ margin:0; font-family:var(--font-display); font-size:clamp(28px,3.6vw,42px); font-weight:300; line-height:1.05; letter-spacing:-.02em; color:var(--accent); }
+.verdict .label{ margin-top:16px; }
+.verdict .body{ align-self:center; }
+
+.tlrow{ display:grid; gap:8px 36px; padding:24px 0; }
+@media (min-width:768px){ .tlrow{ grid-template-columns:130px minmax(0,1fr); } }
+.tlrow .y{ padding-top:4px; }
+.tlrow h4{ font-size:18px; margin-bottom:8px; color:var(--charcoal); }
+.tlrow.good .y,.tlrow.good h4{ color:var(--accent); }
+.tlrow.now{ border-top-color:var(--accent); }
+.tlrow.now .y,.tlrow.now h4{ color:var(--accent); }
+.costrow .k{ font-family:var(--font-display); font-size:30px; font-weight:300; line-height:1; color:var(--accent); font-variant-numeric:tabular-nums; }
+
+.entry{ display:grid; gap:20px 36px; padding:40px 0; }
+@media (min-width:768px){ .entry{ grid-template-columns:56px minmax(0,1.7fr) minmax(0,1fr); } }
+.entry .n{ font-family:var(--font-display); font-size:30px; font-weight:300; line-height:1; color:var(--border-strong); font-variant-numeric:tabular-nums; }
+.entry h3{ font-size:22px; font-weight:400; line-height:1.26; margin-bottom:16px; color:var(--charcoal); }
+.entry .pull{ margin:0; font-family:var(--font-display); font-style:italic; font-size:19px; font-weight:300; line-height:1.44; color:var(--accent); }
+
+.grid12{ display:grid; gap:0 40px; }
+@media (min-width:768px){ .grid12{ grid-template-columns:repeat(12,1fr); } .sp7{ grid-column:span 7; } .sp5{ grid-column:span 5; } .sp6{ grid-column:span 6; } }
+.cell{ padding:32px 0; border-top:1px solid var(--border-strong); height:100%; }
+.cell h3{ font-size:21px; font-weight:400; line-height:1.28; margin:16px 0 12px; color:var(--charcoal); }
+.cell .label{ color:var(--accent); }
+
+.flip{
+  margin-top:64px; padding:36px 28px; border:1px solid var(--accent); background:var(--cream);
+  display:flex; flex-wrap:wrap; align-items:center; gap:16px 28px;
+}
+.flip s{ font-family:var(--font-display); font-size:19px; font-weight:300; color:var(--faint); }
+.flip b{ font-family:var(--font-display); font-size:19px; font-weight:400; color:var(--accent); }
+
+.chain{ display:grid; gap:0 40px; }
+@media (min-width:640px){ .chain{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .chain{ grid-template-columns:repeat(3,1fr); } }
+.chain li{ list-style:none; padding:28px 0; border-top:1px solid var(--border); height:100%; }
+.chain .hd{ display:flex; align-items:baseline; gap:12px; margin-bottom:12px; }
+.chain h3{ font-size:20px; font-weight:400; color:var(--charcoal); }
+
+.record{ margin:0; border:1px solid var(--border-strong); background:var(--cream); align-self:start; }
+.record figcaption{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:16px 24px; border-bottom:1px solid var(--border); }
+.record figcaption b{ font-size:12px; font-weight:500; color:var(--accent); font-variant-numeric:tabular-nums; }
+.record dl{ margin:0; padding:4px 24px; }
+.record .fld{ display:grid; grid-template-columns:86px minmax(0,1fr); gap:16px; padding:12px 0; border-top:1px solid var(--border); }
+.record .fld:first-child{ border-top:0; }
+.record dt{ font-size:9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--faint); padding-top:3px; }
+.record dd{ margin:0; font-size:13px; font-weight:300; color:var(--charcoal); }
+.record .ft{ display:flex; align-items:center; gap:10px; padding:16px 24px; border-top:1px solid var(--border); background:var(--cream-deep); }
+.record .ft i{ width:5px; height:5px; border-radius:50%; background:var(--accent); flex:none; }
+
+.prow{ display:grid; gap:20px 36px; padding:40px 0; }
+@media (min-width:768px){ .prow{ grid-template-columns:minmax(0,.8fr) minmax(0,.7fr) minmax(0,1.6fr); } }
+.prow .place{ font-family:var(--font-display); font-size:26px; color:var(--charcoal); margin:0; }
+.prow .stat{ font-family:var(--font-display); font-size:clamp(26px,3vw,34px); font-weight:300; line-height:1; color:var(--accent); margin:0; font-variant-numeric:tabular-nums; }
+
+.goal{ display:grid; gap:12px 32px; padding:28px 0; }
+@media (min-width:768px){ .goal{ grid-template-columns:46px minmax(0,1.35fr) minmax(0,1fr); } }
+.goal .n{ font-family:var(--font-display); font-size:24px; font-weight:300; line-height:1; color:var(--border-strong); padding-top:4px; font-variant-numeric:tabular-nums; }
+.goal p.g{ margin:0; font-family:var(--font-display); font-size:20px; font-weight:400; line-height:1.34; color:var(--charcoal); }
+
+.cols3{ display:grid; gap:0 40px; }
+@media (min-width:768px){ .cols3{ grid-template-columns:repeat(3,1fr); } }
+.cols3 > div{ padding:32px 0; border-top:1px solid var(--border-strong); height:100%; }
+.cols3 h3{ font-size:21px; font-weight:400; line-height:1.28; margin:12px 0; color:var(--charcoal); }
+.shape > div{ padding:28px 0; border-top:1px solid var(--border); }
+.shape .num{ margin:16px 0; font-family:var(--font-display); font-size:clamp(30px,3.6vw,40px); font-weight:300; line-height:1; color:var(--charcoal); font-variant-numeric:tabular-nums; }
+
+.cta{
+  display:inline-block; margin-top:56px; padding:15px 34px; border-radius:2px;
+  background:var(--accent); color:var(--cream); text-decoration:none;
+  font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  transition:opacity .18s;
+}
+.cta:hover{ opacity:.86; }
+
+.srclist{ display:grid; gap:12px 36px; margin:0; padding:0; list-style:none; }
+@media (min-width:640px){ .srclist{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .srclist{ grid-template-columns:repeat(3,1fr); } }
+.srclist li{ display:grid; grid-template-columns:22px minmax(0,1fr); gap:8px; }
+.srclist .i{ font-size:11px; color:var(--accent); padding-top:2px; font-variant-numeric:tabular-nums; }
+.srclist a{ font-size:12px; font-weight:300; color:var(--muted); text-decoration:none; transition:opacity .18s; }
+.srclist a:hover{ opacity:.6; }
+
+/* ---------- team ---------- */
+.team{ display:grid; gap:28px; }
+@media (min-width:640px){ .team{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .team{ grid-template-columns:repeat(3,1fr); } }
+.tcard{ background:var(--cream); border:1px solid var(--border); padding:32px; }
+.tcard .av{
+  width:44px; height:44px; border-radius:50%; background:var(--charcoal); color:var(--cream);
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:700; letter-spacing:.05em; margin-bottom:20px;
+}
+.tcard .nm{ font-size:16px; font-weight:500; color:var(--charcoal); margin-bottom:4px; }
+.tcard .em{ font-size:12px; color:var(--muted); text-decoration:none; }
+
+/* ---------- coverage threshold ---------- */
+.cov-head{ display:flex; flex-direction:column; gap:32px; padding-bottom:44px; }
+@media (min-width:640px){ .cov-head{ flex-direction:row; align-items:flex-end; gap:56px; } }
+.cov-num{ font-family:var(--font-display); font-size:clamp(54px,10vw,88px); font-weight:300; line-height:1; color:var(--charcoal); font-variant-numeric:tabular-nums; }
+.cov-num.past{ color:var(--accent); }
+.cov-num sup{ font-size:.32em; vertical-align:super; margin-left:2px; }
+.cov-slot{ flex:1; padding-bottom:16px; }
+.cov-wrap{ position:relative; }
+.cov-range{ -webkit-appearance:none; appearance:none; display:block; width:100%; height:20px; background:transparent; cursor:pointer; }
+.cov-range::-webkit-slider-runnable-track{ height:3px; border-radius:2px; background:linear-gradient(to right,var(--accent) 0 var(--pct),var(--border-strong) var(--pct) 100%); }
+.cov-range::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:15px; height:15px; margin-top:-6px; border-radius:50%; background:var(--cream); border:2px solid var(--accent); box-shadow:0 1px 5px rgba(26,26,26,.18); transition:transform .16s var(--ease); }
+.cov-range:active::-webkit-slider-thumb{ transform:scale(1.14); }
+.cov-range::-moz-range-track{ height:3px; border-radius:2px; background:var(--border-strong); }
+.cov-range::-moz-range-progress{ height:3px; border-radius:2px; background:var(--accent); }
+.cov-range::-moz-range-thumb{ width:13px; height:13px; border-radius:50%; background:var(--cream); border:2px solid var(--accent); box-shadow:0 1px 5px rgba(26,26,26,.18); }
+.cov-range:focus-visible{ outline:2px solid var(--accent); outline-offset:5px; }
+.cov-line{ position:absolute; left:70%; top:-7px; width:1px; height:18px; background:var(--charcoal); opacity:.42; pointer-events:none; }
+.cov-linelab{ position:absolute; left:70%; top:16px; transform:translateX(-50%); white-space:nowrap; pointer-events:none; }
+.cov-panels{ display:grid; gap:1px; border:1px solid var(--border); background:var(--border); }
+@media (min-width:1024px){ .cov-panels{ grid-template-columns:repeat(2,1fr); } }
+.cov-panel{ background:var(--cream); padding:28px; }
+@media (min-width:640px){ .cov-panel{ padding:36px; } }
+.cov-panel .hd{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:28px; }
+.cov-panel .hd span{ font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.cov-verdict{ margin:36px 0 0; max-width:60ch; font-family:var(--font-display); font-size:clamp(20px,2.7vw,27px); font-weight:300; line-height:1.42; color:var(--charcoal); }
+.cov-verdict.past{ color:var(--accent); }
+.cov-key{ display:flex; flex-wrap:wrap; gap:24px; margin-top:24px; }
+.cov-key span{ display:flex; align-items:center; gap:8px; font-size:10px; color:var(--muted); }
+
+/* ---------- ticker + footer ---------- */
+.ticker{ padding:30px 0; overflow:hidden; background:var(--cream-deep); border-block:1px solid var(--border); }
+.ticker .run{ display:flex; white-space:nowrap; animation:marquee 38s linear infinite; }
+.ticker .set{ display:flex; align-items:center; flex:none; }
+.ticker span{ padding-inline:28px; font-size:10px; letter-spacing:.18em; text-transform:uppercase; font-weight:500; color:var(--muted); }
+.ticker i{ font-style:normal; color:var(--accent); font-size:12px; }
+@keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@media (prefers-reduced-motion:reduce){ .ticker .run{ animation:none; } }
+
+footer.site{ padding:48px var(--gut); background:var(--cream-deep); }
+.fgrid{ display:grid; gap:40px; max-width:1200px; margin-inline:auto; }
+@media (min-width:640px){ .fgrid{ grid-template-columns:1.6fr 1fr 1fr; gap:64px; } }
+.fgrid .wordmark{ font-family:var(--font-display); font-size:26px; font-weight:600; letter-spacing:.05em; color:var(--charcoal); margin-bottom:16px; }
+.fgrid .wordmark b{ color:var(--accent); font-weight:600; }
+.fgrid p{ margin:0; font-size:13px; font-weight:300; line-height:1.8; color:var(--muted); max-width:34ch; }
+.flinks{ display:flex; flex-direction:column; gap:14px; margin-top:24px; }
+.flinks a{ font-size:13px; font-weight:300; color:var(--muted); text-decoration:none; transition:opacity .18s; }
+.flinks a:hover{ opacity:.6; }
+.fbase{
+  max-width:1200px; margin:52px auto 0; padding-top:28px; border-top:1px solid var(--border);
+  display:flex; flex-direction:column; gap:8px; font-size:10px; color:var(--faint);
+}
+@media (min-width:640px){ .fbase{ flex-direction:row; justify-content:space-between; align-items:center; gap:0; } }
+.disclaimer{ margin-top:24px; font-size:11px; line-height:1.7; color:var(--faint); max-width:46ch; }
 </style>
 </head>
 <body>
-<div class="page">
 
-<div class="grain" aria-hidden="true"></div>
-
+<!-- ============ MASTHEAD ============ -->
 <header class="masthead">
-  <div class="wrap masthead__in">
-    <span class="mark">Love&nbsp;<b>Paws</b>&nbsp;Foundation</span>
-    <span class="tag">Demo</span>
-    <nav>
-      <a href="#storyline">Storyline</a>
-      <a href="#threshold">The 70% line</a>
-      <a href="#failures">Failures</a>
-      <a href="#model">The model</a>
-      <a href="#precedents">Proof</a>
-      <a href="#app">The app</a>
-      <a href="#ask">The ask</a>
-    </nav>
-    <button class="themer" id="themer" type="button" aria-label="Switch colour theme">Theme</button>
-  </div>
-  <i class="prog" id="prog" aria-hidden="true"></i>
+  <a class="mark" href="#top">Love&nbsp;<b>Paws</b></a>
+  <nav class="mnav">
+    <a href="#scale">The scale</a>
+    <a href="#threshold">The 70% line</a>
+    <a href="#failures">Failures</a>
+    <a href="#model">The model</a>
+    <a href="#proof">Proof</a>
+    <a href="#clock">Policy</a>
+    <a href="#ask">The ask</a>
+  </nav>
 </header>
+<i class="accentbar" aria-hidden="true"></i>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
-  <canvas id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="hero__grid" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="eyebrow">Field note 01 / Stray management in India</p>
-    <h1>We are not short of money. We are short of a <span class="sig">boundary</span>.</h1>
-    <div class="hero__foot">
-      <p class="lede">India runs sterilisation programmes without a count, without a threshold and without proof. Love Paws Foundation proposes the opposite: a defined area, a measured population, and every animal traceable from catch to release.</p>
-      <p class="scrollcue"><i></i> Scroll</p>
+<section class="hero" id="top">
+  <div aria-hidden="true">
+    <i class="blob" style="top:8%;left:6%;width:clamp(220px,26vw,420px);height:clamp(220px,26vw,420px)"></i>
+    <i class="blob" style="top:62%;left:2%;width:clamp(180px,20vw,340px);height:clamp(180px,20vw,340px)"></i>
+    <i class="blob" style="top:18%;left:82%;width:clamp(260px,30vw,480px);height:clamp(260px,30vw,480px)"></i>
+    <i class="blob" style="top:70%;left:78%;width:clamp(220px,26vw,420px);height:clamp(220px,26vw,420px)"></i>
+  </div>
+  <div class="ghost" aria-hidden="true">01</div>
+  <div class="wrap" style="position:relative;z-index:10">
+    <div class="crumb rv">
+      <span>Field note</span><span style="color:var(--hairline-faint)">/</span>
+      <span>Stray management in India</span><span style="color:var(--hairline-faint)">/</span>
+      <span class="cur">Overview</span>
+    </div>
+    <div class="eyebrow rv"><i></i><span>01 — Love Paws Foundation</span></div>
+    <h1 class="rv">Humane, measurable<br><em>stray management</em></h1>
+    <p class="sub rv">A defined area, a measured population, and every animal traceable from catch to release</p>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="band">
+  <div class="wrap overview">
+    <div class="rv">
+      <p class="label">Overview</p>
+      <div class="rule"></div>
+    </div>
+    <div>
+      <p class="rv">Love Paws Foundation exists because the discipline that decides whether any piece of infrastructure survives its first five years — draw a boundary, measure a baseline inside it, pay against a verified outcome rather than a reported effort — has never been applied to stray animal management in India.</p>
+      <p class="rv">India runs sterilisation programmes without a count, without a threshold and without proof. Roughly 6.2 crore free-roaming dogs against an official census of 1.53 crore. 47.5 lakh reported dog bites in 2025. No national dashboard that can name a single locality as finished. Money is not the binding constraint. The missing piece is that nobody owns a boundary, and nothing is verified.</p>
+      <p class="rv">So we propose the opposite of a charity campaign. A defined zone. A measured population as the denominator. Every animal traceable from catch to release on a record that cannot be faked, and payment released only when the chain is complete. What follows is the full argument, the evidence behind it, and the ask.</p>
     </div>
   </div>
 </section>
 
-<hr class="hr">
+<!-- ============ THESIS ============ -->
+<section class="band deep">
+  <div class="wrap">
+    <p class="label rv" style="margin-bottom:32px">Love Paws Foundation / the argument</p>
+    <p class="rv" style="font-family:var(--font-display);font-size:clamp(36px,6.4vw,76px);font-weight:300;line-height:1.03;letter-spacing:-.02em;max-width:17ch;margin:0;color:var(--charcoal)">
+      We are not short of money. We are short of a <em style="font-style:italic;color:var(--accent)">boundary</em>.
+    </p>
+    <p class="rv" style="margin:44px 0 0;max-width:64ch;font-size:17px;font-weight:300;line-height:1.82;color:var(--charcoal-light)">
+      India runs sterilisation programmes without a count, without a threshold and without proof. Love Paws Foundation proposes the opposite: a defined area, a measured population, and every animal traceable from catch to release.
+    </p>
+  </div>
+</section>
 
 <!-- ============ STORYLINE ============ -->
-<section class="pad storyline" id="storyline">
+<section class="band">
   <div class="wrap">
-    <p class="eyebrow rv">The storyline</p>
-    <h2 class="rv d1">The argument, in six beats.</h2>
-    <p class="lede rv d2" style="margin-block:1.2rem 0">India is not failing at stray management because it is spending too little. It is failing because it spends without a boundary, without a threshold, and without proof.</p>
-
-    <ol class="beats rv d2">
-      <li><a class="beat" href="#scale">
-        <span class="beat__n">Beat 1</span>
-        <span class="beat__t">Nobody knows the number</span>
-        <span class="beat__c">No reliable national count, no state-wise totals, no dashboard. Every plan built on top of this is a guess.</span>
-      </a></li>
-      <li><a class="beat" href="#threshold">
-        <span class="beat__n">Beat 2</span>
-        <span class="beat__t">The 70 per cent line is biology, not opinion</span>
-        <span class="beat__c">Below the threshold, survivors breed back faster than the programme cuts. Sixty-nine per cent is close to zero.</span>
-      </a></li>
-      <li><a class="beat" href="#arithmetic">
-        <span class="beat__n">Beat 3</span>
-        <span class="beat__t">Money spread thin buys nothing</span>
-        <span class="beat__c">Any budget spread evenly across a city closes zero areas. The same budget inside one boundary closes it permanently.</span>
-      </a></li>
-      <li><a class="beat" href="#failures">
-        <span class="beat__n">Beat 4</span>
-        <span class="beat__t">The dog that came back</span>
-        <span class="beat__c">Paying per animal caught produces double billing, wrong-locality releases and skipped recovery. The wrong unit of payment creates every failure downstream.</span>
-      </a></li>
-      <li><a class="beat" href="#proof">
-        <span class="beat__n">Beat 5</span>
-        <span class="beat__t">It has already been done, in India</span>
-        <span class="beat__c">Goa, Jaipur, Sikkim and Ahmedabad each got there with a map, a phone and one rule: finish the polygon. The demonstrations exist. The repeatable format does not.</span>
-      </a></li>
-      <li><a class="beat" href="#bhag">
-        <span class="beat__n">Beat 6</span>
-        <span class="beat__t">The Love Paws bet</span>
-        <span class="beat__c">Take one area, close it out past the threshold with every animal traceable, publish the evidence, and hand the format to policy.</span>
-      </a></li>
-    </ol>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">The storyline</p>
+      <h2 class="h2">The argument, in six <em>beats.</em></h2>
+      <p class="lede">India is not failing at stray management because it is spending too little. It is failing because it spends without a boundary, without a threshold, and without proof.</p>
+    </div>
+    <ol class="rowlist" id="beats" style="margin:56px 0 0;padding:0;list-style:none"></ol>
   </div>
 </section>
-
-<hr class="hr">
 
 <!-- ============ SCALE ============ -->
-<section class="pad" id="scale">
+<section class="band deep" id="scale">
   <div class="wrap">
-    <p class="eyebrow rv">01 / The scale</p>
-    <h2 class="rv d1">The number nobody owns.</h2>
-    <p class="lede rv d2" style="margin-block-start:1.4rem">There has been no reliable national count of free-roaming dogs. The Ministry has told Parliament it does not hold state-wise sterilisation totals, and no national dashboard tracks coverage. Every plan built on top of this is a guess.</p>
-
-    <div class="ledger rv d2">
-      <div class="row">
-        <div class="row__fig" data-count="6.2" data-dec="1" data-suffix=" cr">0 cr</div>
-        <div class="row__lab">Free-roaming dogs in India, independent estimate</div>
-        <div class="note">Last official exercise was the 2019 Livestock Census, widely treated as an undercount.</div>
-      </div>
-      <div class="row">
-        <div class="row__fig is-sig" data-count="4748478">0</div>
-        <div class="row__lab">Reported dog bite cases in 2025</div>
-        <div class="note">Up roughly 10 lakh on 2024, when 37,17,336 cases were recorded by the NCDC.</div>
-      </div>
-      <div class="row">
-        <div class="row__fig" data-count="5726">0<small>/ year</small></div>
-        <div class="row__lab">Estimated human rabies deaths, ICMR</div>
-        <div class="note">India carries roughly 36 per cent of the global rabies death toll.</div>
-      </div>
-      <div class="row">
-        <div class="row__fig" data-count="8">0</div>
-        <div class="row__lab">Animal Birth Control centres serving all of Mumbai</div>
-        <div class="note">Against a city population counted at 90,757 dogs and over 1.28 lakh bites in 2024.</div>
-      </div>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">01 / The scale</p>
+      <h2 class="h2">The number nobody <em>owns.</em></h2>
+      <p class="lede">There has been no reliable national count of free-roaming dogs. The Ministry has told Parliament it does not hold state-wise sterilisation totals, and no national dashboard tracks coverage. Every plan built on top of this is a guess.</p>
     </div>
+    <div class="rowlist" id="ledger" style="margin-top:56px"></div>
 
-    <div class="contrast rv">
-      <p class="note" style="margin:0 0 .6rem">Human rabies deaths, 2024: what was reported against what is estimated.</p>
-      <div class="bar">
-        <span class="bar__lab">Reported</span>
-        <span class="bar__track"><span class="bar__fill a" data-w="0.94"></span></span><span class="bar__val">54</span>
-      </div>
-      <div class="bar">
-        <span class="bar__lab">Estimated</span>
-        <span class="bar__track"><span class="bar__fill b" data-w="88"></span></span><span class="bar__val">5,726</span>
-      </div>
-      <p class="note" style="margin:.6rem 0 0">A hundredfold gap. We are not measuring the thing we claim to be solving.</p>
-    </div>
+    <div style="display:grid;gap:48px;margin-top:64px" id="scalebars"></div>
   </div>
 </section>
-
-<hr class="hr">
-
-<!-- ============ CENSUS + BURDEN ============ -->
-<section class="pad" id="count">
-  <div class="wrap">
-    <p class="eyebrow rv">01b / The count</p>
-    <h2 class="rv d1">The official number says the problem is shrinking.</h2>
-    <p class="lede rv d2" style="margin-block-start:1.3rem">India's Livestock Census counted 1.71 crore stray dogs in 2012 and 1.53 crore in 2019, a decline of roughly 11 per cent. Over the same period, reported dog bites rose relentlessly. Independent ecological estimates put the free-roaming population near 6.2 crore, four times the official figure.</p>
-
-    <div class="contrast rv">
-      <p class="note" style="margin:0 0 .9rem">Stray dog population, official count against independent estimate.</p>
-      <div class="bar">
-        <span class="bar__lab">2012 census</span>
-        <span class="bar__track"><span class="bar__fill a" data-w="27.6"></span></span><span class="bar__val">1.71 crore</span>
-      </div>
-      <div class="bar">
-        <span class="bar__lab">2019 census</span>
-        <span class="bar__track"><span class="bar__fill a" data-w="24.7"></span></span><span class="bar__val">1.53 crore</span>
-      </div>
-      <div class="bar">
-        <span class="bar__lab">Independent</span>
-        <span class="bar__track"><span class="bar__fill b" data-w="100"></span></span><span class="bar__val">≈ 6.2 crore</span>
-      </div>
-      <p class="note" style="margin:.9rem 0 0">Both cannot be true. Until one of them is settled, no coverage percentage anyone quotes has a denominator, and a programme cannot report progress against a number it does not have.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:clamp(1.5rem,4vw,3.5rem);margin-block-start:3.2rem">
-      <div class="rv">
-        <h3>Where the burden actually sits</h3>
-        <p class="body" style="margin-block-start:.8rem">Five states carried roughly half of India's reported dog bites in 2024. Maharashtra alone recorded more bites than most countries record in a decade. This is the argument for sequencing: the map is not uniform, so the money should not be either.</p>
-      </div>
-      <div class="contrast rv d1" style="margin:0">
-        <p class="note" style="margin:0 0 .9rem">Reported dog bite cases by state, 2024.</p>
-        <div class="bar"><span class="bar__lab">Maharashtra</span><span class="bar__track"><span class="bar__fill b" data-w="100"></span></span><span class="bar__val">4,85,345</span></div>
-        <div class="bar"><span class="bar__lab">Tamil Nadu</span><span class="bar__track"><span class="bar__fill b" data-w="99"></span></span><span class="bar__val">4,80,427</span></div>
-        <div class="bar"><span class="bar__lab">Gujarat</span><span class="bar__track"><span class="bar__fill b" data-w="81"></span></span><span class="bar__val">3,92,837</span></div>
-        <div class="bar"><span class="bar__lab">Karnataka</span><span class="bar__track"><span class="bar__fill b" data-w="74"></span></span><span class="bar__val">3,61,494</span></div>
-        <div class="bar"><span class="bar__lab">Bihar</span><span class="bar__track"><span class="bar__fill b" data-w="54"></span></span><span class="bar__val">2,63,930</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
 
 <!-- ============ THRESHOLD ============ -->
-<div class="wrap thintro" id="threshold">
-  <p class="eyebrow rv">02 / The threshold</p>
-  <h2 class="rv d1">Sixty-nine per cent is not almost.</h2>
-  <p class="lede rv d2">Population stabilisation requires sustained sterilisation coverage of about 70 per cent of the dogs inside a defined area. The Centre's own advisory to states says the same. Below that line, the survivors breed back faster than the programme cuts. Keep scrolling and watch what a partial programme actually buys.</p>
-</div>
-<section class="threshold">
-  <div class="threshold__pin">
-    <div class="wrap thgrid">
-      <div>
-        <p class="eyebrow">Zone coverage, live</p>
-        <div class="readout">
-          <div class="readout__num" id="covNum">0<sup>%</sup></div>
-          <div class="covbar">
-            <span class="covbar__fill" id="covFill"></span>
-            <span class="covbar__mark"></span>
-          </div>
-          <p class="verdict" id="verdict">Coverage in this zone: nil. The population grows straight through the programme.</p>
-        </div>
-      </div>
-      <div class="panels">
-        <div class="panel">
-          <h3>Zone 04B / 168 dogs</h3>
-          <canvas id="mapCanvas"></canvas>
-        </div>
-        <div class="panel panel--curve">
-          <h3>Population, next 6 years</h3>
-          <canvas id="curveCanvas"></canvas>
-        </div>
-        <p class="note panels__foot">Illustrative projection. It shows direction and threshold behaviour, not a forecast for any specific ward.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<!-- ============ MONEY ============ -->
-<section class="pad" id="arithmetic">
+<section class="band" id="threshold">
   <div class="wrap">
-    <p class="eyebrow rv">03 / The arithmetic</p>
-    <h2 class="rv d1">Spread thin, any budget buys nothing.</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:clamp(1.5rem,4vw,3.5rem);margin-block-start:1.8rem">
-      <div class="rv d1">
-        <p class="body">Roughly 6.2 crore dogs. Seventy per cent coverage means on the order of <strong>4.3 crore surgeries</strong>. At the Centre's revised support of <strong>₹800 per dog</strong>, that is thousands of crores of work, and real delivered cost per surgery runs higher once catching, transport, three days of post-operative care and release are counted.</p>
-        <p class="body">Against that arithmetic, central disbursement under the AWBI birth control scheme was often <strong>under ₹50 lakh a year</strong> before 2023. Municipal budgets are small too: BMC has allocated about ₹23 crore to sterilise 45,000 dogs a year.</p>
-      </div>
-      <div class="rv d2">
-        <p class="lede uline" style="font-style:normal">The conclusion is not "give us more money".</p>
-        <p class="body" style="margin-block-start:1rem">Any finite budget, spread evenly across a city, closes zero areas. The same budget, concentrated inside one boundary until it crosses 70 per cent, closes that area permanently. Coverage is not a percentage of money spent. It is a percentage of a defined map.</p>
-      </div>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">02 / The threshold</p>
+      <h2 class="h2">Sixty-nine per cent is not <em>almost.</em></h2>
+      <p class="lede">Population stabilisation requires sustained sterilisation coverage of about 70 per cent of the dogs inside a defined area. The Centre's own advisory to states says the same. Below that line, the survivors breed back faster than the programme cuts.</p>
+      <span class="srcs" style="margin-top:32px" data-src="awbi,nature"></span>
     </div>
 
-    <div class="rv" style="margin-block-start:3.4rem">
-      <h3>What one sterilisation actually costs</h3>
-      <p class="body" style="margin-block-start:.8rem">Three published figures, which do not agree, and the gap between them is the whole problem.</p>
-      <div class="tl" style="margin-block-start:1.6rem">
-        <div class="tl__row">
-          <span class="tl__y">₹800</span>
-          <div><h4>Central support per dog</h4><p>The revised 2025 scheme, up from ₹445. This is what the Centre contributes, not what the work costs.</p></div>
+    <div style="margin-top:48px">
+      <div class="cov-head">
+        <div style="flex:none">
+          <p class="label" style="margin-bottom:12px">Coverage in this zone</p>
+          <div class="cov-num" id="covNum">38<sup>%</sup></div>
         </div>
-        <div class="tl__row">
-          <span class="tl__y">₹960</span>
-          <div><h4>Ahmedabad, delivered</h4><p>1,88,828 sterilisations against ₹18.11 crore of spending. Close to the surgical cost alone, on a programme now approaching 90 per cent coverage.</p></div>
-        </div>
-        <div class="tl__row">
-          <span class="tl__y">₹5,111</span>
-          <div><h4>Mumbai, implied by budget</h4><p>₹23 crore allocated against a target of 45,000 sterilisations a year. The true programme cost per animal, once catching, transport, post-operative care, release and overheads are counted.</p></div>
+        <div class="cov-slot">
+          <label class="label" for="cov" style="display:block;margin-bottom:20px">Drag to change coverage</label>
+          <div class="cov-wrap">
+            <input class="cov-range" id="cov" type="range" min="0" max="100" step="1" value="38" style="--pct:38%">
+            <i class="cov-line" aria-hidden="true"></i>
+            <span class="label cov-linelab" aria-hidden="true" style="color:var(--muted)">70 · the line</span>
+          </div>
         </div>
       </div>
-      <p class="note rv" style="margin-block-start:1.2rem;max-width:70ch">Central support therefore covers somewhere between a sixth and all of the cost, depending on whether anyone counts the parts of the job that are not the surgery. The parts nobody counts are exactly the parts that fail: catching, recovery and release.</p>
-    </div>
 
-    <div class="verdictbox rv">
-      <p class="verdictbox__k">₹4,200 to ₹22,000 crore<span>Arithmetic for national 70 per cent coverage</span></p>
-      <p>Roughly 4.3 crore surgeries, priced at the delivered range above. This is not a funding request, it is a reason to stop pretending the country can be covered uniformly. No plausible budget does every ward at once, which is precisely why the money has to finish one boundary before it moves to the next.</p>
+      <div class="cov-panels">
+        <div class="cov-panel">
+          <div class="hd"><p class="label">Zone 04B / 168 dogs</p><span id="covDone">64 sterilised</span></div>
+          <svg id="zoneMap" viewBox="0 0 224 192" role="img" aria-label="Zone map of 168 dogs, sterilised ones filled"></svg>
+        </div>
+        <div class="cov-panel">
+          <div class="hd"><p class="label">Population, next six years</p><span id="covEnd">270 dogs by year 6</span></div>
+          <svg id="curve" viewBox="0 0 340 190" style="overflow:visible" role="img" aria-label="Six year population projection"></svg>
+          <div class="cov-key">
+            <span><i style="width:15px;border-top:1.2px dashed var(--border-strong)"></i> No programme</span>
+            <span><i id="keySwatch" style="width:15px;height:2px;background:var(--charcoal)"></i> At <b id="keyPct" style="font-weight:400">38</b>% coverage</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="cov-verdict" id="covVerdict" aria-live="polite"></p>
+      <p class="note" style="margin-top:20px">Illustrative projection. It shows threshold behaviour and direction, not a forecast for any specific ward.</p>
     </div>
   </div>
 </section>
 
-<hr class="hr">
+<!-- ============ ARITHMETIC ============ -->
+<section class="band deep" id="arithmetic">
+  <div class="wrap">
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">03 / The arithmetic</p>
+      <h2 class="h2">Spread thin, any budget buys <em>nothing.</em></h2>
+    </div>
+    <div style="display:grid;gap:40px;margin-top:48px" class="two">
+      <div class="rv">
+        <p class="body">Roughly 6.2 crore dogs. Seventy per cent coverage means on the order of <strong>4.3 crore surgeries</strong>. At the Centre's revised support of <strong>₹800 per dog</strong>, that is thousands of crores of work, and real delivered cost runs higher once catching, transport, three days of post-operative care and release are counted.</p>
+        <p class="body">Against that arithmetic, central disbursement under the AWBI birth control scheme was often under ₹50 lakh a year before 2023. Municipal budgets are small too: BMC has committed about ₹23 crore over three years against a target of 1,35,000 sterilisations, roughly 45,000 a year.</p>
+      </div>
+      <div class="rv">
+        <p style="font-family:var(--font-display);font-style:italic;font-size:clamp(22px,2.9vw,30px);line-height:1.36;font-weight:300;margin:0;color:var(--charcoal)">The conclusion is not &ldquo;give us more money&rdquo;.</p>
+        <p class="body" style="margin-top:24px">Any finite budget, spread evenly across a city, closes zero areas. The same budget, concentrated inside one boundary until it crosses 70 per cent, closes that area permanently. Coverage is not a percentage of money spent. It is a percentage of a defined map.</p>
+      </div>
+    </div>
+
+    <div class="rv" style="margin-top:80px">
+      <h3 style="font-size:25px;margin-bottom:12px;color:var(--charcoal)">What one sterilisation actually costs</h3>
+      <p class="note" style="margin-bottom:40px">Three published figures, which do not agree. The gap between them is the whole problem.</p>
+    </div>
+    <div class="rowlist" id="costs"></div>
+
+    <div class="verdict rv">
+      <div>
+        <p class="fig">₹4,100 to ₹7,300 crore</p>
+        <p class="label">Arithmetic for national 70% coverage</p>
+      </div>
+      <p class="body">Roughly 4.3 crore surgeries, priced across the delivered range above — ₹960 an animal at the bottom, ₹1,704 at the top. This is not a funding request. It is a reason to stop pretending the country can be covered uniformly. No plausible budget does every ward at once, which is precisely why the money has to finish one boundary before it moves to the next.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ============ FAILURES ============ -->
-<section class="pad" id="failures">
+<section class="band" id="failures">
   <div class="wrap">
-    <p class="eyebrow rv">04 / Where it breaks</p>
-    <h2 class="rv d1">Four failures, one root.</h2>
-    <div class="entries rv d1" style="margin-block-start:2.6rem">
-
-      <article class="entry">
-        <div class="entry__n">01</div>
-        <div>
-          <h3>Money without a boundary, and money without a check</h3>
-          <p class="body">Payment is made per animal claimed, against paper records, with no independent verification of identity or release. Audits in Bhopal have surfaced inflated figures, ghost surgeries and substandard facilities. Because no animal carries a durable identity record, a claim is effectively unfalsifiable, and an unfalsifiable claim will always be inflated. Underneath the leakage sits a quieter problem: even honest money, spread uniformly, guarantees sub-threshold coverage everywhere and stabilisation nowhere.</p>
-        </div>
-        <div class="entry__side"><p class="pull">Poor allocation is not only theft. It is also honest money spent without a boundary.</p></div>
-      </article>
-
-      <article class="entry">
-        <div class="entry__n">02</div>
-        <div>
-          <h3>No area is anybody's job to finish</h3>
-          <p class="body">There is no systematic, area-wise ownership of the assignment. Work is measured in animals processed, never in territory closed out, so no area ever reaches the point at which the population stops replacing itself. A city can run a programme for twenty years, process lakhs of animals, and still not be able to name one locality that is finished.</p>
-        </div>
-        <div class="entry__side"><p class="note">Documented gap: no national management information system or real-time dashboard publicly tracks sterilisation or vaccination coverage.</p></div>
-      </article>
-
-      <article class="entry">
-        <div class="entry__n">03</div>
-        <div>
-          <h3>Random catch and release</h3>
-          <p class="body">Dogs are released in the wrong locality, which the ABC Rules 2023 expressly prohibit. Re-caught animals are billed twice. There is no traceability from catch to release and no way to prove an individual animal was ever sterilised, vaccinated or returned home. Without traceability there is no coverage figure, only an invoice.</p>
-        </div>
-        <div class="entry__side"><p class="pull">The unit of payment is the dog caught. That single choice creates every failure downstream.</p></div>
-      </article>
-
-      <article class="entry">
-        <div class="entry__n">04</div>
-        <div>
-          <h3>Centres that cannot carry the load</h3>
-          <p class="body">Municipal bodies cannot find appropriately equipped centres. Mumbai runs eight for a city counted at over ninety thousand dogs. Few fully functional district level ABC centres exist and recognition of the existing ones is incomplete. Under-equipped theatres and compressed recovery windows produce post-operative infection, which is both an animal welfare failure and the fastest way to lose community consent for the whole programme.</p>
-        </div>
-        <div class="entry__side"><p class="note">Add to this a documented shortage of trained veterinary personnel, and catching work handed to the least trained people on the payroll.</p></div>
-      </article>
-
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">04 / Where it breaks</p>
+      <h2 class="h2">Four failures, one <em>root.</em></h2>
     </div>
+    <div class="rowlist" id="failures-list" style="margin-top:56px"></div>
   </div>
 </section>
-
-<hr class="hr">
 
 <!-- ============ MODEL ============ -->
-<section class="pad" id="model">
+<section class="band deep" id="model">
   <div class="wrap">
-    <p class="eyebrow rv">05 / The model</p>
-    <h2 class="rv d1">Fund the map, not the calendar.</h2>
-    <div class="model rv d1">
-      <div class="cell c7">
-        <span class="cell__n">01</span>
-        <h3>Map and define areas with statistics</h3>
-        <p>Divide the territory into micro-zones, a polygon per lane cluster rather than per ward. Each zone carries a baseline: estimated dog count, caregiver contacts, bite incident history, conflict hotspots. Surveyed once, then used as the denominator for everything that follows.</p>
-      </div>
-      <div class="cell c5">
-        <span class="cell__n">02</span>
-        <h3>Budget against zone statistics</h3>
-        <p>Money is committed to a zone with an explicit target: cross 70 per cent inside this boundary, then move. Sequencing follows bite incidence and density, not convenience.</p>
-      </div>
-      <div class="cell c5">
-        <span class="cell__n">03</span>
-        <h3>Technology as the control layer</h3>
-        <p>Every animal gets a record at the moment of catch. The record follows it through surgery, recovery and release. Its by-product is the coverage number that does not currently exist anywhere.</p>
-      </div>
-      <div class="cell c7">
-        <span class="cell__n">04</span>
-        <h3>Track activity and release, and pay on verified outcome</h3>
-        <p>The payment milestone moves from animal caught to animal released, at the recorded catch location, with photographic and GPS proof, after the mandated recovery period. This one change removes most of the leakage without needing a single new regulation.</p>
-      </div>
-      <div class="cell c6">
-        <span class="cell__n">05</span>
-        <h3>Build the centres, the ecosystem, the people</h3>
-        <p>Right-sized surgical capacity with real post-operative recovery space. Trained and certified catchers rather than casual labour. Veterinary protocol and infection audit. Community caregivers integrated as the field network instead of treated as obstructions.</p>
-      </div>
-      <div class="cell c6">
-        <span class="cell__n">06</span>
-        <h3>Vaccination in the same motion</h3>
-        <p>Anti-rabies vaccination rides on the same visit and the same record. Sterilisation is a multi-year population play. Vaccination coverage cuts human deaths within a single season, and auditable data makes the ask to pharmaceutical partners a far easier one.</p>
-      </div>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">05 / The model</p>
+      <h2 class="h2">Fund the map, not the <em>calendar.</em></h2>
+      <p class="lede">Six commitments, each of which exists because one of the failures above exists.</p>
     </div>
-
+    <div class="grid12" id="model-grid" style="margin-top:56px"></div>
     <div class="flip rv">
-      <span>Payment milestone</span>
+      <span class="label" style="flex:none">Payment milestone</span>
       <s>Dog caught</s>
-      <span class="arrow">&rarr;</span>
-      <b>Release verified: geotag + photograph + recovery window</b>
+      <span aria-hidden="true" style="color:var(--accent)">&rarr;</span>
+      <b>Release verified: geotag, photograph, recovery window</b>
     </div>
   </div>
 </section>
 
-<hr class="hr">
-
-<!-- ============ APP ============ -->
-<section class="pad" id="app">
+<!-- ============ CHAIN OF CUSTODY ============ -->
+<section class="band" id="chain">
   <div class="wrap">
-    <p class="eyebrow rv">06 / The platform</p>
-    <h2 class="rv d1">Not an app for donors. A chain of custody.</h2>
-    <p class="lede rv d2" style="margin-block-start:1.3rem">Each stage hands the next one a record it cannot fake. Break any link and the payment does not release.</p>
-    <div class="chain">
-      <article class="link"><span class="link__n">01</span><h3>Catch</h3><p>Geotag, photograph, sex, condition, marking ID. Works offline, syncs later.</p></article>
-      <article class="link"><span class="link__n">02</span><h3>Surgery</h3><p>Vet ID, procedure, vaccination batch, complications logged against the same record.</p></article>
-      <article class="link"><span class="link__n">03</span><h3>Recovery</h3><p>Mandated post-operative window enforced by the workflow, not by trust.</p></article>
-      <article class="link"><span class="link__n">04</span><h3>Release</h3><p>Geotagged and photographed inside a permitted radius of the catch point.</p></article>
-      <article class="link"><span class="link__n">05</span><h3>Verify</h3><p>Complete chain or no claim. Duplicate animals surface automatically.</p></article>
-      <article class="link"><span class="link__n">06</span><h3>Publish</h3><p>Coverage, bites and vaccination by zone, on a dashboard anyone can audit.</p></article>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">06 / The control layer</p>
+      <h2 class="h2">Not an app for donors. A chain of <em>custody.</em></h2>
+      <p class="lede">Every animal gets a record at the moment of catch, and the record follows it through surgery, recovery and release. Its by-product is the coverage number that does not currently exist anywhere in India.</p>
     </div>
-    <p class="note rv" style="margin-block-start:1.6rem;max-width:70ch">Design constraints held throughout: offline first, because field areas have no reliable data. One-hand operable, because the operator is holding a dog. Photograph and GPS as the only accepted evidence. And the polygon, not the animal, as the unit of completion.</p>
+    <ol class="chain" id="chain-list" style="margin:56px 0 0;padding:0"></ol>
 
-    <div class="plates">
-      <figure class="record rv" style="margin:0">
-        <div class="record__hd"><span>Catch record</span><b>LP-04B-0117</b></div>
-        <div class="record__photo">
-          <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-            <ellipse cx="24" cy="38" rx="9" ry="12"/>
-            <ellipse cx="44" cy="26" rx="9" ry="13"/>
-            <ellipse cx="64" cy="26" rx="9" ry="13"/>
-            <ellipse cx="84" cy="38" rx="9" ry="12"/>
-            <ellipse cx="54" cy="71" rx="24" ry="19"/>
-          </svg>
-        </div>
-        <dl class="record__body">
-          <dt>Zone</dt><dd>04B / Sewri lane cluster</dd>
-          <dt>Sex</dt><dd>Female, approx. 2 years</dd>
-          <dt>Caught</dt><dd>12 Aug, 06:42</dd>
-          <dt>Surgery</dt><dd>12 Aug, 09:15 / Vet ID 114</dd>
-          <dt>Vaccine</dt><dd>ARV batch 2291</dd>
-          <dt>Released</dt><dd>15 Aug, 07:10 / 40 m from catch</dd>
-          <dt>Marking</dt><dd>Left ear notched</dd>
-        </dl>
-        <div class="record__ft"><i></i> Chain complete / payment released</div>
+    <div class="rv" style="margin-top:64px;padding-top:40px;border-top:1px solid var(--border);display:grid;gap:40px" id="recordblock">
+      <figure class="record">
+        <figcaption><span class="label">Catch record</span><b>LP-04B-0117</b></figcaption>
+        <dl id="recordfields"></dl>
+        <div class="ft"><i></i><span class="label">Chain complete / payment released</span></div>
       </figure>
+      <div>
+        <h3 style="font-size:23px;margin-bottom:20px;color:var(--charcoal)">One animal, one record, six timestamps</h3>
+        <p class="body">This is the whole system in one card. A claim is payable only when every field is filled by the person who did the work, at the moment they did it, with the phone's own clock and coordinates. A dog caught twice shows up as a duplicate. A dog released a kilometre away fails the radius check. A recovery window cut from three days to three hours fails on the timestamps.</p>
+        <p class="body">None of this requires new law. The ABC Rules already mandate return to the exact original location, ear-notching and record keeping. It requires only that somebody check &mdash; and checking is cheap once the record exists.</p>
+      </div>
+    </div>
 
-      <div class="rv d1">
-        <h3>One animal, one record, six timestamps</h3>
-        <p class="body" style="margin-block-start:.8rem">This is the whole system in one card. A claim is only payable when every field is filled by the person who did the work, at the moment they did it, with the phone's own clock and coordinates. A dog caught twice shows up as a duplicate. A dog released a kilometre away fails the radius check. A recovery window cut from three days to three hours fails on the timestamps.</p>
-        <p class="body">None of this requires new law. The ABC Rules already mandate return to the exact original location, ear-notching and record keeping. It requires only that somebody check, and checking is cheap once the record exists.</p>
-
-        <div class="notch">
-          <p class="note" style="margin:0">The mark the rules already require</p>
-          <div class="notch__grid" role="img" aria-label="Three ear states: unmarked, notched after sterilisation, and notched with a linked record">
-            <div class="notch__cell">
-              <svg viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" style="color:var(--signal)">
-                <path d="M40 6 L64 78 Q64 92 40 92 Q16 92 16 78 Z"/>
-              </svg>
-              <span>Unmarked<br>no record exists</span>
-            </div>
-            <div class="notch__cell">
-              <svg viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" style="color:var(--ink-soft)">
-                <path d="M40 6 L64 78 Q64 92 40 92 Q16 92 16 78 L25.7 49 L35 43 L30.3 35 Z"/>
-              </svg>
-              <span>Notched<br>sterilised, unverifiable</span>
-            </div>
-            <div class="notch__cell">
-              <svg viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" style="color:var(--verified)">
-                <path d="M40 6 L64 78 Q64 92 40 92 Q16 92 16 78 L25.7 49 L35 43 L30.3 35 Z"/>
-                <circle cx="62" cy="26" r="13" stroke-width="2.5"/>
-                <path d="M56 26 L60.5 31 L68 21" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-              <span>Notched and linked<br>provable</span>
-            </div>
-          </div>
-        </div>
+    <div class="rv" style="margin-top:64px;padding-top:40px;border-top:1px solid var(--border);display:grid;gap:40px" id="vaccblock">
+      <div>
+        <p class="label" style="margin-bottom:20px">Why vaccination comes first</p>
+        <p style="font-family:var(--font-display);font-size:clamp(21px,2.7vw,28px);line-height:1.36;font-weight:300;margin:0;color:var(--charcoal)">Two places to cut the same chain.</p>
+      </div>
+      <div>
+        <p class="body">Dogs are the source of about 99 per cent of human rabies cases. <span class="srcs inline" data-src="who"></span> Sterilisation is the long game: it shrinks the reservoir over years, and it is the only thing that ends the cycle rather than managing it. Vaccination is the fast one. Push coverage past 70 per cent inside a zone and human deaths from that zone stop within a single season, whether or not a single dog has been sterilised yet.</p>
+        <p class="body">Which is why they belong on the same visit and in the same record. Every catch is already a vaccination opportunity, and every vaccination round is already a census. Running them separately, as most programmes do, pays the catching cost twice and produces two sets of numbers that never reconcile.</p>
       </div>
     </div>
   </div>
 </section>
-
-<hr class="hr">
-
-<!-- ============ TRANSMISSION CHAIN ============ -->
-<section class="pad" id="chain">
-  <div class="wrap">
-    <p class="eyebrow rv">06b / Why vaccination comes first</p>
-    <h2 class="rv d1">Two places to cut the same chain.</h2>
-    <p class="lede rv d2" style="margin-block-start:1.3rem">Dogs are the source of about 99 per cent of human rabies cases. Once symptoms appear the disease is effectively always fatal. Before that point it is entirely preventable, twice over.</p>
-
-    <div class="chainfig rv d2">
-      <svg viewBox="0 0 900 240" role="img" aria-label="Transmission chain from infected dog to human death, with dog vaccination and post-exposure prophylaxis each able to cut it">
-        <g stroke="var(--rule)" fill="var(--paper-2)" stroke-width="1">
-          <rect x="12" y="62" width="180" height="68"/>
-          <rect x="252" y="62" width="180" height="68"/>
-          <rect x="492" y="62" width="180" height="68"/>
-          <rect x="732" y="62" width="156" height="68"/>
-        </g>
-        <g text-anchor="middle" fill="var(--ink)" style="font-family:var(--font-display);font-size:17px">
-          <text x="102" y="93">Infected dog</text>
-          <text x="342" y="93">Bite</text>
-          <text x="582" y="93">Untreated</text>
-          <text x="810" y="93">Death</text>
-        </g>
-        <g text-anchor="middle" fill="var(--ink-soft)" style="font-family:var(--font-mono);font-size:11px">
-          <text x="102" y="114">the reservoir</text>
-          <text x="342" y="114">47.5 lakh in 2025</text>
-          <text x="582" y="114">no prophylaxis</text>
-          <text x="810" y="114">≈100% fatal</text>
-        </g>
-        <g stroke="var(--ink-soft)" stroke-width="1.5" fill="var(--ink-soft)">
-          <line x1="192" y1="96" x2="244" y2="96"/><polygon points="252,96 242,91 242,101"/>
-          <line x1="432" y1="96" x2="484" y2="96"/><polygon points="492,96 482,91 482,101"/>
-          <line x1="672" y1="96" x2="724" y2="96"/><polygon points="732,96 722,91 722,101"/>
-        </g>
-        <g stroke="var(--verified)" stroke-width="2" stroke-dasharray="6 5">
-          <line x1="222" y1="34" x2="222" y2="158"/>
-          <line x1="462" y1="34" x2="462" y2="158"/>
-        </g>
-        <g text-anchor="middle" fill="var(--verified)" style="font-family:var(--font-mono);font-size:12px;letter-spacing:.08em">
-          <text x="222" y="184">DOG VACCINATION</text>
-          <text x="462" y="184">POST-EXPOSURE PROPHYLAXIS</text>
-        </g>
-        <g text-anchor="middle" fill="var(--ink-soft)" style="font-family:var(--font-mono);font-size:11px">
-          <text x="222" y="204">cuts it at the source,</text>
-          <text x="222" y="220">one season, whole zones</text>
-          <text x="462" y="204">cuts it one person at a time,</text>
-          <text x="462" y="220">only if they reach a clinic in time</text>
-        </g>
-      </svg>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:clamp(1.5rem,4vw,3.5rem);margin-block-start:2.6rem">
-      <p class="body rv">Sterilisation is the long game. It shrinks the reservoir over years, and it is the only thing that ends the cycle rather than managing it. Vaccination is the fast one: push coverage past 70 per cent inside a zone and human deaths from that zone stop within a single season, whether or not a single dog has been sterilised yet.</p>
-      <p class="body rv d1">Which is why they belong on the same visit and in the same record. Every catch is already a vaccination opportunity, and every vaccination round is already a census. Running them separately, as most programmes do, pays the catching cost twice and produces two sets of numbers that never reconcile.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
 
 <!-- ============ PROOF ============ -->
-<section class="pad" id="proof">
-  <div class="wrap proof">
+<section class="band deep" id="proof">
+  <div class="wrap">
     <div class="rv">
-      <p class="eyebrow">07 / It has been done</p>
-      <h2>Goa already proved the method.</h2>
-      <p class="body" style="margin-block-start:1.2rem">Declared India's first rabies controlled state in 2021 after three consecutive years with zero human rabies deaths. The method was not more money. It was a map divided into polygons, each assigned to a team; a smartphone app recording every vaccination with GPS, working offline; a rule that a polygon is not finished until coverage inside it clears the threshold; and education and surveillance running alongside. Over 95,000 dogs vaccinated at roughly 70 per cent coverage, published in Nature Communications.</p>
-      <p class="body">The demonstration exists. What does not exist is the repeatable format that lets any municipal body run it. That is the gap Love Paws fills.</p>
+      <p class="label" style="margin-bottom:24px">07 / It has been done</p>
+      <h2 class="h2">Goa already proved the <em>method.</em></h2>
+      <p class="lede">Declared India's first rabies controlled state in 2021 after three consecutive years with zero human rabies deaths. The method was not more money. It was a map divided into polygons, a phone that recorded every animal where it stood, a rule that a polygon is not finished until it clears the threshold, and a surveillance line that told the truth while it was still fixable.</p>
     </div>
-    <div class="rv d2" style="justify-self:center">
-      <p class="stamp">Goa, 2021<br>Rabies controlled<br>First state in India</p>
+    <div class="rowlist" id="goa" style="margin-top:64px"></div>
+    <div class="rv"><span class="srcs" style="margin-top:36px" data-src="nature,mission"></span></div>
+
+    <div class="rv" style="margin-top:80px">
+      <p class="label" style="margin-bottom:24px">Three more, already done</p>
+      <p style="font-family:var(--font-display);font-size:clamp(26px,3.6vw,40px);font-weight:300;line-height:1.12;margin:0 0 16px;color:var(--charcoal)">Goa is not a <em style="font-style:italic;color:var(--accent)">fluke.</em></p>
+      <p class="note">Every one of these ran in India, on Indian budgets, solving catching, transport and post-operative care exactly as we will have to.</p>
     </div>
+    <div class="rowlist" id="precedents" style="margin-top:32px"></div>
   </div>
 </section>
-
-<hr class="hr">
-
-<!-- ============ GOA TIMELINE ============ -->
-<section class="pad" id="goa">
-  <div class="wrap">
-    <p class="eyebrow rv">07b / How Goa actually did it</p>
-    <h2 class="rv d1">Eight years, one method, repeated.</h2>
-    <p class="lede rv d2" style="margin-block-start:1.3rem">Not a breakthrough. A sequence, held to for long enough that the arithmetic caught up.</p>
-    <div class="tl rv d2">
-      <div class="tl__row">
-        <span class="tl__y">2013</span>
-        <div><h4>Campaign begins with the state government</h4><p>A small pilot vaccination drive. At this point no location-specific canine rabies surveillance data existed anywhere in Goa, so the first job was building the map, not vaccinating against it.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">March 2014</span>
-        <div><h4>A 24 hour rabies hotline</h4><p>One public number, widely advertised, for reporting a suspect rabid animal at any hour. This is the piece most programmes skip. Without it there is no way to know whether the vaccination is working.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">2014 to 2019</span>
-        <div><h4>Polygon by polygon, on repeat</h4><p>Teams were directed to assigned polygons shown on a smartphone app, each dog logged with GPS, working offline and syncing later. The entire state was re-vaccinated every twelve months, with a peak of more than 25,000 dogs in a single month.</p></div>
-      </div>
-      <div class="tl__row is-good">
-        <span class="tl__y">2019</span>
-        <div><h4>Canine rabies collapses</h4><p>A 92 per cent reduction in monthly canine rabies cases against the start of the campaign. The reservoir, not just the symptoms.</p></div>
-      </div>
-      <div class="tl__row is-good">
-        <span class="tl__y">June 2021</span>
-        <div><h4>First Rabies Controlled Area in India</h4><p>Declared after three consecutive years with zero human rabies deaths.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">2022</span>
-        <div><h4>Published, and taught</h4><p>The results appear in Nature Communications, making the method citable in a policy room. By June 2022 the education programme had reached five million children with rabies prevention lessons.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">Today</span>
-        <div><h4>Over four million doses</h4><p>Delivered in Goa since 2013, the largest continuous rabies control effort ever run in India.</p></div>
-      </div>
-    </div>
-    <p class="note rv" style="margin-block-start:1.4rem;max-width:72ch">Four mechanisms carried all of it: a boundary drawn before any work started, a phone that recorded every animal where it stood, a rule that a polygon is not finished until it clears the threshold, and a surveillance line that told them the truth while it was still fixable.</p>
-  </div>
-</section>
-
-<hr class="hr">
-
-<!-- ============ MORE PROOFS ============ -->
-<section class="pad" id="precedents">
-  <div class="wrap">
-    <p class="eyebrow rv">07c / Three more, already done</p>
-    <h2 class="rv d1">Goa is not a fluke.</h2>
-    <p class="lede rv d2" style="margin-block-start:1.3rem">Every one of these ran in India, on Indian budgets, under Indian conditions, solving catching, transport and post-operative care exactly as we will have to.</p>
-
-    <div class="proofs rv d2">
-      <article class="proof-row">
-        <div class="proof-row__place"><b>Jaipur</b><span>Help in Suffering / since 1994</span></div>
-        <p class="proof-row__stat"><b class="tick" data-from="7.2" data-to="2.2" data-dec="1">7.2</b><span>Dog bites per 1,000 people, Jaipur</span></p>
-        <div>
-          <p>One of the longest continuously running ABC programmes in the world, built on WHO and WSPA guidelines. More than 1,50,000 dogs have passed through it. Over 70 per cent of female street dogs are sterilised, and over 70 per cent of the street dog population is vaccinated.</p>
-          <p>It is credited with averting an estimated 500 human rabies deaths and 3,60,000 bite injuries. Human rabies in the city is now close to zero. Thirty years is also the honest answer to how long a city takes when it starts without a map.</p>
-        </div>
-      </article>
-
-      <article class="proof-row">
-        <div class="proof-row__place"><b>Sikkim</b><span>SARAH programme / since 2005</span></div>
-        <p class="proof-row__stat"><b class="tick" data-from="4" data-to="0" data-dec="0">4</b><span>Human rabies deaths per year, Sikkim</span></p>
-        <div>
-          <p>The first government-sanctioned programme in India to put animal welfare and public health inside one structure, which is One Health before the phrase was common. Four human rabies deaths in 2005, then none at all from 2006 through 2015.</p>
-          <p>Two deaths appeared in 2016, both near the West Bengal border. That detail matters more than the zeros. It is the case for drawing boundaries around whole administrative units rather than convenient pockets, because a partially covered neighbour re-seeds you.</p>
-        </div>
-      </article>
-
-      <article class="proof-row">
-        <div class="proof-row__place"><b>Ahmedabad</b><span>Municipal ABC programme</span></div>
-        <p class="proof-row__stat"><b class="tick" data-from="0" data-to="90" data-dec="0" data-suffix="%">0%</b><span>Sterilisation coverage reached</span></p>
-        <div>
-          <p>1,88,828 sterilisations delivered against roughly ₹18.11 crore of spending, which works out near ₹960 an animal. A major Indian city approaching the threshold on a municipal budget.</p>
-          <p>It is also the cleanest evidence available that surgical cost is not what stops the rest of the country. Ahmedabad paid roughly what everybody else is offered. What it did differently was keep going in the same place.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
 
 <!-- ============ POLICY CLOCK ============ -->
-<section class="pad" id="clock">
+<section class="band" id="clock">
   <div class="wrap">
-    <p class="eyebrow rv">07d / The policy clock</p>
-    <h2 class="rv d1">The law is not the missing piece.</h2>
-    <p class="lede rv d2" style="margin-block-start:1.3rem">Almost everything this page argues for is already policy. It has been written, funded, revised and given a deadline. What was never built is the machinery that shows whether any of it happened.</p>
-
-    <div class="tl rv d2">
-      <div class="tl__row">
-        <span class="tl__y">1960</span>
-        <div><h4>Prevention of Cruelty to Animals Act</h4><p>The parent statute. Every rule since is made under it.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">2001</span>
-        <div><h4>First ABC (Dogs) Rules</h4><p>Catch, neuter, vaccinate, return becomes national policy. Delivery is left to urban local bodies, and so is the measurement.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">2021</span>
-        <div><h4>NAPRE, and Zero by 30</h4><p>India commits to eliminating dog-mediated human rabies by 2030, aligned to the global target set by WHO, FAO, WOAH and GARC. The interim goals were explicit: cut dog bites by half by 2025, and raise dog vaccination by 75 per cent by 2025.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">2023</span>
-        <div><h4>ABC Rules revised</h4><p>Return to the exact original location, ear-notching, multi-tier monitoring committees, AWBI recognition valid three years. The traceability this page asks for is, on paper, already compulsory.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">2025</span>
-        <div><h4>Funding raised</h4><p>₹800 per dog, up from ₹445, plus a one-time ₹2 crore infrastructure grant for state veterinary hospitals. States are advised to cover at least 70 per cent.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">Aug 2025</span>
-        <div><h4>The Supreme Court intervenes</h4><p>Removal from Delhi NCR streets ordered on 11 August, modified on 22 August to release back into the same territory after sterilisation and immunisation, except animals that are rabid or aggressive. All states and union territories were impleaded for a pan-India policy.</p></div>
-      </div>
-      <div class="tl__row is-now">
-        <span class="tl__y">Now</span>
-        <div><h4>The 2025 targets came due</h4><p>Bites were to fall by half. They rose from 37,17,336 in 2024 to 47,48,478 in 2025, an increase of roughly 28 per cent. No national dashboard exists to explain why, because none was ever built.</p></div>
-      </div>
-      <div class="tl__row">
-        <span class="tl__y">2030</span>
-        <div><h4>The deadline</h4><p>Four years out. Reaching it needs coverage that can be proved, zone by zone, which is the one thing nobody currently produces.</p></div>
-      </div>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">08 / The policy clock</p>
+      <h2 class="h2">The law is not the missing <em>piece.</em></h2>
+      <p class="lede">Almost everything this page argues for is already policy. It has been written, funded, revised and given a deadline. What was never built is the machinery that shows whether any of it happened.</p>
     </div>
+    <div class="rowlist" id="clocklist" style="margin-top:56px"></div>
+    <div class="rv"><span class="srcs" style="margin-top:36px" data-src="abc,napre,dahd,sc25,sc26"></span></div>
 
-    <div class="verdictbox rv">
-      <p class="verdictbox__k">A 50% cut asked for. A 28% rise delivered.<span>NAPRE dog bite target, 2025</span></p>
-      <p>This is the gap Love Paws exists to close, and it is not a gap in intent, funding or law. It is a gap in verification. A target with no measurement system is a press release, and the country has now run that experiment for four years with the deadline in sight.</p>
+    <div class="verdict rv">
+      <div>
+        <p class="fig">37,17,336 &rarr; 47,48,478</p>
+        <p class="label">Reported dog bites, 2024 to 2025</p>
+      </div>
+      <p class="body">A 28 per cent rise in a single year, against a 2030 elimination deadline and a 2025 vaccination-coverage target that was missed. This is the gap Love Paws exists to close, and it is not a gap in intent, funding or law — all three exist. It is a gap in verification. No national dashboard publishes zone-level coverage, so nobody can say which of those bites happened inside a covered area and which did not.</p>
     </div>
   </div>
 </section>
-
-<hr class="hr">
 
 <!-- ============ GOALS ============ -->
-<section class="pad">
+<section class="band deep" id="goals">
   <div class="wrap">
-    <p class="eyebrow rv">08 / Love Paws Foundation</p>
-    <h2 class="rv d1">What we are here to do.</h2>
-    <div class="goals rv d1">
-      <div class="goal"><p>Reduce the stray animal population through humane sterilisation.<span>Coverage measured against a defined map, never against an activity count.</span></p></div>
-      <div class="goal"><p>Reduce the incidence of human and stray conflict.<span>Sequenced by bite incidence, so the zones that hurt people most are closed first.</span></p></div>
-      <div class="goal"><p>Increase anti-rabies vaccination drives, with pharmaceutical company commitments secured through government directive.<span>Auditable zone data turns a request into a case.</span></p></div>
-      <div class="goal"><p>Establish practices, methods, formats and protocols for sterilisation coverage in smaller locations and villages.<span>Where there is currently no model at all.</span></p></div>
-      <div class="goal"><p>Reduce pressure on community caregivers.<span>Who today absorb the cost, the labour and the hostility of a failed public programme.</span></p></div>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">09 / Love Paws Foundation</p>
+      <h2 class="h2">What we are here to <em>do.</em></h2>
     </div>
+    <ol class="rowlist" id="goals-list" style="margin:56px 0 0;padding:0;list-style:none"></ol>
   </div>
 </section>
 
-<!-- ============ BHAG ============ -->
-<section class="pad bhag" id="bhag">
+<!-- ============ BIG GOAL ============ -->
+<section class="band" id="bhag">
   <div class="wrap">
-    <p class="eyebrow rv">09 / The big goal</p>
-    <h2 class="rv d1">Prove one area. Package the format. Take it to policy.</h2>
-    <p class="lede rv d2" style="margin-block-start:1.3rem">A pan-India stray dog policy is being written right now, after the Supreme Court's August 2025 orders brought every state and union territory into the matter. The window for a demonstrated, evidence-backed operating model is open, and it will not stay open.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:2rem;margin-block-start:2.4rem">
-      <div class="rv"><h3>Prove it in one area</h3><p class="body" style="margin-block-start:.6rem">One ward or cluster, taken from baseline to past 70 per cent, fully traceable, with bite incidence measured before and after. The deliverable is not the dogs. It is the evidence pack.</p></div>
-      <div class="rv d1"><h3>Package the format</h3><p class="body" style="margin-block-start:.6rem">SOPs, app, cost per outcome, staffing norms, centre specification, audit method. Assembled so a municipal commissioner can adopt it without redesigning anything.</p></div>
-      <div class="rv d2"><h3>Take it to policy</h3><p class="body" style="margin-block-start:.6rem">Enter the national conversation with a working model rather than a position paper. One ward proved is worth more than ten thousand untraceable surgeries.</p></div>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">10 / The big goal</p>
+      <h2 class="h2">Prove one area. Package the format. Take it to <em>policy.</em></h2>
+      <p class="lede">The Supreme Court's May 2026 directions settled the rulebook and put an ABC centre in every district on the states' account. What no order can supply is proof that a boundary was actually closed. That is the gap a demonstrated, evidence-backed operating model fills, and it is open now.</p>
     </div>
-    <dl class="team rv">
-      <div><dt>Control</dt><p class="num">2</p><dd>Direction, accountability, government relationships.</dd></div>
-      <div><dt>Working core</dt><p class="num">4 to 6</p><dd>Policy drafting, operations design, data, technology, partnerships.</dd></div>
-      <div><dt>Representation</dt><p class="num">10</p><dd>Advocacy, city and state relationships, forums, media, CSR and pharma channels.</dd></div>
-    </dl>
+    <div class="cols3" id="bhag-grid" style="margin-top:56px"></div>
+    <div class="rv">
+      <p class="label" style="margin:80px 0 32px">What it takes to run</p>
+      <dl class="cols3 shape" id="shape" style="margin:0"></dl>
+    </div>
   </div>
 </section>
 
 <!-- ============ ASK ============ -->
-<section class="pad ask" id="ask">
+<section class="band" id="ask">
   <div class="wrap">
-    <p class="eyebrow rv">10 / The ask</p>
-    <h2 class="rv d1">One zone. One budget cycle. Full evidence.</h2>
-    <div class="asks rv d1">
-      <div><span class="who">Municipal bodies</span><h3>Give us a boundary</h3><p>One ward, an agreed baseline survey and permission to run the chain of custody inside it. We publish everything, including what fails.</p></div>
-      <div><span class="who">CSR and philanthropy</span><h3>Fund the close-out, not the activity</h3><p>Money committed to a zone until it crosses the threshold, released against verified outcomes rather than reported effort.</p></div>
-      <div><span class="who">Pharmaceutical partners</span><h3>Vaccine at scale</h3><p>Supply and cold chain against auditable zone-level coverage data, backed by government directive.</p></div>
+    <div class="rv">
+      <p class="label" style="margin-bottom:24px">11 / The ask</p>
+      <h2 class="h2">One zone. One budget cycle. Full <em>evidence.</em></h2>
+      <p class="lede">Three counterparties, three different commitments, one boundary.</p>
     </div>
-    <a class="cta" href="mailto:hello@lovepawsfoundation.org">Start a conversation &rarr;</a>
+    <div class="cols3" id="asks" style="margin-top:56px"></div>
+    <div class="rv"><a class="cta" href="mailto:hello@lovepawsfoundation.org">Start a conversation &rarr;</a></div>
+
+    <div class="rv" style="margin-top:80px;padding-top:36px;border-top:1px solid var(--border)">
+      <p class="label" style="margin-bottom:24px">Sources</p>
+      <ol class="srclist" id="srclist"></ol>
+      <p class="note" style="margin-top:32px">Figures are drawn from the sources above and dated 2024 to 2026. Nothing here claims a result Love Paws has already achieved.</p>
+    </div>
   </div>
 </section>
 
-<hr class="hr">
+<!-- ============ TEAM ============ -->
+<section class="band deep" style="border-bottom:0;border-top:1px solid var(--border)">
+  <div class="wrap">
+    <p class="label rv" style="margin-bottom:48px">Team</p>
+    <div class="team" id="team"></div>
+  </div>
+</section>
 
-<footer>
-  <div class="wrap foot">
+<!-- ============ TICKER + FOOTER ============ -->
+<section class="ticker" aria-hidden="true">
+  <div class="run" id="ticker"></div>
+</section>
+
+<footer class="site">
+  <div class="fgrid">
     <div>
-      <p class="mark" style="margin:0 0 1rem">Love&nbsp;<b>Paws</b>&nbsp;Foundation</p>
-      <p class="note" style="max-width:34ch">A demonstrative platform for humane, measurable stray animal management in India.</p>
-      <p class="disclaimer" style="margin-block-start:1.4rem">Demonstration build. Contact details, entity registration and imagery are placeholders. Every figure on this page is drawn from the sources listed alongside and is dated 2024 to 2026. Nothing here claims a result Love Paws has already achieved.</p>
+      <div class="wordmark">Love&nbsp;<b>Paws</b></div>
+      <p>A demonstrative platform for humane, measurable stray animal management in India.</p>
+      <a class="em" href="mailto:hello@lovepawsfoundation.org" style="display:inline-block;margin-top:24px;font-size:12px;font-weight:500;color:var(--charcoal);text-decoration:none">hello@lovepawsfoundation.org</a>
+      <p class="disclaimer">Demonstration build. Contact details, entity registration and imagery are placeholders.</p>
     </div>
     <div>
-      <p class="note" style="margin:0 0 1rem;letter-spacing:.16em;text-transform:uppercase">Sources</p>
-      <ul class="srcs">
-        <li><a href="https://www.business-standard.com/india-news/over-3-7-million-dog-bite-cases-54-human-rabies-deaths-in-2024-govt-125072201228_1.html" target="_blank" rel="noopener">NCDC bite and rabies figures, 2024</a></li>
-        <li><a href="https://www.theweek.in/news/health/2025/10/22/from-dog-bites-to-deaths-understanding-rabies-prevention-in-india.html" target="_blank" rel="noopener">ICMR estimates and global share</a></li>
-        <li><a href="https://www.impriindia.com/insights/policy-update/animal-birth-control-abc-rules-2023/" target="_blank" rel="noopener">ABC Rules 2023 and implementation gaps</a></li>
-        <li><a href="https://awbi.gov.in/uploads/documents/175508789397Revised%20ABC%20Guidelines.pdf" target="_blank" rel="noopener">AWBI revised ABC guidelines</a></li>
-        <li><a href="https://www.devdiscourse.com/article/headlines/3530458-govt-ups-funding-for-stray-dog-sterilisation-to-rs-800-per-animal-rs-2-cr-for-vet-hospitals" target="_blank" rel="noopener">Revised central funding, ₹800 per dog</a></li>
-        <li><a href="https://www.scobserver.in/journal/what-did-the-supreme-court-hold-on-the-stray-dogs-matter/" target="_blank" rel="noopener">Supreme Court, August 2025</a></li>
-        <li><a href="https://www.deccanherald.com/amp/story/india%2Fmaharashtra%2Fover-90000-stray-dogs-in-mumbai-but-only-8-shelters-for-them-bmc-officials-3791354" target="_blank" rel="noopener">Mumbai population and centre capacity</a></li>
-        <li><a href="https://www.freepressjournal.in/mumbai/mumbai-bmc-plans-sterilisation-of-45000-stray-dogs-annually-allocates-23-crore-for-control-drive" target="_blank" rel="noopener">BMC allocation and targets</a></li>
-        <li><a href="https://www.nature.com/articles/s41467-022-30371-y" target="_blank" rel="noopener">Goa rabies elimination, Nature Communications</a></li>
-        <li><a href="https://straydogmenace.com/2026/02/13/exclusive-india-4748478-dog-bite-cases-2025-10-lakh-rise-7-58-crore-since-2010/" target="_blank" rel="noopener">2025 bite case compilation</a></li>
-        <li><a href="https://rabiesfreeindia.mohfw.gov.in/About-NAPRE" target="_blank" rel="noopener">NAPRE and the Zero by 30 target</a></li>
-        <li><a href="https://helpinsuffering.org/abc-programme/" target="_blank" rel="noopener">Jaipur ABC programme, Help in Suffering</a></li>
-        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28361056/" target="_blank" rel="noopener">Sikkim SARAH, ten-year outcomes</a></li>
-        <li><a href="https://www.prokerala.com/news/articles/a1770413.html" target="_blank" rel="noopener">Ahmedabad coverage and cost per animal</a></li>
-        <li><a href="https://www.missionrabies.com/en/our-projects/india" target="_blank" rel="noopener">Goa campaign scale and method</a></li>
-        <li><a href="https://visionias.in/blog/current-affairs/stray-dogs-management-in-india-balancing-public-safety-with-animal-welfare" target="_blank" rel="noopener">Livestock Census 2012 and 2019 counts</a></li>
-      </ul>
+      <p class="label">The case</p>
+      <div class="flinks">
+        <a href="#scale">The scale</a>
+        <a href="#threshold">The 70% line</a>
+        <a href="#arithmetic">The arithmetic</a>
+        <a href="#failures">Where it breaks</a>
+        <a href="#model">The model</a>
+      </div>
     </div>
+    <div>
+      <p class="label">Evidence</p>
+      <div class="flinks">
+        <a href="#proof">Proof</a>
+        <a href="#clock">The policy clock</a>
+        <a href="#bhag">The big goal</a>
+        <a href="#ask">The ask</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbase">
+    <span>&copy; 2026 Love Paws Foundation.</span>
+    <span style="color:var(--hairline-faint)">Boundary · Threshold · Verified outcome</span>
   </div>
 </footer>
 
-</div>
-
 <script>
 (function(){
-  "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var DPR = function(){ return Math.min(window.devicePixelRatio || 1, 2); };
+"use strict";
 
-  /* ---------- theme toggle ---------- */
-  var themer = document.getElementById("themer");
-  themer.addEventListener("click", function(){
-    var root = document.documentElement;
-    var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    var current = root.getAttribute("data-theme") || (dark ? "dark" : "light");
-    root.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+/* ============ SOURCES — keyed by id, never by position ============ */
+var SOURCES = [
+  { id:"ncdc", tag:"NCDC", label:"NCDC dog bite and rabies figures for 2024, as given to Parliament", href:"https://www.dailypioneer.com/2025/india/over-37-lakh-dog-bite-cases--54-human-rabies-deaths-in-2024--govt.html" },
+  { id:"idsp", tag:"IDSP · RTI", label:"2025 dog bite total, compiled from IDSP data under RTI", href:"https://straydogmenace.com/2026/02/13/exclusive-india-4748478-dog-bite-cases-2025-10-lakh-rise-7-58-crore-since-2010/" },
+  { id:"icmr", tag:"ICMR · Lancet", label:"ICMR-funded Lancet estimate of annual rabies deaths", href:"https://www.theweek.in/news/health/2025/10/22/from-dog-bites-to-deaths-understanding-rabies-prevention-in-india.html" },
+  { id:"who", tag:"WHO", label:"WHO rabies fact sheet — 99% dog-mediated, ~59,000 deaths globally", href:"https://www.who.int/news-room/fact-sheets/detail/rabies" },
+  { id:"census", tag:"Livestock Census", label:"Livestock Census counts and independent population estimates", href:"https://visionias.in/blog/current-affairs/stray-dogs-management-in-india-balancing-public-safety-with-animal-welfare" },
+  { id:"bmcPop", tag:"BMC survey", label:"Mumbai dog population and centre capacity", href:"https://www.deccanherald.com/india/maharashtra/over-90000-stray-dogs-in-mumbai-but-only-8-shelters-for-them-bmc-officials-3791354" },
+  { id:"mhBites", tag:"Maharashtra govt", label:"Mumbai dog bite cases, 2024", href:"https://www.freepressjournal.in/mumbai/mumbai-records-over-128-lakh-stray-dog-bites-in-2024-authorities-ramp-up-control-measures" },
+  { id:"bmcBudget", tag:"BMC budget", label:"BMC allocation — ₹23 crore over three years, 1,35,000 sterilisations", href:"https://www.freepressjournal.in/mumbai/mumbai-bmc-plans-sterilisation-of-45000-stray-dogs-annually-allocates-23-crore-for-control-drive" },
+  { id:"dahd", tag:"DAHD", label:"Revised central funding — ₹800 per dog, ₹2 crore infrastructure grant", href:"https://www.devdiscourse.com/article/headlines/3530458-govt-ups-funding-for-stray-dog-sterilisation-to-rs-800-per-animal-rs-2-cr-for-vet-hospitals" },
+  { id:"amc", tag:"AMC Ahmedabad", label:"Ahmedabad coverage, sterilisation count and spending", href:"https://www.prokerala.com/news/articles/a1770413.html" },
+  { id:"nature", tag:"Nature Comms", label:"Goa rabies elimination, Nature Communications 2022", href:"https://www.nature.com/articles/s41467-022-30371-y" },
+  { id:"mission", tag:"Mission Rabies", label:"Mission Rabies India — doses delivered, children educated, 2021 declaration", href:"https://www.missionrabies.com/en/our-projects/india" },
+  { id:"jaipur", tag:"Help in Suffering", label:"Jaipur ABC programme outcomes, Help in Suffering / ICAM", href:"https://www.icam-coalition.org/jaipur-abc-costs-greatly-outweighed-by-benefits/" },
+  { id:"sarah", tag:"SARAH", label:"Sikkim SARAH, ten-year outcomes", href:"https://pubmed.ncbi.nlm.nih.gov/28361056/" },
+  { id:"sc25", tag:"SC · Aug 2025", label:"Supreme Court order of 22 August 2025, modifying the 11 August order", href:"https://www.scconline.com/blog/post/2025/08/22/supreme-court-stray-dogs-order-modified-vaccinated-release-banned-feeding/" },
+  { id:"sc26", tag:"SC · May 2026", label:"Supreme Court directions of 19 May 2026 — nationwide framework", href:"https://www.mondaq.com/india/trials-appeals-compensation/1808544/supreme-court-directions-on-stray-dog-management-may-2026-implementation-priorities-for-municipal-bodies-and-state-administrators" },
+  { id:"napre", tag:"NAPRE", label:"NAPRE and the Zero by 30 target", href:"https://rabiesfreeindia.mohfw.gov.in/About-NAPRE" },
+  { id:"abc", tag:"ABC Rules 2023", label:"ABC Rules 2023, implementation gaps and AWBI disbursement", href:"https://www.impriindia.com/insights/policy-update/animal-birth-control-abc-rules-2023/" },
+  { id:"awbi", tag:"AWBI", label:"AWBI revised ABC guidelines", href:"https://awbi.gov.in/uploads/documents/175508789397Revised%20ABC%20Guidelines.pdf" }
+];
+var byId = {};
+SOURCES.forEach(function(s){ byId[s.id] = s; });
+
+function esc(t){ return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function srcHTML(ids, variant){
+  if (!ids) return "";
+  return '<span class="srcs' + (variant ? " " + variant : "") + '">' + ids.map(function(id){
+    var s = byId[id];
+    if (!s) return "";
+    return '<a class="src-tag" href="' + s.href + '" target="_blank" rel="noopener noreferrer" title="' + esc(s.label) + '">' + esc(s.tag) + '<i aria-hidden="true">&#8599;</i></a>';
+  }).join("") + '</span>';
+}
+// Hydrate the tag spans written directly into the markup.
+[].forEach.call(document.querySelectorAll("[data-src]"), function(el){
+  var variant = el.classList.contains("inline") ? "inline" : "";
+  el.outerHTML = srcHTML(el.getAttribute("data-src").split(","), variant);
+});
+
+/* ============ CONTENT ============ */
+var BEATS = [
+  ["Nobody knows the number","No reliable national count, no state-wise sterilisation totals, no dashboard. Every plan built on top of this is a guess."],
+  ["The 70 per cent line is biology, not opinion","Below the threshold, survivors breed back faster than the programme cuts. Sixty-nine per cent is close to zero."],
+  ["Money spread thin buys nothing","Any budget spread evenly across a city closes zero areas. The same budget inside one boundary closes it permanently."],
+  ["The dog that came back","Paying per animal caught produces double billing, wrong-locality releases and skipped recovery. The wrong unit of payment creates every failure downstream."],
+  ["It has already been done, in India","Goa, Jaipur, Sikkim and Ahmedabad each got there with a map, a phone and one rule: finish the polygon. The demonstrations exist. The repeatable format does not."],
+  ["The Love Paws bet","Take one area, close it out past the threshold with every animal traceable, publish the evidence, and hand the format to policy."]
+];
+
+var LEDGER = [
+  { fig:"6.2 cr", lab:"Free-roaming dogs in India, independent estimate", note:"The last official exercise was the 2019 Livestock Census, widely treated as an undercount.", src:["census"] },
+  { fig:"47,48,478", lab:"Reported dog bite cases in 2025", note:"Up roughly 10 lakh on 2024, when 37,17,336 cases were recorded by the NCDC.", src:["idsp","ncdc"], hot:true },
+  { fig:"5,726", lab:"Estimated human rabies deaths a year, ICMR", note:"An older WHO framing put India at roughly 36 per cent of a global toll near 59,000, implying a far higher number. The two estimates use different methods and should not be read together.", src:["icmr","who"] },
+  { fig:"8", lab:"Animal Birth Control centres serving all of Mumbai", note:"Against a city population counted at 90,757 dogs and over 1.28 lakh bites in 2024.", src:["bmcPop","mhBites"] }
+];
+
+var BARSETS = [
+  { caption:"Human rabies deaths in 2024: what was reported, against what is estimated.",
+    rows:[["Reported","54",1,false],["Estimated","5,726",100,true]],
+    foot:"A hundredfold gap. We are not measuring the thing we claim to be solving.", src:["ncdc","icmr"] },
+  { caption:"Stray dog population: official census against independent estimate.",
+    rows:[["2012 census","1.71 cr",27.6,false],["2019 census","1.53 cr",24.7,false],["Independent","≈ 6.2 cr",100,true]],
+    foot:"Both cannot be true. Until one is settled, no coverage percentage anyone quotes has a denominator.", src:["census"] },
+  { caption:"Reported dog bite cases by state, 2024.",
+    rows:[["Maharashtra","4,85,345",100,true],["Tamil Nadu","4,80,427",99,false],["Gujarat","3,92,837",81,false],["Karnataka","3,61,494",74,false],["Bihar","2,63,930",54,false]],
+    foot:"Five states carried roughly half of India's reported bites. The map is not uniform, so the money should not be either.", src:["ncdc"] }
+];
+
+var COSTS = [
+  ["₹800","Central support per dog","The revised 2025 scheme, up from ₹445. This is what the Centre contributes, not what the work costs.",["dahd"]],
+  ["₹960","Ahmedabad, delivered","1,88,828 sterilisations against ₹18.11 crore. Close to the surgical cost alone, on a programme now reporting about 89 per cent coverage.",["amc"]],
+  ["₹1,704","Mumbai, implied by budget","₹23 crore committed over three years against 1,35,000 sterilisations. Still well above Ahmedabad's delivered figure — roughly what the work costs once catching, transport, recovery and release are counted rather than surgery alone.",["bmcBudget"]]
+];
+
+var FAILURES = [
+  ["01","Money without a boundary, and money without a check","Payment is made per animal claimed, against paper records, with no independent verification of identity or release. Audits in Bhopal have surfaced inflated figures, ghost surgeries and substandard facilities. Because no animal carries a durable identity record, a claim is effectively unfalsifiable, and an unfalsifiable claim will always be inflated.","Poor allocation is not only theft. It is also honest money spent without a boundary.",true],
+  ["02","No area is anybody's job to finish","There is no systematic, area-wise ownership of the assignment. Work is measured in animals processed, never in territory closed out, so no area ever reaches the point at which the population stops replacing itself. A city can run a programme for twenty years, process lakhs of animals, and still not name one locality that is finished.","Documented gap: no national management information system or real-time dashboard publicly tracks sterilisation or vaccination coverage.",false],
+  ["03","Random catch and release","Dogs are released in the wrong locality, which the ABC Rules 2023 expressly prohibit. Re-caught animals are billed twice. There is no traceability from catch to release, and no way to prove an individual animal was ever sterilised, vaccinated or returned home.","The unit of payment is the dog caught. That single choice creates every failure downstream.",true],
+  ["04","Centres that cannot carry the load","Municipal bodies cannot find appropriately equipped centres. Mumbai runs eight for a city counted at over ninety thousand dogs. Under-equipped theatres and compressed recovery windows produce post-operative infection, which is both an animal welfare failure and the fastest way to lose community consent for the whole programme.","Add to this a documented shortage of trained veterinary personnel, and catching work handed to the least trained people on the payroll.",false]
+];
+
+var MODEL = [
+  ["01","sp7","Map and define areas with statistics","Divide the territory into micro-zones, a polygon per lane cluster rather than per ward. Each zone carries a baseline: estimated dog count, caregiver contacts, bite incident history, conflict hotspots. Surveyed once, then used as the denominator for everything that follows."],
+  ["02","sp5","Budget against zone statistics","Money is committed to a zone with an explicit target: cross 70 per cent inside this boundary, then move. Sequencing follows bite incidence and density, not convenience."],
+  ["03","sp5","Technology as the control layer","Every animal gets a record at the moment of catch. The record follows it through surgery, recovery and release. Its by-product is the coverage number that does not currently exist anywhere."],
+  ["04","sp7","Track activity and release, and pay on verified outcome","The payment milestone moves from animal caught to animal released, at the recorded catch location, with photographic and GPS proof, after the mandated recovery period. This one change removes most of the leakage without needing a single new regulation."],
+  ["05","sp6","Build the centres, the ecosystem, the people","Right-sized surgical capacity with real post-operative recovery space. Trained and certified catchers rather than casual labour. Veterinary protocol and infection audit. Community caregivers integrated as the field network instead of treated as obstructions."],
+  ["06","sp6","Vaccination in the same motion","Anti-rabies vaccination rides on the same visit and the same record. Sterilisation is a multi-year population play. Vaccination coverage cuts human deaths within a single season, and auditable data makes the ask to pharmaceutical partners a far easier one."]
+];
+
+var CHAIN = [
+  ["01","Catch","Geotag, photograph, sex, condition, marking ID. Works offline, syncs later."],
+  ["02","Surgery","Vet ID, procedure, vaccination batch, complications, against the same record."],
+  ["03","Recovery","The mandated post-operative window enforced by the workflow, not by trust."],
+  ["04","Release","Geotagged and photographed inside a permitted radius of the catch point."],
+  ["05","Verify","Complete chain or no claim. Duplicate animals surface automatically."],
+  ["06","Publish","Coverage, bites and vaccination by zone, on a dashboard anyone can audit."]
+];
+
+var RECORD = [
+  ["Zone","04B / Sewri lane cluster"],["Sex","Female, approx. 2 years"],["Caught","12 Aug, 06:42"],
+  ["Surgery","12 Aug, 09:15 / Vet ID 114"],["Vaccine","ARV batch 2291"],
+  ["Released","15 Aug, 07:10 / 40 m from catch"],["Marking","Left ear notched"]
+];
+
+var GOA = [
+  ["2013","The campaign begins with the state government","No location-specific canine rabies surveillance data existed anywhere in Goa, so the first job was building the map, not vaccinating against it.",false],
+  ["Mar 2014","A 24 hour rabies hotline","One public number for reporting a suspect rabid animal at any hour. This is the piece most programmes skip, and without it there is no way to know whether the vaccination is working.",false],
+  ["2014–19","Polygon by polygon, on repeat","Teams directed to assigned polygons on a smartphone app, every dog logged with GPS, working offline. The entire state re-vaccinated every twelve months, peaking above 25,000 dogs in a single month.",false],
+  ["2019","Canine rabies collapses","A 92 per cent reduction in monthly canine rabies cases against the start of the campaign. The reservoir, not just the symptoms.",true],
+  ["Jun 2021","First Rabies Controlled Area in India","Declared after three consecutive years with zero human rabies deaths.",true],
+  ["2022","Published, and taught","Results appear in Nature Communications, making the method citable in a policy room. Education teams were reaching 150,000 children a year in Goa; across India the programme reports more than 27 lakh children taught to date.",false],
+  ["Today","Over four million doses","Delivered in Goa since 2013, the largest continuous rabies control effort ever run in India.",false]
+];
+
+var PRECEDENTS = [
+  ["Jaipur","Help in Suffering / since 1994","7.2 → 2.2","Dog bites per 1,000 people",["jaipur"],
+   ["One of the longest continuously running ABC programmes in the world, built on WHO and WSPA guidelines. More than 1,50,000 dogs have passed through it. Over 70 per cent of female street dogs are sterilised, and over 70 per cent of the street dog population is vaccinated.",
+    "It is credited with averting an estimated 500 human rabies deaths and 3,60,000 bite injuries. Thirty years is also the honest answer to how long a city takes when it starts without a map."]],
+  ["Sikkim","SARAH programme / since 2006","4 → 0","Human rabies deaths a year",["sarah"],
+   ["The first government-sanctioned programme in India to put animal welfare and public health inside one structure. Four human rabies deaths in 2005, then none at all from 2006 through 2015.",
+    "Two deaths appeared in 2016, both near the West Bengal border. That detail matters more than the zeros: it is the case for drawing boundaries around whole administrative units, because a partially covered neighbour re-seeds you."]],
+  ["Ahmedabad","Municipal ABC programme","89%","Sterilisation coverage reached",["amc"],
+   ["1,88,828 sterilisations delivered against roughly ₹18.11 crore of spending, which works out near ₹960 an animal. A major Indian city approaching the threshold on a municipal budget.",
+    "It is the cleanest evidence available that surgical cost is not what stops the rest of the country. Ahmedabad paid roughly what everybody else is offered. What it did differently was keep going in the same place."]]
+];
+
+var CLOCK = [
+  ["1960","Prevention of Cruelty to Animals Act","The parent statute. Every rule since is made under it.",""],
+  ["2001","First ABC (Dogs) Rules","Catch, neuter, vaccinate, return becomes national policy. Delivery is left to urban local bodies, and so is the measurement.",""],
+  ["2021","NAPRE, and Zero by 30","India commits to eliminating dog-mediated human rabies by 2030, aligned to the global Zero by 30 target. The interim animal-health goal was 75 per cent dog vaccination coverage by 2025.",""],
+  ["2023","ABC Rules revised","Return to the exact original location, ear-notching, monitoring committees, AWBI recognition. The traceability this page asks for is, on paper, already compulsory.",""],
+  ["2025","Funding raised","₹800 per dog, up from ₹445, plus a one-time ₹2 crore infrastructure grant for state veterinary hospitals. States are advised to cover at least 70 per cent.",""],
+  ["Aug 2025","The Supreme Court intervenes","Removal from Delhi NCR ordered on 11 August, modified on 22 August to release back into the same territory after sterilisation and immunisation. All states and union territories impleaded for a pan-India policy.",""],
+  ["May 2026","The Court settles the framework","Final nationwide directions in the suo motu stray dog matter. The ABC Rules 2023 are reaffirmed, the AWBI standard operating procedure is upheld, an ABC centre is directed in every district, and states are held accountable on pain of contempt. The rulebook is now closed. What it still does not specify is how coverage gets measured.",""],
+  ["Now","The measurement gap outlived the argument","Reported bites rose from 37,17,336 in 2024 to 47,48,478 in 2025, an increase of roughly 28 per cent, while the 2025 vaccination-coverage target went unmet. No national dashboard exists to explain why, because none was ever built.","now"],
+  ["2030","The deadline","Four years out. Reaching it needs coverage that can be proved, zone by zone, which is the one thing nobody currently produces.",""]
+];
+
+var GOALS = [
+  ["Reduce the stray animal population through humane sterilisation.","Coverage measured against a defined map, never against an activity count."],
+  ["Reduce the incidence of human and stray conflict.","Sequenced by bite incidence, so the zones that hurt people most are closed first."],
+  ["Increase anti-rabies vaccination drives, with pharmaceutical commitments secured through government directive.","Auditable zone data turns a request into a case."],
+  ["Establish practices, methods, formats and protocols for coverage in smaller towns and villages.","Where there is currently no model at all."],
+  ["Reduce pressure on community caregivers.","Who today absorb the cost, the labour and the hostility of a failed public programme."]
+];
+
+var BHAG = [
+  ["Prove it in one area","One ward or cluster, taken from baseline to past 70 per cent, fully traceable, with bite incidence measured before and after. The deliverable is not the dogs. It is the evidence pack."],
+  ["Package the format","SOPs, app, cost per outcome, staffing norms, centre specification, audit method. Assembled so a municipal commissioner can adopt it without redesigning anything."],
+  ["Take it to policy","Enter the national conversation with a working model rather than a position paper. One ward proved is worth more than ten thousand untraceable surgeries."]
+];
+
+var SHAPE = [
+  ["Control","2","Direction, accountability, government relationships."],
+  ["Working core","4 to 6","Policy drafting, operations design, data, technology, partnerships."],
+  ["Representation","10","Advocacy, city and state relationships, forums, media, CSR and pharma channels."]
+];
+
+var ASKS = [
+  ["Municipal bodies","Give us a boundary","One ward, an agreed baseline survey and permission to run the chain of custody inside it. We publish everything, including what fails."],
+  ["CSR and philanthropy","Fund the close-out, not the activity","Money committed to a zone until it crosses the threshold, released against verified outcomes rather than reported effort."],
+  ["Pharmaceutical partners","Vaccine at scale","Supply and cold chain against auditable zone-level coverage data, backed by government directive."]
+];
+
+var TEAM = [
+  ["LM","Lynette Menezes","Founder — Love Paws",""],
+  ["PS","Pratham Shrivastav","Technical Head","pratham.shrivastav@v-group.in"]
+];
+
+var TICKER = ["Boundary","Threshold","Chain of custody","Verified outcome","Zone coverage","Ear notch","Geotag","Recovery window","One health","Audit trail","Polygon closed","Published data"];
+
+/* ============ RENDER ============ */
+function el(id){ return document.getElementById(id); }
+function pad(i){ return String(i + 1).length < 2 ? "0" + (i + 1) : String(i + 1); }
+
+el("beats").innerHTML = BEATS.map(function(b, i){
+  return '<li class="beat rv"><span class="n">' + pad(i) + '</span><h3>' + esc(b[0]) + '</h3><p class="body">' + esc(b[1]) + '</p></li>';
+}).join("");
+
+el("ledger").innerHTML = LEDGER.map(function(r){
+  return '<div class="ledrow rv"><p class="fig' + (r.hot ? " hot" : "") + '">' + esc(r.fig) + '</p>' +
+    '<p class="lab">' + esc(r.lab) + '</p>' +
+    '<div><p class="note">' + esc(r.note) + '</p><div style="margin-top:12px">' + srcHTML(r.src) + '</div></div></div>';
+}).join("");
+
+el("scalebars").innerHTML = BARSETS.map(function(s){
+  return '<div class="bars rv"><p class="note" style="margin-bottom:24px">' + esc(s.caption) + '</p>' +
+    s.rows.map(function(r){
+      return '<div class="bar"><span class="bl">' + esc(r[0]) + '</span>' +
+        '<span class="track"><span class="fill' + (r[3] ? " hot" : "") + '" data-w="' + r[2] + '"></span></span>' +
+        '<span class="bv' + (r[3] ? " hot" : "") + '">' + esc(r[1]) + '</span></div>';
+    }).join("") +
+    '<p class="note" style="margin-top:24px">' + esc(s.foot) + '</p>' +
+    '<div style="margin-top:20px">' + srcHTML(s.src) + '</div></div>';
+}).join("");
+
+el("costs").innerHTML = COSTS.map(function(c){
+  return '<div class="tlrow costrow rv"><p class="k">' + esc(c[0]) + '</p><div><h4>' + esc(c[1]) + '</h4>' +
+    '<p class="body">' + esc(c[2]) + '</p><div style="margin-top:14px">' + srcHTML(c[3]) + '</div></div></div>';
+}).join("");
+
+el("failures-list").innerHTML = FAILURES.map(function(f){
+  var side = f[4] ? '<p class="pull">' + esc(f[3]) + '</p>' : '<p class="note">' + esc(f[3]) + '</p>';
+  return '<article class="entry rv"><span class="n">' + esc(f[0]) + '</span>' +
+    '<div><h3>' + esc(f[1]) + '</h3><p class="body">' + esc(f[2]) + '</p></div>' +
+    '<div style="padding-top:4px">' + side + '</div></article>';
+}).join("");
+
+el("model-grid").innerHTML = MODEL.map(function(m){
+  return '<div class="' + m[1] + ' rv"><div class="cell"><span class="label">' + esc(m[0]) + '</span>' +
+    '<h3>' + esc(m[2]) + '</h3><p class="body">' + esc(m[3]) + '</p></div></div>';
+}).join("");
+
+el("chain-list").innerHTML = CHAIN.map(function(c){
+  return '<li class="rv"><div class="hd"><span class="label" style="color:var(--accent)">' + esc(c[0]) + '</span>' +
+    '<h3>' + esc(c[1]) + '</h3></div><p class="body">' + esc(c[2]) + '</p></li>';
+}).join("");
+
+el("recordfields").innerHTML = RECORD.map(function(f){
+  return '<div class="fld"><dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd></div>';
+}).join("");
+
+el("goa").innerHTML = GOA.map(function(g){
+  return '<div class="tlrow rv' + (g[3] ? " good" : "") + '"><span class="label y">' + esc(g[0]) + '</span>' +
+    '<div><h4>' + esc(g[1]) + '</h4><p class="body">' + esc(g[2]) + '</p></div></div>';
+}).join("");
+
+el("precedents").innerHTML = PRECEDENTS.map(function(p){
+  return '<article class="prow rv"><div><p class="place">' + esc(p[0]) + '</p><p class="label" style="margin-top:8px">' + esc(p[1]) + '</p></div>' +
+    '<div><p class="stat">' + esc(p[2]) + '</p><p class="note" style="margin-top:12px">' + esc(p[3]) + '</p></div>' +
+    '<div>' + p[5].map(function(t){ return '<p class="body">' + esc(t) + '</p>'; }).join("") +
+    '<div style="margin-top:16px">' + srcHTML(p[4]) + '</div></div></article>';
+}).join("");
+
+el("clocklist").innerHTML = CLOCK.map(function(c){
+  return '<div class="tlrow rv ' + c[3] + '"><span class="label y">' + esc(c[0]) + '</span>' +
+    '<div><h4>' + esc(c[1]) + '</h4><p class="body">' + esc(c[2]) + '</p></div></div>';
+}).join("");
+
+el("goals-list").innerHTML = GOALS.map(function(g, i){
+  return '<li class="goal rv"><span class="n">' + pad(i) + '</span><p class="g">' + esc(g[0]) + '</p>' +
+    '<p class="note" style="padding-top:6px">' + esc(g[1]) + '</p></li>';
+}).join("");
+
+el("bhag-grid").innerHTML = BHAG.map(function(b, i){
+  return '<div class="rv"><span style="display:block;font-family:var(--font-display);font-size:26px;font-weight:300;line-height:1;color:var(--accent);margin-bottom:16px">' + pad(i) + '</span>' +
+    '<h3>' + esc(b[0]) + '</h3><p class="body">' + esc(b[1]) + '</p></div>';
+}).join("");
+
+el("shape").innerHTML = SHAPE.map(function(t){
+  return '<div class="rv"><dt class="label">' + esc(t[0]) + '</dt><p class="num">' + esc(t[1]) + '</p>' +
+    '<dd style="margin:0"><p class="note">' + esc(t[2]) + '</p></dd></div>';
+}).join("");
+
+el("asks").innerHTML = ASKS.map(function(a){
+  return '<div class="rv"><p class="label" style="color:var(--accent)">' + esc(a[0]) + '</p>' +
+    '<h3>' + esc(a[1]) + '</h3><p class="body">' + esc(a[2]) + '</p></div>';
+}).join("");
+
+el("srclist").innerHTML = SOURCES.map(function(s, i){
+  return '<li><span class="i">' + (i + 1) + '</span><a href="' + s.href + '" target="_blank" rel="noopener noreferrer">' + esc(s.label) + '</a></li>';
+}).join("");
+
+el("team").innerHTML = TEAM.map(function(t){
+  return '<div class="tcard rv"><div class="av">' + esc(t[0]) + '</div><div class="nm">' + esc(t[1]) + '</div>' +
+    '<p class="label" style="margin-bottom:14px">' + esc(t[2]) + '</p>' +
+    (t[3] ? '<a class="em" href="mailto:' + t[3] + '">' + esc(t[3]) + '</a>' : '') + '</div>';
+}).join("");
+
+(function(){
+  var set = '<div class="set">' + TICKER.map(function(t){
+    return '<span>' + esc(t) + ' <i>&#10022;</i></span>';
+  }).join("") + '</div>';
+  el("ticker").innerHTML = set + set;
+})();
+
+/* ============ REVEAL ============ */
+var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var pending = [].slice.call(document.querySelectorAll(".rv"));
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if (!e.isIntersecting) return;
+    var i = pending.indexOf(e.target);
+    if (i > -1) pending.splice(i, 1);
+    io.unobserve(e.target);
+    e.target.classList.add("in");
+    var bars = e.target.querySelectorAll(".fill[data-w]");
+    [].forEach.call(bars, function(f, k){
+      setTimeout(function(){ f.style.width = f.getAttribute("data-w") + "%"; }, reduce ? 0 : k * 110);
+    });
   });
+}, { threshold: .12, rootMargin: "0px 0px -6% 0px" });
+pending.forEach(function(n){ io.observe(n); });
 
-  /* ---------- reveal on enter ---------- */
-  var pending = [].slice.call(document.querySelectorAll(".rv, .ledger, .contrast, .chain, .tl, .proofs, .chainfig"));
-
-  function reveal(el){
-    var i = pending.indexOf(el);
-    if (i === -1) return;
-    pending.splice(i,1);
-    io.unobserve(el);
-    el.classList.add("in");
-    if (el.classList.contains("ledger")) countUp(el);
-    if (el.classList.contains("contrast")) growBars(el);
-    if (el.classList.contains("chain")) stagger(el);
-    if (el.classList.contains("tl")) litRows(el);
-    if (el.classList.contains("proofs")) tickStats(el);
-  }
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if (e.isIntersecting) reveal(e.target); });
-  }, { threshold:.14, rootMargin:"0px 0px -6% 0px" });
-
-  pending.forEach(function(el){ io.observe(el); });
-
-  /* Fallback: a fast scroll or an anchor jump can carry an element from below
-     the viewport to above it inside one frame, so it never intersects. Sweep
-     anything the page has already passed. */
-  var sweeping = false;
-  function sweep(){
+// A fast scroll or an anchor jump can carry an element past the viewport
+// between frames, so sweep anything already scrolled beyond.
+var sweeping = false;
+window.addEventListener("scroll", function(){
+  if (sweeping || !pending.length) return;
+  sweeping = true;
+  requestAnimationFrame(function(){
     sweeping = false;
     for (var i = pending.length - 1; i >= 0; i--){
-      if (pending[i].getBoundingClientRect().top < window.innerHeight * 0.92) reveal(pending[i]);
+      if (pending[i].getBoundingClientRect().top < window.innerHeight * 0.94){
+        var n = pending[i];
+        pending.splice(i, 1);
+        io.unobserve(n);
+        n.classList.add("in");
+        [].forEach.call(n.querySelectorAll(".fill[data-w]"), function(f){ f.style.width = f.getAttribute("data-w") + "%"; });
+      }
     }
-  }
-  window.addEventListener("scroll", function(){
-    if (sweeping || !pending.length) return;
-    sweeping = true;
-    requestAnimationFrame(sweep);
-  }, { passive:true });
+  });
+}, { passive: true });
 
-  function stagger(chain){
-    var links = chain.querySelectorAll(".link");
-    links.forEach(function(l,i){ setTimeout(function(){ l.classList.add("in"); }, reduce ? 0 : i*90); });
-  }
+/* ============ COVERAGE THRESHOLD ============ */
+(function(){
+  var ZONE = 168, COLS = 14, THRESHOLD = 70, YEARS = 6, GROWTH = 0.18, Y_MAX = 480;
+  var CW = 340, CH = 190;
 
-  function growBars(box){
-    box.querySelectorAll(".bar__fill").forEach(function(f,i){
-      setTimeout(function(){ f.style.width = f.dataset.w + "%"; }, reduce ? 0 : i*110);
-    });
-  }
-
-  /* timeline dots light up in sequence as the spine is read */
-  function litRows(tl){
-    tl.querySelectorAll(".tl__row").forEach(function(r,i){
-      setTimeout(function(){ r.classList.add("lit"); }, reduce ? 0 : i*80);
-    });
-  }
-
-  /* each precedent counts from its starting figure to what it achieved */
-  function tickStats(scope){
-    scope.querySelectorAll(".tick").forEach(function(el,i){
-      var from = parseFloat(el.dataset.from), to = parseFloat(el.dataset.to);
-      var dec = parseInt(el.dataset.dec || "0", 10), suf = el.dataset.suffix || "";
-      if (reduce){ el.textContent = to.toFixed(dec) + suf; return; }
-      setTimeout(function(){
-        var t0 = null, dur = 1700;
-        requestAnimationFrame(function step(t){
-          if (t0 === null) t0 = t;
-          var p = Math.min((t - t0)/dur, 1);
-          var e = 1 - Math.pow(1 - p, 4);
-          el.textContent = (from + (to - from)*e).toFixed(dec) + suf;
-          if (p < 1) requestAnimationFrame(step);
-        });
-      }, i*200);
-    });
-  }
-
-  /* reading progress */
-  (function(){
-    var rail = document.getElementById("prog");
-    if (!rail) return;
-    var queued = false;
-    function paint(){
-      queued = false;
-      var d = document.documentElement;
-      var max = d.scrollHeight - d.clientHeight;
-      rail.style.transform = "scaleX(" + (max > 0 ? Math.min(d.scrollTop/max, 1) : 0) + ")";
+  // Deterministic shuffle so the zone fills in scattered rather than sweeping.
+  var order = (function(){
+    var idx = [], seed = 20260817, i, j, t;
+    for (i = 0; i < ZONE; i++) idx.push(i);
+    for (i = ZONE - 1; i > 0; i--){
+      seed = (seed * 1103515245 + 12345) % 2147483648;
+      j = seed % (i + 1);
+      t = idx[i]; idx[i] = idx[j]; idx[j] = t;
     }
-    window.addEventListener("scroll", function(){
-      if (queued) return;
-      queued = true;
-      requestAnimationFrame(paint);
-    }, { passive:true });
-    window.addEventListener("resize", paint);
-    paint();
+    return idx;
   })();
 
-  /* ---------- count up ---------- */
-  function fmt(n, dec){
-    if (dec) return n.toFixed(dec);
-    // Indian digit grouping
-    var s = Math.round(n).toString();
-    if (s.length <= 3) return s;
-    var last3 = s.slice(-3), rest = s.slice(0,-3);
-    return rest.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + last3;
-  }
-  function countUp(scope){
-    scope.querySelectorAll("[data-count]").forEach(function(el){
-      var target = parseFloat(el.dataset.count);
-      var dec = parseInt(el.dataset.dec || "0", 10);
-      var suffix = el.dataset.suffix || "";
-      var tail = el.querySelector("small");
-      var tailHTML = tail ? tail.outerHTML : "";
-      if (reduce){ el.innerHTML = fmt(target, dec) + suffix + tailHTML; return; }
-      var t0 = null, dur = 1500;
-      function step(t){
-        if (t0 === null) t0 = t;
-        var p = Math.min((t - t0)/dur, 1);
-        var e = 1 - Math.pow(1 - p, 4);
-        el.innerHTML = fmt(target*e, dec) + suffix + tailHTML;
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    });
+  var range = el("cov"), num = el("covNum"), done = el("covDone"),
+      endEl = el("covEnd"), verdict = el("covVerdict"),
+      map = el("zoneMap"), curve = el("curve"),
+      swatch = el("keySwatch"), keyPct = el("keyPct");
+
+  function project(cov){
+    var rate = GROWTH * (1 - cov / THRESHOLD), pts = [], v = ZONE, y;
+    pts.push(v);
+    for (y = 1; y <= YEARS; y++){ v = v * (1 + rate); pts.push(v); }
+    return pts;
   }
 
-  /* ---------- css var reader ---------- */
-  function cssv(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
-
-  /* =========================================================
-     HERO: drifting dot field. Each dot stands for 100,000 dogs.
-     ========================================================= */
-  (function hero(){
-    var cv = document.getElementById("heroCanvas");
-    if (!cv) return;
-    var ctx = cv.getContext("2d");
-    var dots = [], W = 0, H = 0, running = false, born = performance.now();
-
-    function build(){
-      var d = DPR();
-      W = cv.clientWidth; H = cv.clientHeight;
-      cv.width = Math.round(W*d); cv.height = Math.round(H*d);
-      ctx.setTransform(d,0,0,d,0,0);
-      dots = [];
-      var n = 620;                       // 620 dots x 100,000 = 6.2 crore
-      var cols = Math.ceil(Math.sqrt(n * (W/Math.max(H,1))));
-      var rows = Math.ceil(n/cols);
-      var cw = W/cols, ch = H/rows;
-      for (var i=0;i<n;i++){
-        var c = i%cols, r = Math.floor(i/cols);
-        dots.push({
-          x: c*cw + cw*(0.2 + Math.random()*0.6),
-          y: r*ch + ch*(0.2 + Math.random()*0.6),
-          p: Math.random()*Math.PI*2,
-          s: 0.25 + Math.random()*0.5,
-          delay: Math.random()*1600
-        });
-      }
-    }
-
-    var nextConv = 0;
-    var CONV_MS = 3200;
-
-    function draw(now){
-      if (!running) return;
-      ctx.clearRect(0,0,W,H);
-      var ink = cssv("--ink-soft"), sig = cssv("--signal"), ver = cssv("--verified");
-      var age = now - born;
-
-      // one dog at a time, somewhere in the field, quietly gets counted
-      if (!reduce && age > 1800 && now > nextConv){
-        nextConv = now + 1500 + Math.random()*1800;
-        dots[Math.floor(Math.random()*dots.length)].conv = now;
-      }
-
-      for (var i=0;i<dots.length;i++){
-        var d = dots[i];
-        var a = Math.min(Math.max((age - d.delay)/900, 0), 1);
-        if (a <= 0) continue;
-        var wob = reduce ? 0 : Math.sin(now/2600 + d.p) * 2.4;
-        var x = d.x + wob, y = d.y + wob*0.4;
-        var marked = (i % 47 === 0);
-        var t = d.conv ? (now - d.conv)/CONV_MS : 2;
-
-        if (t < 1){
-          // expanding ring, then the dot settles as verified
-          var ease = 1 - Math.pow(1 - Math.min(t*1.8, 1), 3);
-          ctx.globalAlpha = a * (1 - Math.min(t*1.8, 1)) * 0.55;
-          ctx.strokeStyle = ver; ctx.lineWidth = 1;
-          ctx.beginPath(); ctx.arc(x, y, 1.5 + ease*13, 0, Math.PI*2); ctx.stroke();
-          ctx.globalAlpha = a * 0.9;
-          ctx.fillStyle = ver;
-          ctx.beginPath(); ctx.arc(x, y, d.s + 1.1, 0, Math.PI*2); ctx.fill();
-        } else {
-          ctx.globalAlpha = a * (marked ? 0.85 : 0.34);
-          ctx.fillStyle = marked ? sig : ink;
-          ctx.beginPath(); ctx.arc(x, y, d.s + (marked ? 0.9 : 0), 0, Math.PI*2); ctx.fill();
-        }
-      }
-      ctx.globalAlpha = 1;
-      requestAnimationFrame(draw);
-    }
-
-    build();
-    var vis = new IntersectionObserver(function(e){
-      var on = e[0].isIntersecting;
-      if (on && !running){ running = true; requestAnimationFrame(draw); }
-      else if (!on) running = false;
-    }, { threshold:0 });
-    vis.observe(cv);
-
-    window.addEventListener("resize", debounce(function(){ build(); }, 200));
-  })();
-
-  /* =========================================================
-     THRESHOLD: scroll drives coverage. Map fills, curve responds.
-     ========================================================= */
-  (function threshold(){
-    var section = document.querySelector(".threshold");
-    var mapCv = document.getElementById("mapCanvas");
-    var curveCv = document.getElementById("curveCanvas");
-    if (!section || !mapCv || !curveCv) return;
-
-    var mctx = mapCv.getContext("2d"), cctx = curveCv.getContext("2d");
-    var covNum = document.getElementById("covNum");
-    var covFill = document.getElementById("covFill");
-    var verdict = document.getElementById("verdict");
-
-    var MAX = 0.85;                 // scroll end state
-    var N = 168;                    // dogs in the zone
-    var pack = [];                  // {x,y,order} in unit space
-    var poly = [                    // irregular zone boundary, unit space
-      [0.10,0.20],[0.34,0.08],[0.62,0.12],[0.86,0.06],[0.94,0.34],
-      [0.88,0.62],[0.93,0.86],[0.64,0.94],[0.36,0.88],[0.12,0.92],[0.06,0.58]
-    ];
-    var lastCov = -1, ticking = false;
-
-    function inside(x,y){
-      var hit = false;
-      for (var i=0,j=poly.length-1;i<poly.length;j=i++){
-        var xi=poly[i][0], yi=poly[i][1], xj=poly[j][0], yj=poly[j][1];
-        if (((yi>y)!==(yj>y)) && (x < (xj-xi)*(y-yi)/(yj-yi)+xi)) hit = !hit;
-      }
-      return hit;
-    }
-
-    function seedPack(){
-      pack = [];
-      var seed = 20260817;
-      function rnd(){ seed = (seed*1664525 + 1013904223) % 4294967296; return seed/4294967296; }
-      var guard = 0;
-      while (pack.length < N && guard++ < 20000){
-        var x = 0.06 + rnd()*0.88, y = 0.06 + rnd()*0.88;
-        if (!inside(x,y)) continue;
-        var ok = true;
-        for (var i=0;i<pack.length;i++){
-          var dx = pack[i].x-x, dy = pack[i].y-y;
-          if (dx*dx + dy*dy < 0.0022){ ok = false; break; }
-        }
-        if (ok) pack.push({ x:x, y:y, order:rnd() });
-      }
-      pack.sort(function(a,b){ return a.order - b.order; });
-    }
-
-    function sizeCanvas(cv, ctx){
-      var d = DPR();
-      var w = cv.clientWidth, h = cv.clientHeight;
-      if (!w || !h) return null;
-      cv.width = Math.round(w*d); cv.height = Math.round(h*d);
-      ctx.setTransform(d,0,0,d,0,0);
-      return { w:w, h:h };
-    }
-
-    function drawMap(cov){
-      var s = sizeCanvas(mapCv, mctx); if (!s) return;
-      var w = s.w, h = s.h, pad = 6;
-      var sx = function(u){ return pad + u*(w-pad*2); };
-      var sy = function(u){ return pad + u*(h-pad*2); };
-      mctx.clearRect(0,0,w,h);
-
-      // survey grid
-      mctx.strokeStyle = cssv("--rule-soft"); mctx.lineWidth = 1;
-      for (var g=1; g<8; g++){
-        var p = g/8;
-        mctx.beginPath(); mctx.moveTo(sx(p), sy(0)); mctx.lineTo(sx(p), sy(1)); mctx.stroke();
-        mctx.beginPath(); mctx.moveTo(sx(0), sy(p)); mctx.lineTo(sx(1), sy(p)); mctx.stroke();
-      }
-
-      // zone boundary
-      mctx.beginPath();
-      poly.forEach(function(pt,i){ i ? mctx.lineTo(sx(pt[0]), sy(pt[1])) : mctx.moveTo(sx(pt[0]), sy(pt[1])); });
-      mctx.closePath();
-      mctx.fillStyle = cov >= 0.7 ? cssv("--verified-dim") : cssv("--signal-dim");
-      mctx.fill();
-      mctx.strokeStyle = cssv("--ink"); mctx.lineWidth = 1.4; mctx.setLineDash([5,4]);
-      mctx.stroke(); mctx.setLineDash([]);
-
-      // animals
-      var done = Math.round(pack.length * cov);
-      var rad = Math.max(2.2, Math.min(w,h)/95);
-      for (var i=0;i<pack.length;i++){
-        var d = pack[i], X = sx(d.x), Y = sy(d.y);
-        if (i < done){
-          mctx.fillStyle = cssv("--verified");
-          mctx.beginPath(); mctx.arc(X, Y, rad, 0, Math.PI*2); mctx.fill();
-          // ear notch mark
-          mctx.strokeStyle = cssv("--paper"); mctx.lineWidth = 1.2;
-          mctx.beginPath(); mctx.moveTo(X - rad*0.55, Y - rad*0.15); mctx.lineTo(X + rad*0.55, Y - rad*0.15); mctx.stroke();
-        } else {
-          mctx.strokeStyle = cssv("--signal"); mctx.lineWidth = 1.3;
-          mctx.beginPath(); mctx.arc(X, Y, rad*0.85, 0, Math.PI*2); mctx.stroke();
-        }
-      }
-    }
-
-    /* Illustrative projection. Below the threshold the annual change stays
-       positive and shrinks as coverage rises; above it, reproduction is
-       suppressed and natural turnover pulls the population down. */
-    function trajectory(cov){
-      var r = cov < 0.70
-        ? 0.13 * (1 - cov/0.70)
-        : -0.12 * ((cov - 0.70)/0.15);
-      var pts = [1], v = 1;
-      for (var y=1; y<=6; y++){ v = v * (1 + r); pts.push(v); }
-      return pts;
-    }
-
-    function drawCurve(cov){
-      var s = sizeCanvas(curveCv, cctx); if (!s) return;
-      var w = s.w, h = s.h;
-      var padL = 10, padR = 10, padT = 12, padB = 20;
-      var pts = trajectory(cov);
-      var yMin = 0.35, yMax = 2.25;
-      var X = function(i){ return padL + (i/(pts.length-1))*(w-padL-padR); };
-      var Y = function(v){ return padT + (1 - (v-yMin)/(yMax-yMin))*(h-padT-padB); };
-
-      cctx.clearRect(0,0,w,h);
-
-      // baseline: today's population
-      cctx.strokeStyle = cssv("--rule"); cctx.lineWidth = 1; cctx.setLineDash([3,3]);
-      cctx.beginPath(); cctx.moveTo(X(0), Y(1)); cctx.lineTo(X(pts.length-1), Y(1)); cctx.stroke();
-      cctx.setLineDash([]);
-
-      var past = cov >= 0.70;
-      var col = past ? cssv("--verified") : cssv("--signal");
-
-      // area under the curve
-      cctx.beginPath();
-      cctx.moveTo(X(0), Y(1));
-      pts.forEach(function(v,i){ cctx.lineTo(X(i), Y(v)); });
-      cctx.lineTo(X(pts.length-1), Y(1));
-      cctx.closePath();
-      cctx.fillStyle = past ? cssv("--verified-dim") : cssv("--signal-dim");
-      cctx.fill();
-
-      // the curve
-      cctx.beginPath();
-      pts.forEach(function(v,i){ i ? cctx.lineTo(X(i), Y(v)) : cctx.moveTo(X(i), Y(v)); });
-      cctx.strokeStyle = col; cctx.lineWidth = 2; cctx.stroke();
-
-      // endpoint
-      var last = pts[pts.length-1];
-      cctx.fillStyle = col;
-      cctx.beginPath(); cctx.arc(X(pts.length-1), Y(last), 3.2, 0, Math.PI*2); cctx.fill();
-
-      var delta = Math.round((last-1)*100);
-      var label = (delta > 0 ? "+" : "") + delta + "%";
-      cctx.font = "600 12px " + cssv("--font-mono");
-      cctx.textAlign = "right"; cctx.textBaseline = "bottom";
-      cctx.fillText(label, X(pts.length-1) - 6, Y(last) - 7);
-
-      cctx.fillStyle = cssv("--ink-soft");
-      cctx.font = "10px " + cssv("--font-mono");
-      cctx.textAlign = "left"; cctx.textBaseline = "top";
-      cctx.fillText("year 0", X(0), h - padB + 5);
-      cctx.textAlign = "right";
-      cctx.fillText("year 6", X(pts.length-1), h - padB + 5);
-    }
-
-    function verdictFor(cov){
-      if (cov < 0.02) return "Coverage in this zone: nil. The population grows straight through the programme.";
-      if (cov < 0.32) return "A third of the way. Every surgery is real, and the population still climbs.";
-      if (cov < 0.56) return "Half done is not half solved. The survivors breed back faster than the programme cuts.";
-      if (cov < 0.70) return "Sixty something per cent. Years of work, crores spent, and the curve has barely bent.";
-      if (cov < 0.78) return "Threshold crossed. The population begins to fall, and it stays down.";
-      return "Held above the line, the zone closes out. Now the same money moves to the next boundary.";
-    }
-
-    function render(){
-      ticking = false;
-      var rect = section.getBoundingClientRect();
-      var span = section.offsetHeight - window.innerHeight;
-      var p = span > 0 ? (-rect.top)/span : 0;
-      p = Math.max(0, Math.min(1, p));
-      var cov = Math.round(p * MAX * 100)/100;
-      if (cov === lastCov) return;
-      lastCov = cov;
-
-      var pct = Math.round(cov*100);
-      var past = cov >= 0.70;
-      covNum.innerHTML = pct + "<sup>%</sup>";
-      covNum.classList.toggle("is-past", past);
-      covFill.style.width = pct + "%";
-      covFill.classList.toggle("is-past", past);
-      verdict.textContent = verdictFor(cov);
-      verdict.classList.toggle("is-past", past);
-
-      drawMap(cov);
-      drawCurve(cov);
-    }
-
-    function onScroll(){
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(render);
-    }
-
-    seedPack();
-    window.addEventListener("scroll", onScroll, { passive:true });
-    window.addEventListener("resize", debounce(function(){ lastCov = -1; render(); }, 150));
-    // first paint once layout settles
-    requestAnimationFrame(function(){ lastCov = -1; render(); });
-    setTimeout(function(){ lastCov = -1; render(); }, 300);
-  })();
-
-  function debounce(fn, ms){
-    var t; return function(){ clearTimeout(t); t = setTimeout(fn, ms); };
+  function verdictFor(c){
+    if (c === 0) return "Nothing has happened here. The population grows straight through the programme.";
+    if (c < 40) return "Visible activity, no effect. Every animal treated is replaced before the team returns.";
+    if (c < 60) return "Half the zone done, and the survivors breed back faster than the programme cuts.";
+    if (c < THRESHOLD) return "Sixty-nine per cent is not almost. Below the line, the money bought a smaller treadmill.";
+    if (c < 85) return "Threshold crossed. The population stops replacing itself and begins to fall.";
+    return "Past the line and holding. This zone can be closed out, evidenced and handed over.";
   }
+
+  function path(pts){
+    return pts.map(function(v, i){
+      var x = (i / YEARS) * CW, y = CH - (v / Y_MAX) * CH;
+      return (i ? "L" : "M") + " " + x.toFixed(1) + " " + y.toFixed(1);
+    }).join(" ");
+  }
+
+  function render(){
+    var cov = Number(range.value);
+    var past = cov >= THRESHOLD;
+    var live = past ? "var(--accent)" : "var(--charcoal)";
+    var treated = Math.round((cov / 100) * ZONE);
+    var mark = {};
+    order.slice(0, treated).forEach(function(i){ mark[i] = 1; });
+
+    range.style.setProperty("--pct", cov + "%");
+    num.innerHTML = cov + "<sup>%</sup>";
+    num.className = "cov-num" + (past ? " past" : "");
+    done.textContent = treated + " sterilised";
+    keyPct.textContent = cov;
+    swatch.style.background = live;
+
+    var dots = "", i, on;
+    for (i = 0; i < ZONE; i++){
+      on = mark[i];
+      dots += '<circle cx="' + ((i % COLS) * 16 + 8) + '" cy="' + (Math.floor(i / COLS) * 16 + 8) + '" r="' +
+        (on ? 4.6 : 2.9) + '" fill="' + (on ? "var(--accent)" : "transparent") + '" stroke="' +
+        (on ? "var(--accent)" : "var(--border-strong)") + '" stroke-width="1.1"/>';
+    }
+    map.innerHTML = dots;
+
+    var series = project(cov), none = project(0), last = series[YEARS];
+    endEl.textContent = Math.round(last) + " dogs by year " + YEARS;
+    endEl.style.color = past ? "var(--accent)" : "var(--muted)";
+    curve.innerHTML =
+      '<line x1="0" x2="' + CW + '" y1="' + (CH - (ZONE / Y_MAX) * CH) + '" y2="' + (CH - (ZONE / Y_MAX) * CH) +
+        '" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2 5"/>' +
+      '<path d="' + path(none) + '" fill="none" stroke="var(--border-strong)" stroke-width="1.2" stroke-dasharray="4 5"/>' +
+      '<path d="' + path(series) + '" fill="none" stroke="' + live + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<circle cx="' + CW + '" cy="' + (CH - (last / Y_MAX) * CH) + '" r="3.5" fill="' + live + '"/>';
+
+    verdict.textContent = verdictFor(cov);
+    verdict.className = "cov-verdict" + (past ? " past" : "");
+    range.setAttribute("aria-valuetext", cov + " per cent. " + verdictFor(cov));
+  }
+
+  range.addEventListener("input", render);
+  render();
+})();
+
 })();
 </script>
 </body>
